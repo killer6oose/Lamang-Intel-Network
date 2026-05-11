@@ -1,0 +1,61 @@
+[
+  {
+    "id": "m4-buffer-tube",
+    "name": "M4 Buffer Tube",
+    "category": "bufferTube",
+    "statModifiers": {
+      "recoil": 2.0,
+      "sizeChangeX": 1.0
+    },
+    "weight": 0.108,
+    "vendor": "Gunny",
+    "vendorRank": 3,
+    "price": 0,
+    "patchVersion": "0.4.0.3",
+    "wikiSource": true
+  },
+  {
+    "id": "cq-a1-buffer-tube",
+    "name": "CQ A1 Buffer Tube",
+    "category": "bufferTube",
+    "statModifiers": {
+      "recoilControl": -3.0,
+      "ergonomics": -3.0
+    },
+    "weight": 0.108,
+    "vendor": "Gunny",
+    "vendorRank": 1,
+    "price": 153,
+    "patchVersion": "0.4.0.3",
+    "wikiSource": true,
+    "manufacturer": "Norinco",
+    "verified": true
+  },
+  {
+    "id": "m4-buffer-tube-fde",
+    "name": "M4 Buffer Tube (FDE)",
+    "category": "bufferTube",
+    "statModifiers": {
+      "recoil": 2.0,
+      "sizeChangeX": 1.0
+    },
+    "weight": 0.108,
+    "vendor": "Loot only",
+    "vendorRank": 0,
+    "price": 0,
+    "patchVersion": "0.4.0.3",
+    "wikiSource": true
+  },
+  {
+    "id": "m16a1-buffer-tube",
+    "name": "M16A1 Rifle Buffer Tube",
+    "category": "bufferTube",
+    "statModifiers": {},
+    "weight": 0.120,
+    "vendor": "Gunny",
+    "vendorRank": 1,
+    "notes": "Rifle-length buffer tube for the M16A1. Fixed stock only - does not accept telescoping stocks. Needs in-game verification.",
+    "verified": false,
+    "patchVersion": "0.4"
+  }
+]

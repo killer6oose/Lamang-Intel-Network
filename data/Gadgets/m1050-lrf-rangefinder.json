@@ -1,0 +1,22 @@
+{
+  "id": "m1050-lrf-rangefinder",
+  "name": "M1050 LRF Rangefinder",
+  "shortName": "M1050 LRF",
+  "type": "Rangefinder",
+  "slot": "Binoculars",
+  "description": "The M1050R LRF combines the clarity of the M1050 binoculars with dependable, precise range-finding capabilities. It is designed primarily for military personnel and tactical units.",
+  "manufacturer": "Safran Group",
+  "vendor": null,
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 1.270
+  },
+  "gridSize": null,
+  "notes": "Combines M1050R optics with rangefinder capability. Vendor and grid size unknown. Marked as upcoming content on fandom wiki.",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox (marked as upcoming content)",
+  "upcoming": true,
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}

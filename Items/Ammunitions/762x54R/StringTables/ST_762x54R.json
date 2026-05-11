@@ -1,0 +1,26 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_762x54R",
+    "Flags": "RF_Public | RF_Standalone | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_762x54R",
+      "KeysToEntries": {
+        "Ammo_Lps_762x54_Name": "7.62x54R LPS (57-N-323S)",
+        "Ammo_Lps_762x54_ShortName": "LPS 7.62x54R",
+        "Ammo_Lps_762x54_Description": "The 57-N-323S (GZh) cartridge features the iconic LPS (Light Armor-Piercing, Steel-Core) bullet. This cartridge is known for its lethal combination of a St 10 steel core and a 9.45-9.75g bullet, and can be recognized by its silver-painted tip, a tradition observed from 1953 to 1978.",
+        "Ammo_T46MTracer_762x54_Name": "7.62x54R Tracer (T-46M)",
+        "Ammo_T46MTracer_762x54_ShortName": "Tracer 7.62x54R",
+        "Ammo_T46MTracer_762x54_Description": "The T-46M Tracer cartridge is a modernized ammunition designed for the Mosin-Nagant rifle. It has a distinctive green-painted tip and features a smokeless, nitrocellulose-based powder (BT) that propels a 9.5-9.8g bullet at a muzzle velocity of 825-855m/s. The bullet is clad in a tombac-plated steel shell and has a lead core with 1-2% antimony for enhanced performance.",
+        "Ammo_7N1SniperRound_762x54_Name": "7.62x54R Sniper Round (7N1)",
+        "Ammo_7N1SniperRound_762x54_ShortName": "SR 7.62x54R",
+        "Ammo_7N1SniperRound_762x54_Description": "The 7N1 cartridge is a preferred choice for snipers due to its precision. It has a length ranging from 75.91 to 77.16mm and features a smokeless, nitrocellulose-based powder marked as ВТ. This propels a 9.52-9.56g bullet at speeds of 820-835m/s from the SVD rifle. The bullet is enveloped in a tombac-plated steel shell and houses a St 10 core weighing 2.2-2.3g. This cartridge is ideal for long-range accuracy and delivers consistent performance for sniper applications.",
+        "Ammo_7N13Ap_762x54_Name": "7.62x54R AP (7N13)",
+        "Ammo_7N13Ap_762x54_ShortName": "AP 7.62x54R",
+        "Ammo_7N13Ap_762x54_Description": "The 7.62x54R 7N13 cartridge is a powerful armor-piercing (AP) round designed for precision and penetration. It has a distinctive purple tip and provides reliable armor-penetrating capabilities, making it an excellent choice for applications requiring enhanced piercing power."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

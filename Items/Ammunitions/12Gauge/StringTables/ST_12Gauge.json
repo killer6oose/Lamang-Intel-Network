@@ -1,0 +1,29 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_12Gauge",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_12Gauge",
+      "KeysToEntries": {
+        "Ammo_00Buckshot_12Gaug_Name": "12ga 00 Buckshot",
+        "Ammo_00Buckshot_12Gaug_ShortName": "00 12ga",
+        "Ammo_00Buckshot_12Gaug_Description": "A standard 00 buckshot ammunition, consisting of multiple large pellets and designed for close-range engagements. Although it may have slightly wider shot patterns compared to the FC 00 Buckshot, it still delivers significant kinetic energy.",
+        "Ammo_Flechette_12Gaug_Name": "Flechette",
+        "Ammo_Flechette_12Gaug_ShortName": "Flechette",
+        "Ammo_Flechette_12Gaug_Description": "",
+        "Ammo_Slug_12Gaug_Name": "12ga Slug",
+        "Ammo_Slug_12Gaug_ShortName": "Slug 12ga",
+        "Ammo_Slug_12Gaug_Description": "Shotgun slugs are single-projectile ammunition designed for increased accuracy and penetration compared to buckshot. They consist of a large, solid projectile (.68 to .72 caliber) that delivers high kinetic energy upon impact.",
+        "Ammo_SstSabotSlug_12Gaug_Name": "12ga SST Sabot Slug",
+        "Ammo_SstSabotSlug_12Gaug_ShortName": "SST Slug 12ga",
+        "Ammo_SstSabotSlug_12Gaug_Description": "SST Sabot Slugs use a plastic carrier to hold a smaller, high-velocity projectile (.50 caliber or smaller). When fired, the sabot separates from the projectile, enabling it to travel at high speed and deliver significant energy upon impact.",
+        "Ammo_00FCBuckshot_12Gaug_Name": "12ga FC 00 Buckshot",
+        "Ammo_00FCBuckshot_12Gaug_ShortName": "FC 00 12ga",
+        "Ammo_00FCBuckshot_12Gaug_Description": "The Flight Control 00 Buckshot ammunition is designed to provide tighter shot patterns and increased accuracy, making it highly effective for close-range engagements. The flight control wad helps to maintain a more consistent shot spread, improving hit probability on target."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

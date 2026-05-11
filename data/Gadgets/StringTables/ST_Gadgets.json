@@ -1,0 +1,32 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_Gadgets",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_Gadgets",
+      "KeysToEntries": {
+        "Binocular_M830R_ShortName": "M830R",
+        "Binocular_M830R_Name": "M830R Binoculars",
+        "Binocular_M830R_Description": "The M830R binoculars are used by many armies around the world. Its durable design is known for enduring even the harshest conditions.",
+        "Binocular_TriumphHd_Name": "Triumph HD Binoculars",
+        "Binocular_TriumphHd_ShortName": "Triumph",
+        "Binocular_TriumphHd_Description": "The Triumph HD binoculars provide reliable and solid performance for hunters, hikers, and other outdoor enthusiasts.",
+        "Binocular_M1050R_Name": "M1050R Binoculars",
+        "Binocular_M1050R_ShortName": "M1050R",
+        "Binocular_M1050R_Description": "The M1050 binoculars can withstand extreme conditions while providing clear images. Its reliability and durability have made it a popular choice among militaries worldwide.",
+        "Rangefinder_CrossfireHd_Name": "Crossfire HD Rangefinder",
+        "Rangefinder_CrossfireHd_ShortName": "Crossfire",
+        "Rangefinder_CrossfireHd_Description": "The Crossfire HD is a reliable and easy-to-use rangefinder that collects essential environmental data, allowing for accurate shots at the target.",
+        "Rangefinder_Plrf25c_Name": "PLRF 25C Rangefinder",
+        "Rangefinder_Plrf25c_ShortName": "PLRF",
+        "Rangefinder_Plrf25c_Description": "The PLRF 25C is a high-performance rangefinder designed for snipers, spotters, and forward observers during combat operations. Its rugged construction ensures reliable performance even in extreme conditions. The wavelength of the ranging laser is undetectable by night vision goggles (NVGs), making this rangefinder ideal for covert operations.",
+        "Rangefinder_M1050Lrf_Name": "M1050 LRF Rangefinder",
+        "Rangefinder_M1050Lrf_ShortName": "M1050 LRF",
+        "Rangefinder_M1050Lrf_Description": "The M1050R LRF combines the clarity of the M1050 binoculars with dependable, precise range-finding capabilities. It is designed primarily for military personnel and tactical units."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

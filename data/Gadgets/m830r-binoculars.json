@@ -1,0 +1,22 @@
+{
+  "id": "m830r-binoculars",
+  "name": "M830R Binoculars",
+  "shortName": "M830R",
+  "type": "Binoculars",
+  "slot": "Binoculars",
+  "description": "The M830R binoculars are used by many armies around the world. Its durable design is known for enduring even the harshest conditions.",
+  "manufacturer": "Steiner",
+  "vendor": "Banshee",
+  "vendorRank": 1,
+  "baseStats": {
+    "weight": 0.530
+  },
+  "gridSize": "2x1",
+  "notes": "Entry-level binoculars. Available Banshee Rank 1.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "upcoming": false,
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}

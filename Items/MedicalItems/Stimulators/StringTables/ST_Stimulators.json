@@ -1,0 +1,49 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_Stimulators",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_Stimulators",
+      "KeysToEntries": {
+        "Med_Stim_Caffeine_ShortName": "",
+        "Med_Stim_Caffeine_Description": "",
+        "Med_Stim_Ritalin_ShortName": "Methyl",
+        "Med_Stim_Ritalin_Description": "Commonly prescribed to treat attention deficit hyperactivity disorder (ADHD) and narcolepsy, it increases the levels of certain neurotransmitters in the brain, leading to improved focus, attention, and impulse control.\n\nDecreases body and arm stamina drain and prevents negative effects when suppressed at the cost of increased intoxication and liver damage. Lasts 5 minutes.",
+        "Med_Stim_Strychnine_ShortName": "Strych",
+        "Med_Stim_Strychnine_Description": "A highly toxic alkaloid compound derived from the seeds of the Strychnos nux-vomica tree. Historically, it has been used as a pesticide and in small doses as a stimulant and performance enhancer due to its convulsant effects.     \n\nBlocks body stamina drain at the cost of increased intoxication, heart damage, and a short-lasting full arm stamina drain and pain after the effect wears off. Lasts 1 minute.",
+        "Med_Stim_Fenethylline_ShortName": "Fenethyl",
+        "Med_Stim_Fenethylline_Description": "Initially developed as a medication to treat attention deficit hyperactivity disorder (ADHD) and narcolepsy. However, its stimulant properties led to concerns about misuse and addiction potential.\n\nIncreases stamina regeneration at the cost of increased intoxication and hydration drain. Lasts 3 minutes.",
+        "Med_Stim_Epo_ShortName": "EPO",
+        "Med_Stim_Epo_Description": "The primary function of erythropoietin (EPO) is to stimulate the production of red blood cells in the bone marrow. It plays a crucial role in maintaining oxygen delivery to tissues and organs, contributing to overall health and vitality.\n\nIncreases blood regeneration at the cost of increased intoxication, hydration drain, and liver damage. Lasts 3 minutes.",
+        "Med_Stim_BoneHealingSubstance_ShortName": "ORI-12",
+        "Med_Stim_BoneHealingSubstance_Description": "This compound leverages advanced bioengineering to accelerate the natural healing process of damaged bones. The bioactive growth factors within ORI-12 are carefully selected to mimic the signals released during bone healing. These growth factors stimulate nearby bone-forming cells, encouraging them to increase their activity and generate new bone tissue.\n\nRegenerates up to 50% of damaged bones at the cost of increased intoxication and pain. Lasts 4 minutes.",
+        "Med_Stim_OrganHealingSubstance_ShortName": "HpR 3-S",
+        "Med_Stim_OrganHealingSubstance_Description": "This substance is designed to trigger and accelerate the regrowth of impaired tissues within vital organs, offering the potential to restore function and vitality. The nanomolecules of HpR 3-S possess the ability to identify specific signals emitted by injured cells, allowing them to differentiate between healthy and damaged tissue. Once attached to damaged cells, the nanomolecules release bioactive compounds that stimulate the activation of dormant stem cells within the affected organ. These stem cells undergo a transformation into specialized cells that rapidly replicate and replace the damaged tissue. \n\nRegenerates up to 50% of injured organs at the cost of increased intoxication and pain. Lasts 4 minutes.",
+        "Med_Stim_Morphine_Name": "Morphine",
+        "Med_Stim_Morphine_ShortName": "Morph",
+        "Med_Stim_Morphine_Description": "A powerful opioid analgesic used to suppress severe pain. It acts on the central nervous system to reduce pain perception and improve short-term functionality under stress.\n\nCompletely suppresses pain and negative effects, such as tremors and limping, caused by arm and leg fractures at the cost of increased intoxication and liver damage. Lasts 4 minutes..",
+        "Med_Stim_Fenethylline_Name": "Fenethylline",
+        "Med_Stim_Strychnine_Name": "Strychnine",
+        "Med_Stim_Ritalin_Name": "Methylphenidate",
+        "Med_Stim_Epo_Name": "EPO",
+        "Med_Stim_BoneHealingSubstance_Name": "ORI-12",
+        "Med_Stim_OrganHealingSubstance_Name": "HpR 3-S",
+        "Med_Stim_BoneHealingSubstance_V2_Name": "ORI-12 V2",
+        "Med_Stim_BoneHealingSubstance_V2_ShortName": "ORI-12 V2",
+        "Med_Stim_BoneHealingSubstance_V2_Description": "An advanced version of ORI-12, a compound that leverages advanced bioengineering to accelerate the natural healing process of damaged bones. The bioactive growth factors within ORI-12 are carefully selected to mimic the signals released during bone healing. These growth factors stimulate nearby bone-forming cells, encouraging them to increase their activity and generate new bone tissue.\n\nRegenerates up to 65% of damaged bones at the cost of increased intoxication and pain. Lasts 5 minutes.",
+        "Med_Stim_Epo_V2_Name": "EPO V2",
+        "Med_Stim_Epo_V2_ShortName": "EPO 2",
+        "Med_Stim_Epo_V2_Description": "An advanced EPO formulation designed to significantly accelerate red blood cell production. Its effects are potent enough to noticeably sustain blood levels even under active blood loss.\n\nGreatly increases blood regeneration at the cost of increased intoxication, hydration drain, and liver damage. Lasts 3 minutes.",
+        "Med_Stim_OrganHealingSubstance_V2_Name": "HpR 3-S V2",
+        "Med_Stim_OrganHealingSubstance_V2_ShortName": "HpR 3-S V2",
+        "Med_Stim_OrganHealingSubstance_V2_Description": "An advanced version of HpR 3-S, designed to trigger and accelerate the regrowth of impaired tissues within vital organs, offering the potential to restore function and vitality. The nanomolecules of HpR 3-S possess the ability to identify specific signals emitted by injured cells, allowing them to differentiate between healthy and damaged tissue. Once attached to damaged cells, the nanomolecules release bioactive compounds that stimulate the activation of dormant stem cells within the affected organ. These stem cells undergo a transformation into specialized cells that rapidly replicate and replace the damaged tissue. \n\nRegenerates up to 65% of injured organs at the cost of increased intoxication and pain. Lasts 5 minutes.",
+        "Med_Stim_DetoxSubstance_Name": "DT-0X",
+        "Med_Stim_DetoxSubstance_ShortName": "DT-0X",
+        "Med_Stim_DetoxSubstance_Description": "A fast-acting detoxification compound designed to rapidly neutralize toxins in the bloodstream. It restores physiological stability by completely eliminating intoxication effects.\n\nRemoves up to 100% intoxication at the cost of increased hydration drain and liver damage. Lasts 90 seconds."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_Cards",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_Cards",
+      "KeysToEntries": {
+        "Card_HotelCleaningRoomStorage_Name": "Hotel Supply Closet Card",
+        "Card_HotelCleaningRoomStorage_ShortName": "MS Supply",
+        "Card_HotelCleaningRoomStorage_Description": "A key to a supply closet in the Midnight Sapphire Hotel.",
+        "Card_Resort_HotelCleaningRoomStorage_Name": "Hotel Supply Closet Key Card",
+        "Card_Resort_HotelCleaningRoomStorage_ShortName": "MSH Supply",
+        "Card_Resort_HotelCleaningRoomStorage_Description": "A key card to a supply closet in the Midnight Sapphire Hotel.",
+        "Card_DevCard_Name": "Card reader",
+        "Card_DevCard_ShortName": "Card reader",
+        "Card_DevCard_Description": "",
+        "Card_NamThaven_TownHallFinancialSection_Name": "Nam Thaven Town Hall Finance Department Key Card",
+        "Card_NamThaven_TownHallFinancialSection_ShortName": "NT Fin",
+        "Card_NamThaven_TownHallFinancialSection_Description": "An access card to the finance department of the Nam Thaven town hall.",
+        "Card_KiuVongsa_TownHallFinancialSection_Name": "Kiu Vongsa Town Hall Finance Department Key Card",
+        "Card_KiuVongsa_TownHallFinancialSection_ShortName": "KV Fin",
+        "Card_KiuVongsa_TownHallFinancialSection_Description": "An access card to the finance department of the Kiu Vongsa town hall.",
+        "Card_PhaLang_TownHallFinancialSection_Name": "Pha Lang Town Hall Finance Department Key Card",
+        "Card_PhaLang_TownHallFinancialSection_ShortName": "PL Fin",
+        "Card_PhaLang_TownHallFinancialSection_Description": "An access card to the finance department of the Pha Lang town hall.",
+        "Card_MilitaryBase_ReceptionStorage_Name": "Fort Narith HQ Reception Storage Key Card",
+        "Card_MilitaryBase_ReceptionStorage_ShortName": "FN HQRec",
+        "Card_MilitaryBase_ReceptionStorage_Description": "An access card to the storage room behind the reception desk at Fort Narith HQ.",
+        "Card_TigerBayYachtclubShop_Name": "UNLRA HQ Office Key Card",
+        "Card_TigerBayYachtclubShop_ShortName": "TB UNOf",
+        "Card_TigerBayYachtclubShop_Description": "An access card to one of the offices inside the UNLRA HQ in Tiger bay.",
+        "Card_TigerBay_ImprovisedMallArmory_Name": "Tiger Bay Central Armory Card",
+        "Card_TigerBay_ImprovisedMallArmory_ShortName": "TBC Arm",
+        "Card_TigerBay_ImprovisedMallArmory_Description": "A card to an improvised armory inside Tiger Bay Central.",
+        "Card_MilitaryBase_OperationsRoom_Name": "Fort Narith Operations Room Key Card",
+        "Card_MilitaryBase_OperationsRoom_Description": "An access card to the Fort Narith Operations Room.",
+        "Card_MilitaryBase_OperationsRoom_ShortName": "FN OR"
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

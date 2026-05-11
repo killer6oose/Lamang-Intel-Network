@@ -1,0 +1,116 @@
+{
+  "id": "ak-12",
+  "name": "AK-12",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "5.45x39mm",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Turncoat",
+  "vendorRank": 2,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 2.81,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 3.553,
+    "rateOfFire": 700,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "5.45x39mm BP (7N22)",
+    "5.45x39mm BS (7N24)",
+    "5.45x39mm BT (7BT4)",
+    "5.45x39mm FMJ",
+    "5.45x39mm HP",
+    "5.45x39mm PP (7N10)",
+    "5.45x39mm PS (7N6)",
+    "5.45x39mm US (7U1)"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "ak-ratnik-handguard",
+        "ak-ratnik-handguard-long"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-ratnik-grip"
+      ]
+    },
+    "chargingHandle": {
+      "label": "Charging Handle",
+      "required": false,
+      "compatible": [
+        "ak-rp-1-charging-handle"
+      ]
+    },
+    "receiver": {
+      "label": "Dust Cover / Receiver",
+      "required": false,
+      "compatible": [
+        "ak-ratnik-dust-cover"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "ratnik-foldable-stock",
+        "aks-74u-foldable-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "ak-12-suppressor",
+        "dtk-1-muzzle-brake",
+        "dtk-2-muzzle-brake",
+        "ak-100-series-muzzle-brake"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "ak-12-rear-sight",
+        "kobra-ekp-8-18-red-dot-sight",
+        "kobra-ekp-1s-03-red-dot-sight",
+        "pk-01-vs-red-dot-sight",
+        "okp7-red-dot-sight",
+        "pilad-p1x42-red-dot-sight",
+        "pso-1-4x24",
+        "npz-pso-3-9x24"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak-5-45-39mm-30-round-bakelite-magazine",
+        "ak12-5-45x39mm-30-round-magazine",
+        "ak74-5-45x39mm-60-round-magazine",
+        "ak-5-45-39mm-30-round-black-magazine",
+        "ak-5-45x39mm-30-round-pmag-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "magazine": "ak12-5-45x39mm-30-round-magazine",
+    "pistolGrip": "ak-ratnik-grip",
+    "stock": "ratnik-foldable-stock"
+  },
+  "notes": "Modern Russian service rifle, part of the Ratnik equipment system. Turncoat Rank 2. Uses Ratnik-specific parts - pistol grip, handguard, dust cover not shared with older AK platforms. Has built-in optic rail. NOTE: 'ak-ratnik-dust-cover' ID does not yet exist in attachments data and needs to be added.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-10",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/30/AK-12_inspect.png"
+}

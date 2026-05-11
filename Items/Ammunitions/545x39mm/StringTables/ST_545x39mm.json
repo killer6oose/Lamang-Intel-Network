@@ -1,0 +1,41 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_545x39mm",
+    "Flags": "RF_Public | RF_Standalone | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_545x39mm",
+      "KeysToEntries": {
+        "Ammo_Fmj_545x39_Name": "5.45x39mm FMJ",
+        "Ammo_Fmj_545x39_ShortName": "FMJ 5.45x39",
+        "Ammo_Fmj_545x39_Description": "The 5.45x39mm FMJ ammunition is a military cartridge designed for rifles such as the AK-74. It features a full metal jacket design with a lead core encased in copper, providing reliable feeding and penetration. This ammunition is widely used in military applications due to its consistent performance in both combat and training scenarios.",
+        "Ammo_Hp_545x39_Name": "5.45x39mm HP",
+        "Ammo_Hp_545x39_ShortName": "HP 5.45x39",
+        "Ammo_Hp_545x39_Description": "The 5.45x39mm Hollow Point (HP) ammunition is engineered for rifles such as the AK-74. Its hollow point design is intended to expand upon impact, creating larger wound channels and increased stopping power. As a result, 5.45x39mm HP ammo is suitable for certain self-defense and hunting applications, providing effective terminal ballistics.",
+        "Ammo_Ps7N6_545x39_Name": "5.45x39mm PS (7N6)",
+        "Ammo_Ps7N6_545x39_ShortName": "PS 5.45x39",
+        "Ammo_Ps7N6_545x39_Description": "The 5.45x39mm PS (7N6) ammunition is a military cartridge used in rifles such as the AK-74. The 'PS' designation refers to the projectile's steel-core design, which enhances its penetration capabilities. This ammunition is widely adopted for military use due to its armor-piercing properties and is commonly used in military training and combat scenarios.",
+        "Ammo_Pp7N10_545x39_Name": "5.45x39mm PP (7N10)",
+        "Ammo_Pp7N10_545x39_ShortName": "PP 5.45x39",
+        "Ammo_Pp7N10_545x39_Description": "The 5.45x39mm PP (7N10) ammunition is a specialized military cartridge designed for rifles like the AK-74. It features a steel core for improved penetration capabilities, making it suitable for armor-piercing applications. This ammo is known for its effectiveness in military use, particularly in scenarios where enhanced penetration is a priority.",
+        "Ammo_US7U1_545x39_Name": "5.45x39mm US (7U1)",
+        "Ammo_US7U1_545x39_ShortName": "US 5.45x39",
+        "Ammo_US7U1_545x39_Description": "The 5.45x39mm US gs round contains a subsonic 5.1-gram bullet with a pointed tungsten carbide core over a lead base enclosed in a bimetallic jacket. It is housed in a steel case with a reduced charge. This US cartridge was developed by TsNIITochMash in the mid-80s for use in the AKS-74UB and AKS-74UBN.",
+        "Ammo_Bt7Bt4_545x39_Name": "5.45x39mm BT (7BT4)",
+        "Ammo_Bt7Bt4_545x39_ShortName": "BT 5.45x39",
+        "Ammo_Bt7Bt4_545x39_Description": "The 5.45x39mm BT (7BT4) is a high-performance ammunition combining armor-piercing and tracer capabilities. Its hardened steel core ensures superior penetration, effortlessly piercing through medium-grade armor and barriers. The integrated tracer element ignites upon firing, creating a visible trajectory for precise targeting and enhanced fire control, even in low-visibility conditions.",
+        "Ammo_Bp7N22_545x39_Name": "5.45x39mm BP (7N22)",
+        "Ammo_Bp7N22_545x39_ShortName": "BP 5.45x39",
+        "Ammo_Bp7N22_545x39_Description": "The 5.45x39mm BP (7N22) ammunition is a specialized cartridge designed for rifles like the AK-74. It features a ballistic projectile with an armor-piercing steel core, making it highly effective at penetrating armored targets.  This ammo is widely used in military applications where penetrating protective barriers is essential.",
+        "Ammo_Bs7N24_545x39_Name": "5.45x39mm BS (7N24)",
+        "Ammo_Bs7N24_545x39_ShortName": "BS 5.45x39",
+        "Ammo_Bs7N24_545x39_Description": "The 5.45x39mm BS (7N24) cartridge is designed for rifles such as the AK-74. The designation 'BS' stands for 'Broneboynyy Serdechnik' or 'Armor-Piercing Core.' It contains a hardened tungsten carbide core that enhances its armor-piercing capabilities and is commonly used in military applications due to its effectiveness against armored targets.",
+        "Ammo_Wolf_545x39_Name": "5.45x39mm Wolf",
+        "Ammo_Wolf_545x39_ShortName": "SP 5.45x39",
+        "Ammo_Wolf_545x39_Description": "The Wolf WPA Military Classic 5.45x39mm ammunition features 55-grain soft point bullets and steel cases with Berdan primers. It is designed for AK-74 rifles and is suitable for range training and self-defense. This ammunition is non-reloadable, non-corrosive, and has a polymer coating to improve feeding reliability."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_9x19mm",
+    "Flags": "RF_Public | RF_Standalone | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_9x19mm",
+      "KeysToEntries": {
+        "Ammo_Fmj_9x19_Name": "9x19mm FMJ",
+        "Ammo_Fmj_9x19_ShortName": "FMJ 9x19",
+        "Ammo_Fmj_9x19_Description": "A 9mm Parabellum cartridge loaded with a full metal jacket (FMJ) bullet. It features a lead core encapsulated by a copper or brass jacket, providing smooth feeding and reliable performance. The FMJ design prevents the bullet from expanding upon impact, making it suitable for target shooting, training, and general-purpose use.",
+        "Ammo_Tracer_9x19_Name": "9x19mm Tracer",
+        "Ammo_Tracer_9x19_ShortName": "Tracer 9x19",
+        "Ammo_Tracer_9x19_Description": "A specialized type of the 9mm Parabellum (9x19mm) cartridge that contains a tracer compound in the bullet. This allows the bullet to emit visible light during flight, making it useful for tracking the bullet's trajectory in low-light conditions or for training purposes.",
+        "Ammo_Hp_9x19_Name": "9x19mm HP",
+        "Ammo_Hp_9x19_ShortName": "HP 9x19",
+        "Ammo_Hp_9x19_Description": "A 9mm Parabellum cartridge loaded with a hollow point bullet. Unlike full metal jacket (FMJ) rounds, hollow point ammunition is designed to expand upon impact, creating a larger wound channel and transferring more energy to the target.",
+        "Ammo_LibraSnail_9x19_Name": "9x19mm Libra Snail",
+        "Ammo_LibraSnail_9x19_ShortName": "LS 9x19",
+        "Ammo_LibraSnail_9x19_Description": "The Snail ammunition was created in 2002 and made its debut at the IWA (Internationale Waffenausstellung), a firearms exhibition held in Nuremberg, Germany, in 2003. The round's designer, Vlastimil Libra, utilized a bullet made of solid brass or aluminum with a steel core to achieve controlled deformation in the projectile. This unique combination of materials and construction results in a round with exceptional penetration capabilities.",
+        "Ammo_Rip_9x19_Name": "9x19mm RIP",
+        "Ammo_Rip_9x19_ShortName": "RIP",
+        "Ammo_Rip_9x19_Description": "This cutting-edge ammunition utilizes a Radically Invasive Projectile (RIP) design with a precision-machined copper hollow point to promote controlled expansion upon impact, resulting in devastating wound channels.",
+        "Ammo_XtremePenetratorP_9x19_Name": "9x19mm Xtreme Penetrator P+",
+        "Ammo_XtremePenetratorP_9x19_ShortName": "XP+ 9x19",
+        "Ammo_XtremePenetratorP_9x19_Description": "The Xtreme Penetrator Ammo is designed to provide superior penetration and stopping power. It features a 115-grain solid copper bullet with a unique fluted design that maintains its structural integrity and delivers deep penetration upon impact. The +P designation indicates higher pressure, resulting in increased velocity and energy transfer. This ammunition is ideal for self-defense scenarios where reliable barrier penetration is crucial.",
+        "Ammo_LibraSnailHeavy_9x19_Name": "9x19 Libra Snail Heavy",
+        "Ammo_LibraSnailHeavy_9x19_ShortName": "LS 9x19",
+        "Ammo_LibraSnailHeavy_9x19_Description": "The Snail ammunition was created in 2002 and made its debut at the IWA (Internationale Waffenausstellung), a firearms exhibition held in Nuremberg, Germany, in 2003. The round's designer, Vlastimil Libra, utilized a bullet made of solid brass or aluminum with a steel core to achieve controlled deformation in the projectile. This unique combination of materials and construction results in a round with exceptional penetration capabilities."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

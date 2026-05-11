@@ -1,0 +1,38 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_45ACP",
+    "Flags": "RF_Public | RF_Standalone | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_45ACP",
+      "KeysToEntries": {
+        "Ammo_Fmj_45Acp_Name": ".45 ACP FMJ",
+        "Ammo_Fmj_45Acp_ShortName": "FMJ .45",
+        "Ammo_Fmj_45Acp_Description": "The .45 ACP FMJ features a lead core encased in a metal shell, typically copper, which enhances penetration and reduces barrel fouling. It is commonly used for target practice and training due to its reliability and consistent performance.",
+        "Ammo_HydraShock_45Acp_Name": ".45 ACP Hydra-Shok",
+        "Ammo_HydraShock_45Acp_ShortName": "Hydra-Shok",
+        "Ammo_HydraShock_45Acp_Description": "Developed by Federal Premium Ammunition, the Hydra-Shok round features a hollow-point bullet with a unique center post that helps promote controlled expansion upon impact. This design aims to create a larger wound channel and improve stopping power while reducing the risk of over-penetration. The .45 ACP Hydra-Shok is often used for self-defense due to its reliable performance and effectiveness in incapacitating a threat.",
+        "Ammo_JhpP_45Acp_Name": ".45 ACP JHP +P",
+        "Ammo_JhpP_45Acp_ShortName": "JHP +P .45",
+        "Ammo_JhpP_45Acp_Description": ".45 ACP JHP +P ammunition features a Jacketed Hollow Point bullet designed to expand upon impact, creating a larger wound channel and improving stopping power. The +P designation means the round is loaded to higher pressure for increased velocity and energy. This type of ammunition is commonly used for self-defense due to its enhanced effectiveness and stopping power.",
+        "Ammo_Ap_45Acp_Name": ".45 ACP AP",
+        "Ammo_Ap_45Acp_ShortName": "AP .45",
+        "Ammo_Ap_45Acp_Description": "The H.E.A.T. Dart Tip .45 ACP ammunition features a special tip designed for enhanced penetration, making it suitable for piercing hard barriers or armor. This type of ammunition is used in military and law enforcement applications where reliable penetration through obstacles is critical to mission success.",
+        "Shrapnel_Name": "Mine shrapnel",
+        "Shrapnel_ShortName": "Shrapnel",
+        "Shrapnel_Description": "<DEV>",
+        "GrenadeShrapnel_Name": "Grenade shrapnel",
+        "GrenadeShrapnel_ShortName": "Shrapnel",
+        "GrenadeShrapnel_Description": "<DEV>",
+        "MineShrapnel_Name": "Mine shrapnel",
+        "MineShrapnel_ShortName": "Shrapnel",
+        "MineShrapnel_Description": "<DEV>",
+        "MortarShrapnel_Name": "Mortar shrapnel",
+        "MortarShrapnel_ShortName": "Shrapnel",
+        "MortarShrapnel_Description": "<DEV>"
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_MortarShells",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_MortarShells",
+      "KeysToEntries": {
+        "Mortar_Ammo_M933HEZone1_Name": "M933 120mm HE Cartridge (Low Range)",
+        "Mortar_Ammo_M933HEZone1_ShortName": "M933 Low",
+        "Mortar_Ammo_M933HEZone1_Description": "The M933 High Explosive (HE) cartridge is designed for use against personnel, bunkers, and light material targets. It features a steel case filled with Composition B explosive and an aluminum M31 fin assembly. The propulsion system consists of an M1020 ignition cartridge and four waterproof, horseshoe-shaped M234 propelling charges.",
+        "Mortar_Ammo_M933HEZone2_Name": "M933 120mm HE Cartridge (Medium Range)",
+        "Mortar_Ammo_M933HEZone2_ShortName": "M933 Med",
+        "Mortar_Ammo_M933HEZone2_Description": "The M933 High Explosive (HE) cartridge is designed for use against personnel, bunkers, and light material targets. It features a steel case filled with Composition B explosive and an aluminum M31 fin assembly. The propulsion system consists of an M1020 ignition cartridge and four waterproof, horseshoe-shaped M234 propelling charges.",
+        "Mortar_Ammo_M933HEZone3_Name": "M933 120mm HE Cartridge (High Range)",
+        "Mortar_Ammo_M933HEZone3_ShortName": "M933 High",
+        "Mortar_Ammo_M933HEZone3_Description": "The M933 High Explosive (HE) cartridge is designed for use against personnel, bunkers, and light material targets. It features a steel case filled with Composition B explosive and an aluminum M31 fin assembly. The propulsion system consists of an M1020 ignition cartridge and four waterproof, horseshoe-shaped M234 propelling charges."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

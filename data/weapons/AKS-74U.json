@@ -1,0 +1,102 @@
+{
+  "id": "aks-74u",
+  "name": "AKS-74U",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "5.45x39mm",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Artisan",
+  "vendorRank": 1,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 3.5,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 3.1,
+    "weight": 2.757,
+    "rateOfFire": 650,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "5.45x39mm BP (7N22)",
+    "5.45x39mm BS (7N24)",
+    "5.45x39mm BT (7BT4)",
+    "5.45x39mm FMJ",
+    "5.45x39mm HP",
+    "5.45x39mm PP (7N10)",
+    "5.45x39mm PS (7N6)",
+    "5.45x39mm US (7U1)"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "aks-74u-mlok-handguard",
+        "aks-74u-quad-rail-handguard",
+        "aks-74u-wooden-handguard"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-polymer-pistol-grip",
+        "ak-bakelite-pistol-grip",
+        "moe-ak-pistol-grip",
+        "moe-ak-pistol-grip-fde"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "aks-74u-foldable-stock",
+        "aks-74u-m4-foldable-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "aks-74u-muzzle-brake",
+        "dtk-1-muzzle-brake",
+        "dtk-2-muzzle-brake"
+      ]
+    },
+    "optic": {
+      "label": "Optic / Sights",
+      "required": false,
+      "compatible": [
+        "aks-74u-rear-sight",
+        "kobra-ekp-8-18-red-dot-sight",
+        "kobra-ekp-1s-03-red-dot-sight",
+        "pk-01-vs-red-dot-sight",
+        "okp7-red-dot-sight",
+        "pilad-p1x42-red-dot-sight"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak-5-45-39mm-30-round-bakelite-magazine",
+        "ak-5-45-39mm-30-round-black-magazine",
+        "ak74-5-45x39mm-60-round-magazine",
+        "ak-5-45x39mm-30-round-pmag-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "muzzleDevice": "aks-74u-muzzle-brake",
+    "stock": "aks-74u-foldable-stock",
+    "magazine": "ak-5-45-39mm-30-round-bakelite-magazine"
+  },
+  "notes": "Compact short-barreled 5.45x39mm carbine. Lightest assault rifle in game at 2.757kg. Uses AKS-74U-specific handguards and muzzle brake. Good for CQB and weight-sensitive loadouts. Uses same magazines as AK-74 family. Vendor rank estimated at Artisan R.1 - needs verification.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-10",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/90/AKS-74U_inspect.png"
+}

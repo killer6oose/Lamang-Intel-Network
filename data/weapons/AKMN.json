@@ -1,0 +1,120 @@
+{
+  "id": "akmn",
+  "name": "AKMN",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x39mm",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Turncoat",
+  "vendorRank": 2,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 3.5,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 2.0,
+    "weight": 3.82,
+    "rateOfFire": 600,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "7.62x39mm BP (7N23)",
+    "7.62x39mm PS (57-N-231C)",
+    "7.62x39mm SP",
+    "7.62x39mm Tracer (57-N-231P)",
+    "7.62x39mm US"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "akm-wooden-handguard",
+        "ak-polymer-handguard-with-picatinny-rail",
+        "ak-moe-handguard",
+        "ak-moe-handguard-fde",
+        "ak-b10m-b19-handguard",
+        "ak-b30-b31s-handguard",
+        "ak-handguard-romanian-dong",
+        "ak-handguard-romanian-shark"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-polymer-pistol-grip",
+        "ak-bakelite-pistol-grip",
+        "moe-ak-pistol-grip",
+        "moe-ak-pistol-grip-fde",
+        "archangel-ak-series-pistol-grip"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "ak-47-akm-wooden-stock",
+        "akmsn-foldable-stock",
+        "ak-moe-stock",
+        "ak-moe-stock-fde",
+        "ak-zhukov-stock",
+        "ak-zhukov-stock-fde",
+        "ak-pt-1-stock",
+        "ak-pt-3-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "akm-muzzle-brake",
+        "akm-slant-brake",
+        "ak-bulgarian-flash-hider",
+        "tanker-muzzle-break",
+        "tactical-muzzle-brake",
+        "tactical-muzzle-break",
+        "dtk-1-muzzle-brake",
+        "dtk-2-muzzle-brake",
+        "ak-adapter-14-1lh-to-24-1-5"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "kobra-ekp-8-18-red-dot-sight",
+        "kobra-ekp-1s-03-red-dot-sight",
+        "pk-01-vs-red-dot-sight",
+        "okp7-red-dot-sight",
+        "pilad-p1x42-red-dot-sight",
+        "pso-1-4x24",
+        "npz-pso-3-9x24",
+        "pilad-2-5-24l-brevis-assault-scope",
+        "ak-rear-iron-sight"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak-7-62x39mm-10-round-steel-magazine",
+        "ak-7-62x39mm-30-round-bakelite-magazine",
+        "ak-7-62x39mm-30-round-stamped-magazine",
+        "ak-7-62x39mm-30-round-pmag-magazine",
+        "ak15-7-62x39mm-30-round-magazine",
+        "schmeisser-ak-7-62x39-60-round-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "magazine": "ak-7-62x39mm-30-round-bakelite-magazine"
+  },
+  "notes": "AKM variant with side rail ('N' = Nochnoye/night sight mount). Identical to AKM but adds optic slot via side rail. Weight is estimated (wiki blank) - approximately 40g heavier than base AKM due to side rail. Stats for accuracy/weight/rate need in-game verification.",
+  "verified": true,
+  "verifiedSource": "fandom wiki + in-game",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-10",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/94/AKM_inspect.png"
+}

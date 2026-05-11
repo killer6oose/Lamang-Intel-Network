@@ -1,0 +1,22 @@
+{
+  "id": "plrf-25c-rangefinder",
+  "name": "PLRF 25C Rangefinder",
+  "shortName": "PLRF",
+  "type": "Rangefinder",
+  "slot": "Binoculars",
+  "description": "The PLRF 25C is a high-performance rangefinder designed for snipers, spotters, and forward observers during combat operations. Its rugged construction ensures reliable performance even in extreme conditions. The wavelength of the ranging laser is undetectable by night vision goggles (NVGs), making this rangefinder ideal for covert operations.",
+  "manufacturer": null,
+  "vendor": null,
+  "vendorRank": null,
+  "baseStats": {
+    "weight": null
+  },
+  "gridSize": null,
+  "notes": "No wiki page exists yet. Weight, vendor, and grid size unknown. Upcoming content.",
+  "verified": false,
+  "verifiedSource": "ST_Gadgets string table only",
+  "upcoming": true,
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}

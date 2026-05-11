@@ -1,0 +1,22 @@
+{
+  "id": "crossfire-hd-rangefinder",
+  "name": "Crossfire HD Rangefinder",
+  "shortName": "Crossfire",
+  "type": "Rangefinder",
+  "slot": "Binoculars",
+  "description": "The Crossfire HD is a reliable and easy-to-use rangefinder that collects essential environmental data, allowing for accurate shots at the target.",
+  "manufacturer": null,
+  "vendor": null,
+  "vendorRank": null,
+  "baseStats": {
+    "weight": null
+  },
+  "gridSize": null,
+  "notes": "No wiki page exists yet. Weight, vendor, and grid size unknown. Upcoming content.",
+  "verified": false,
+  "verifiedSource": "ST_Gadgets string table only",
+  "upcoming": true,
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}

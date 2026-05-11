@@ -1,0 +1,110 @@
+{
+  "id": "ak-308",
+  "name": "AK-308",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x51mm NATO",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Vulture",
+  "vendorRank": 4,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 1.8,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 5.712,
+    "rateOfFire": 600,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "7.62x51mm AP (M61)",
+    "7.62x51mm FMJ (M80)",
+    "7.62x51mm FMJ (M80A1)",
+    "7.62x51mm HPBT",
+    "7.62x51mm Tracer (M62)"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "ak-308-handguard"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-ratnik-grip"
+      ]
+    },
+    "chargingHandle": {
+      "label": "Charging Handle",
+      "required": false,
+      "compatible": [
+        "ak-rp-1-charging-handle"
+      ]
+    },
+    "receiver": {
+      "label": "Dust Cover / Receiver",
+      "required": false,
+      "compatible": [
+        "ak-308-dust-cover"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "ratnik-foldable-stock",
+        "aks-74u-foldable-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "srd762-qd-muzzle-brake",
+        "srd762-qd-taper-lok-muzzle-brake",
+        "hypertap-muzzle-brake-7-62x51"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "kobra-ekp-8-18-red-dot-sight",
+        "kobra-ekp-1s-03-red-dot-sight",
+        "pk-01-vs-red-dot-sight",
+        "okp7-red-dot-sight",
+        "pso-1-4x24",
+        "npz-pso-3-9x24",
+        "pilad-2-5-24l-brevis-assault-scope",
+        "acog-ta01nsn-4x32-assault-scope",
+        "vudu-1-6x24-ffp-rifle-scope",
+        "vudu-3-5-18x50-ffp-rifle-scope",
+        "viper-pst-gen-ii-5-25x50-rifle-scope"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak308-7-62x51mm-20-round-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "magazine": "ak308-7-62x51mm-20-round-magazine",
+    "pistolGrip": "ak-ratnik-grip",
+    "stock": "ratnik-foldable-stock"
+  },
+  "notes": "AK-12 platform scaled up to 7.62x51mm NATO. Heaviest assault rifle in game at 5.712kg. Vulture Rank 4 - faction-locked late game weapon. Rate of fire estimated at 600 RPM (wiki blank, based on 7.62x51mm platform norms) - needs verification. NOTE: 'ak-308-dust-cover' ID not yet in attachments data. Limited mag compatibility - 20-round only.",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox (ROF estimated)",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-10",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/9d/AK-308_inspect.png"
+}

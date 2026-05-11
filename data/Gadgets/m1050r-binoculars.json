@@ -1,0 +1,22 @@
+{
+  "id": "m1050r-binoculars",
+  "name": "M1050R Binoculars",
+  "shortName": "M1050R",
+  "type": "Binoculars",
+  "slot": "Binoculars",
+  "description": "The M1050 binoculars can withstand extreme conditions while providing clear images. Its reliability and durability have made it a popular choice among militaries worldwide.",
+  "manufacturer": "Steiner",
+  "vendor": "Banshee",
+  "vendorRank": 3,
+  "baseStats": {
+    "weight": 1.000
+  },
+  "gridSize": "2x1",
+  "notes": "Top-tier binoculars. Available Banshee Rank 3. Heaviest of the binoculars at 1kg.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "upcoming": false,
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}

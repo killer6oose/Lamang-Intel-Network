@@ -1,0 +1,38 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_762x39mm",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_762x39mm",
+      "KeysToEntries": {
+        "Ammo_57N231Ps_762x39_Name": "7.62x39mm PS (57-N-231C)",
+        "Ammo_57N231Ps_762x39_ShortName": "PS 7.62x39",
+        "Ammo_57N231Ps_762x39_Description": "A 7.62x39mm cartridge with a steel-core bullet encased in a bimetallic steel and copper case. It was designed in 1943 and has undergone various enhancements, but remains in widespread use today. At a distance of 300m, it can penetrate a 6mm thick steel plate. The PS designation stands for Pulya Stalnaya, which translates to Steel Bullet.",
+        "Ammo_7N23Bp_762x39_Name": "7.62x39mm BP (7N23)",
+        "Ammo_7N23Bp_762x39_ShortName": "BP 7.62x39",
+        "Ammo_7N23Bp_762x39_Description": "The 7.62x39mm 7N23 BP ammunition is a specialized cartridge designed for rifles such as the AK-47. It features a ballistic projectile with a steel core, making it effective against armored targets. This ammo is widely used in military applications due to its enhanced penetration capabilities and is employed in scenarios where defeating protective barriers is crucial.",
+        "Ammo_57N231PTracer_762x39_Name": "7.62x39mm Tracer (57-N-231P)",
+        "Ammo_57N231PTracer_762x39_ShortName": "Tracer 7.62x39",
+        "Ammo_57N231PTracer_762x39_Description": "The 7.62x39mm 57-N-231P Tracer ammunition is intended for rifles such as the AK-47. It includes a pyrotechnic tracer element that produces a visible light trail during flight, aiding in tracking. This ammunition is mainly used for training and signaling, combining standard 7.62x39mm features with tracer technology.",
+        "Ammo_Us_762x39_Name": "7.62x39mm US",
+        "Ammo_Us_762x39_ShortName": "US 7.62x39",
+        "Ammo_Us_762x39_Description": "The US 7.62x39mm cartridge features a subsonic bullet comprising a pointed heat-treated steel core encased in a bimetallic jacket over a lead base. It is housed in a bimetallic case with a reduced charge. Developed in the 1950s as the Umén'shennoy Skórosti (\"Reduced Speed\") round, it was intended for use with a suppressor, effectively reducing noise while ensuring compatibility with Soviet 7.62x39mm caliber firearms.",
+        "Ammo_Sp_762x39_Name": "7.62x39mm SP",
+        "Ammo_Sp_762x39_ShortName": "SP 7.62x39",
+        "Ammo_Sp_762x39_Description": "A 7.62x39mm soft point cartridge with a lead core semi-jacketed bullet. It is designed to expand after impact, causing massive damage to the target at the cost of reduced penetration.",
+        "Ammo_57Bz231Bz_762x39_Name": "7.62x39 BZ (57-BZ-231)",
+        "Ammo_57Bz231Bz_762x39_ShortName": "API 7.62x39",
+        "Ammo_57Bz231Bz_762x39_Description": "The 7.62mm 1943 model API (Armor Piercing Incendiary) cartridges, featuring armor-piercing incendiary (7.62 BZ) and incendiary (7.62 Z) rounds, were produced until the early 1960s. These cartridges were designed to target lightly armored vehicles, ignite fuel behind armor or in thick-walled containers, and neutralize personnel behind light cover.",
+        "Ammo_FMJ_762x39_Name": "7.62x39mm FMJ",
+        "Ammo_FMJ_762x39_ShortName": "FMJ 7.62x39",
+        "Ammo_FMJ_762x39_Description": "A standard 7.62×39mm cartridge loaded with a full metal jacket (FMJ) projectile, widely used in AK-platform rifles. Designed for reliable feeding and consistent performance, the FMJ bullet has a lead core enclosed in a hard metal jacket, which reduces barrel fouling and deformation during travel.",
+        "Ammo_7N27Pp_762x39_Name": "7.62x39mm PP (7N27)",
+        "Ammo_7N27Pp_762x39_ShortName": "PP 7.62x39",
+        "Ammo_7N27Pp_762x39_Description": "A round featuring a sharp, hardened tool steel core designed for improved armor penetration. Its special coating reduces wear on machine gun feeding mechanisms. The cartridge was never fully adopted after the introduction of the BP round."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

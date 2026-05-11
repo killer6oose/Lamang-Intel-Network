@@ -1,0 +1,109 @@
+{
+  "id": "ak-74m",
+  "name": "AK-74M",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "5.45x39mm",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Artisan",
+  "vendorRank": 2,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 2.8,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 3.6,
+    "rateOfFire": 650,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "5.45x39mm BP (7N22)",
+    "5.45x39mm BS (7N24)",
+    "5.45x39mm BT (7BT4)",
+    "5.45x39mm FMJ",
+    "5.45x39mm HP",
+    "5.45x39mm PP (7N10)",
+    "5.45x39mm PS (7N6)",
+    "5.45x39mm US (7U1)"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "ak-74-polymer-handguard",
+        "ak-74-wooden-handguard",
+        "ak-polymer-handguard-with-picatinny-rail",
+        "ak-moe-handguard",
+        "ak-moe-handguard-fde",
+        "ak-b10m-b19-handguard",
+        "ak-b30-b31s-handguard"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-polymer-pistol-grip",
+        "ak-bakelite-pistol-grip",
+        "moe-ak-pistol-grip",
+        "moe-ak-pistol-grip-fde",
+        "ak-ratnik-grip",
+        "archangel-ak-series-pistol-grip"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "ak-74m-polymer-stock",
+        "ak-moe-stock",
+        "ak-moe-stock-fde",
+        "ak-zhukov-stock",
+        "ak-zhukov-stock-fde",
+        "ak-pt-1-stock",
+        "ak-pt-3-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "dtk-1-muzzle-brake",
+        "dtk-2-muzzle-brake",
+        "ak-100-series-muzzle-brake",
+        "tactical-muzzle-brake",
+        "tactical-muzzle-break",
+        "ak-15-suppressor"
+      ]
+    },
+    "optic": {
+      "label": "Iron Sights",
+      "required": false,
+      "compatible": [
+        "ak-rear-iron-sight"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak-5-45-39mm-30-round-bakelite-magazine",
+        "ak-5-45-39mm-30-round-black-magazine",
+        "ak74-5-45x39mm-60-round-magazine",
+        "ak-5-45x39mm-30-round-pmag-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "magazine": "ak-5-45-39mm-30-round-bakelite-magazine"
+  },
+  "notes": "Modernized AK-74 in 5.45x39mm with polymer folding stock. Has integrated side rail (see AK-74N for side-rail optic variant). Wiki infobox stats incomplete - accuracy, weight, rate of fire are estimated from in-game community data and require verification. Lower recoil than 7.62x39mm AKM platform.",
+  "verified": false,
+  "verifiedSource": "fandom wiki (incomplete) + community estimate",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-10",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/52/AK-74M_inspect.png"
+}

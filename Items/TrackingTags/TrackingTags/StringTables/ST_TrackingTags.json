@@ -1,0 +1,23 @@
+[
+  {
+    "Type": "StringTable",
+    "Name": "ST_TrackingTags",
+    "Flags": "RF_Public | RF_Standalone | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'StringTable'",
+    "StringTable": {
+      "TableNamespace": "ST_TrackingTags",
+      "KeysToEntries": {
+        "TrackingTag_SmallGpsTag_Name": "Basic Tracking Tag",
+        "TrackingTag_SmallGpsTag_ShortName": "B tTag",
+        "TrackingTag_SmallGpsTag_Description": "A basic tracking tag that allows the owner to monitor their property's location for a short amount of time.",
+        "TrackingTag_GpsTag_Name": "Tracking Tag",
+        "TrackingTag_GpsTag_ShortName": "tTag",
+        "TrackingTag_GpsTag_Description": "A tracking tag that allows the owner to monitor their property's location for a moderate amount of time.",
+        "TrackingTag_AdvancedGpsTag_Name": "Advanced Tracking Tag",
+        "TrackingTag_AdvancedGpsTag_ShortName": "A tTag",
+        "TrackingTag_AdvancedGpsTag_Description": "An advanced tracking tag that allows the owner to monitor their property's location for an extended period of time."
+      },
+      "KeysToMetaData": {}
+    }
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "id": "triumph-hd-binoculars",
+  "name": "Triumph HD Binoculars",
+  "shortName": "Triumph",
+  "type": "Binoculars",
+  "slot": "Binoculars",
+  "description": "The Triumph HD binoculars provide reliable and solid performance for hunters, hikers, and other outdoor enthusiasts.",
+  "manufacturer": "Vortex Optics",
+  "vendor": "Banshee",
+  "vendorRank": 2,
+  "baseStats": {
+    "weight": 0.650
+  },
+  "gridSize": "2x1",
+  "notes": "Mid-tier binoculars. Available Banshee Rank 2.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "upcoming": false,
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}
