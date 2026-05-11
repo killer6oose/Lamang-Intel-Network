@@ -1,0 +1,6 @@
+# Deny direct HTTP access to the admin password file.
+# Nginx users: add "location ~ /\.adminpass { deny all; }" to your server block instead.
+<Files ".adminpass">
+    Order Deny,Allow
+    Deny from all
+</Files>

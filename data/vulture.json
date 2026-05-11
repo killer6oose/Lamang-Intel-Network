@@ -1,0 +1,16 @@
+{
+  "description": "Roaming black-market vendor. Always found at 2 Major Combat Outposts that rotate each Monday.",
+  "tacMapUrl": "",
+  "currentLocations": ["Stalwart", "Westmore"],
+  "possibleLocations": [
+    { "name": "Stalwart",   "gridRef": "154:160", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Westmore",   "gridRef": "168:161", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Winchester", "gridRef": "201:148", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Harrison",   "gridRef": "197:125", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Spielberk",  "gridRef": "182:123", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Titan",      "gridRef": "153:121", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Bronco",     "gridRef": "142:134", "detail": "Major Combat Outpost", "imageUrl": "" },
+    { "name": "Crusader",   "gridRef": "137:151", "detail": "Major Combat Outpost", "imageUrl": "" }
+  ],
+  "history": []
+}

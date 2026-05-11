@@ -1,0 +1,16 @@
+{
+  "banner": [
+    "WEEK 24 UPDATE ACTIVE",
+    "BLUEPRINTS - 0.4 SPEARHEAD UPDATE NOW LIVE",
+    "9 BLUEPRINT LOCATIONS CONFIRMED",
+    "COMMUNITY EVENT: FRIDAY PVP STREAMS"
+  ],
+  "blueprints": [
+    { "id": "ak308",  "name": "AK-308",  "camo": "Hunter Team",    "location": "Fort Narith - Jail",            "weaponType": "Assault Rifle", "caliber": "7.62x51mm NATO", "locateUrl": "" },
+    { "id": "akmn",   "name": "AKMN",    "camo": "Jackal Company", "location": "Campsite",                      "weaponType": "Assault Rifle", "caliber": "7.62x39mm",      "locateUrl": "" },
+    { "id": "ddm4",   "name": "DDM4",    "camo": "Phantom Lance",  "location": "Fort Narith - Barracks A, 2F", "weaponType": "Assault Rifle", "caliber": "5.56x45mm NATO", "locateUrl": "" },
+    { "id": "hk416",  "name": "HK416",   "camo": "Warden Watch",   "location": "Airfield Control Tower",        "weaponType": "Assault Rifle", "caliber": "5.56x45mm NATO", "locateUrl": "" },
+    { "id": "m14ebr", "name": "M14 EBR", "camo": "Grey Specter",   "location": "Shipwreck Bay - Bunker",        "weaponType": "Battle Rifle",  "caliber": "7.62x51mm NATO", "locateUrl": "" },
+    { "id": "g36c",   "name": "G36C",    "camo": "Jungle Reaper",  "location": "Mong Village Outpost",          "weaponType": "Carbine",       "caliber": "5.56x45mm NATO", "locateUrl": "" }
+  ]
+}

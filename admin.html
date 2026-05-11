@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin | GZW Guides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --jd:#1a2612;--jm:#2d4220;--jg:#4a6741;--jb:#6b9c5e;--jp:#8db87e;
+  --ed:#2e1c0c;--eb:#5c3d1e;--em:#7a5230;--et:#a07040;--es:#c4a066;
+  --uk:#0e0e0e;--ud:#1c1c1c;--uc:#2a2a2a;--um:#3e3e3e;--ug:#5a5a5a;--ul:#8a8a8a;--up:#b8b8b8;--uw:#e2e2e2;
+  --danger:#8b2020;--danger-b:#c43030;--success:#2a6b3a;--success-b:#3a9b52;--warn:#7a5a00;--warn-b:#c4a000;
+  --mono:'Share Tech Mono',monospace;--disp:'Oswald',sans-serif;--body:'Barlow Condensed',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--uk);color:var(--up);font-family:var(--body);font-size:15px;line-height:1.5;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:9999}
+
+/* HEADER */
+.sh{background:var(--ed);border-bottom:2px solid var(--eb)}
+.shi{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{width:36px;height:36px;flex-shrink:0}
+.lm{font-family:var(--disp);font-size:22px;font-weight:700;letter-spacing:.1em;color:var(--es);text-transform:uppercase;line-height:1}
+.ls{font-family:var(--mono);font-size:9px;color:var(--ug);letter-spacing:.2em;text-transform:uppercase}
+.abadge{font-family:var(--mono);font-size:10px;background:var(--danger);color:#ffaaaa;border:1px solid var(--danger-b);padding:4px 12px;letter-spacing:.15em;text-transform:uppercase}
+.hnav{display:flex;align-items:center;gap:16px}
+.hnav a{font-family:var(--mono);font-size:11px;color:var(--ug);text-decoration:none;letter-spacing:.1em;transition:color .15s}
+.hnav a:hover{color:var(--es)}
+
+/* GATE */
+.gate-wrap{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 64px);padding:40px 24px}
+.gate-card{background:var(--ud);border:1px solid var(--eb);padding:48px 40px;width:100%;max-width:440px;position:relative;overflow:hidden}
+.gate-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ed),var(--et),var(--ed))}
+.gate-ey{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ug);margin-bottom:10px}
+.gate-title{font-family:var(--disp);font-size:32px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--uw);margin-bottom:8px}
+.gate-desc{font-family:var(--body);font-size:13px;color:var(--ug);margin-bottom:28px}
+.gate-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ul);display:block;margin-bottom:8px}
+.gate-input{width:100%;background:var(--uc);border:1px solid var(--um);color:var(--uw);font-family:var(--mono);font-size:16px;padding:12px 16px;outline:none;margin-bottom:14px;transition:border-color .15s}
+.gate-input:focus{border-color:var(--et)}
+.captcha-box{background:rgba(26,38,18,.4);border:1px solid var(--jm);padding:14px 16px;margin-bottom:14px}
+.captcha-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--jg);margin-bottom:8px}
+.captcha-q{font-family:var(--mono);font-size:20px;color:var(--jp);letter-spacing:.08em;margin-bottom:10px}
+.gate-btn{width:100%;background:var(--eb);border:1px solid var(--et);color:var(--es);font-family:var(--body);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:13px;cursor:pointer;transition:background .15s}
+.gate-btn:hover{background:var(--em)}
+.gate-err{font-family:var(--mono);font-size:11px;color:#e05555;letter-spacing:.1em;margin-bottom:14px;display:none}
+
+/* ADMIN WRAP */
+.admin-wrap{max-width:1200px;margin:0 auto;padding:32px 24px}
+
+/* TABS */
+.tab-nav{display:flex;border-bottom:2px solid var(--um);margin-bottom:32px}
+.tab-btn{font-family:var(--disp);font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ug);background:none;border:none;border-bottom:2px solid transparent;padding:10px 22px;cursor:pointer;margin-bottom:-2px;transition:all .18s}
+.tab-btn:hover{color:var(--up)}
+.tab-btn.active{color:var(--es);border-bottom-color:var(--et)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* SECTION HEADER */
+.adm-sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--um)}
+.adm-st{font-family:var(--disp);font-size:14px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ul)}
+.adm-sd{font-family:var(--mono);font-size:11px;color:var(--ug);margin-top:2px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-family:var(--body);font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid;padding:7px 16px;font-size:12px;transition:all .15s;text-decoration:none;white-space:nowrap}
+.btn-p{background:var(--jg);border-color:var(--jb);color:var(--jd)}
+.btn-p:hover{background:var(--jb)}
+.btn-s{background:none;border-color:var(--um);color:var(--ul)}
+.btn-s:hover{border-color:var(--ul);color:var(--uw)}
+.btn-d{background:none;border-color:var(--danger);color:#e05555}
+.btn-d:hover{background:rgba(139,32,32,.2)}
+.btn-w{background:none;border-color:var(--warn-b);color:var(--es)}
+.btn-w:hover{background:rgba(122,90,0,.2)}
+.btn-sm{padding:4px 10px;font-size:11px}
+
+/* TABLE */
+.adm-tbl{width:100%;border-collapse:collapse}
+.adm-tbl th{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ug);text-align:left;padding:8px 12px;border-bottom:1px solid var(--um);background:var(--uc)}
+.adm-tbl td{font-family:var(--body);font-size:14px;color:var(--up);padding:10px 12px;border-bottom:1px solid rgba(62,62,62,.5);vertical-align:middle}
+.adm-tbl tr:hover td{background:rgba(42,42,42,.5)}
+.adm-tbl .mono{font-family:var(--mono);font-size:12px}
+.adm-tbl .acts{display:flex;gap:6px;justify-content:flex-end}
+
+/* FORMS */
+.adm-sel,.adm-in{background:var(--uc);border:1px solid var(--um);color:var(--uw);font-family:var(--mono);font-size:12px;padding:7px 10px;outline:none;transition:border-color .15s}
+.adm-sel{cursor:pointer}
+.adm-sel:focus,.adm-in:focus{border-color:var(--et)}
+.adm-sel option{background:var(--uc)}
+.adm-in{width:100%}
+.adm-ta{background:var(--uc);border:1px solid var(--um);color:var(--uw);font-family:var(--body);font-size:14px;padding:10px;outline:none;resize:vertical;width:100%;transition:border-color .15s}
+.adm-ta:focus{border-color:var(--et)}
+.fr{margin-bottom:16px}
+.fl{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ul);display:block;margin-bottom:7px}
+.fh{font-family:var(--mono);font-size:10px;color:var(--ug);margin-top:5px}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.fr3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+
+/* LOC SELECT ROW */
+.loc-row{display:flex;gap:8px;align-items:center}
+
+/* POSSIBLE LOC LIST */
+.pll{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.pli{background:var(--uc);border:1px solid var(--um);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.pli-head{display:flex;align-items:center;justify-content:space-between}
+.pli-name{font-family:var(--mono);font-size:13px;color:var(--jp)}
+.pli-fields{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pli-in{background:rgba(14,14,14,.8);border:1px solid var(--um);color:var(--uw);font-family:var(--mono);font-size:11px;padding:5px 8px;outline:none;width:100%}
+.pli-in:focus{border-color:var(--et)}
+
+/* BANNER */
+.ban-list{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.ban-item{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--uc);border:1px solid var(--um);padding:10px 14px}
+.ban-text{font-family:var(--mono);font-size:12px;color:var(--up);flex:1}
+.ban-acts{display:flex;gap:4px}
+.ord-btn{background:none;border:1px solid var(--um);color:var(--ug);width:26px;height:26px;cursor:pointer;font-size:12px;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.ord-btn:hover{border-color:var(--ul);color:var(--uw)}
+.add-ban-row{display:flex;gap:10px;align-items:flex-start}
+.add-ban-row .adm-in{flex:1}
+
+/* AMMO TAB */
+.ammo-cal-sel{background:rgba(26,38,18,.35);border:1px solid var(--jm);padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ammo-cal-nm{font-family:var(--disp);font-size:16px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--jp)}
+.ammo-cal-meta{font-family:var(--mono);font-size:10px;color:var(--ug)}
+.back-btn{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--et);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.back-btn:hover{color:var(--es)}
+
+/* SETTINGS */
+.set-card{background:var(--ud);border:1px solid var(--um);padding:24px;max-width:480px;margin-bottom:24px}
+.set-card-title{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--et);margin-bottom:18px;border-bottom:1px solid var(--um);padding-bottom:10px}
+
+/* MODAL */
+dialog{background:var(--ud);border:1px solid var(--um);color:var(--up);padding:0;max-width:560px;width:94vw;position:fixed}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+.mod-hd{background:var(--uc);border-bottom:1px solid var(--um);padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.mod-ti{font-family:var(--disp);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--uw)}
+.mod-x{background:none;border:none;color:var(--ug);font-size:20px;cursor:pointer;padding:0 4px;transition:color .15s;line-height:1}
+.mod-x:hover{color:var(--uw)}
+.mod-bd{padding:24px 20px;max-height:70vh;overflow-y:auto}
+.mod-ft{padding:16px 20px;border-top:1px solid var(--um);display:flex;justify-content:flex-end;gap:10px}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;z-index:1000;background:var(--jd);border:1px solid var(--jg);color:var(--jp);font-family:var(--mono);font-size:12px;letter-spacing:.1em;padding:12px 20px;opacity:0;transform:translateY(10px);transition:all .25s ease;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* EMPTY STATE */
+.empty-state{font-family:var(--mono);font-size:12px;color:var(--ug);padding:24px;border:1px dashed var(--um);text-align:center}
+
+@media(max-width:700px){.fr2,.fr3{grid-template-columns:1fr}.tab-btn{padding:10px 12px;font-size:11px}.pli-fields{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="sh">
+  <div class="shi">
+    <a href="index.html" class="logo">
+      <img src="logo.png" width="36" height="36" alt="GZW Guides" />
+      <div><div class="lm">GZW Guides</div><div class="ls">Admin Panel</div></div>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="abadge">&#x1F512; Restricted</div>
+      <nav class="hnav">
+        <a href="index.html">Home</a>
+        <a href="bosses.html">Bosses</a>
+        <a href="#" id="logout-link" style="color:#e05555;display:none" onclick="logout();return false">Logout</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- GATE -->
+<div class="gate-wrap" id="gate-wrap">
+  <div class="gate-card">
+    <div class="gate-ey">// Restricted Access</div>
+    <div class="gate-title">Admin Login</div>
+    <div class="gate-desc">Solve the verification problem and enter your passphrase.</div>
+    <div class="gate-err" id="gate-err"></div>
+
+    <div class="captcha-box">
+      <div class="captcha-label">// Verification</div>
+      <div class="captcha-q" id="captcha-q"></div>
+      <label class="gate-lbl" for="gate-captcha">Answer</label>
+      <input class="gate-input" type="number" id="gate-captcha" placeholder="Enter answer..." autocomplete="off" onkeydown="if(event.key==='Enter')document.getElementById('gate-pass').focus()" />
+    </div>
+
+    <label class="gate-lbl" for="gate-pass">Passphrase</label>
+    <input class="gate-input" type="password" id="gate-pass" placeholder="Enter passphrase..." autocomplete="current-password" onkeydown="if(event.key==='Enter')attemptLogin()" />
+    <button class="gate-btn" onclick="attemptLogin()">&#x25B6; Authenticate</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-wrap" id="admin-panel" style="display:none">
+
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" onclick="switchTab('bosses')"     id="tab-btn-bosses">Bosses</button>
+    <button class="tab-btn"        onclick="switchTab('blueprints')" id="tab-btn-blueprints">Blueprints</button>
+    <button class="tab-btn"        onclick="switchTab('ammo')"       id="tab-btn-ammo">Ammo</button>
+    <button class="tab-btn"        onclick="switchTab('banner')"     id="tab-btn-banner">Banner</button>
+    <button class="tab-btn"        onclick="switchTab('settings')"   id="tab-btn-settings">Settings</button>
+  </nav>
+
+  <!-- BOSSES TAB -->
+  <div class="tab-panel active" id="tab-bosses" role="tabpanel">
+    <!-- Named Bosses section -->
+    <div class="adm-sh">
+      <div>
+        <div class="adm-st">Named Bosses</div>
+        <div class="adm-sd">// Boss intel shown on the Bosses page. Name, callsign, faction, locations, loot.</div>
+      </div>
+      <button class="btn btn-p" onclick="openBossModal(null)">+ Add Boss</button>
+    </div>
+    <div id="named-bosses-tbl"></div>
+    <!-- Vulture MCO Locations section -->
+    <div id="bosses-tbl" style="margin-top:28px;border-top:1px solid var(--um);padding-top:28px"></div>
+  </div>
+
+  <!-- BLUEPRINTS TAB -->
+  <div class="tab-panel" id="tab-blueprints" role="tabpanel">
+    <div class="adm-sh">
+      <div>
+        <div class="adm-st">Blueprint Registry</div>
+        <div class="adm-sd">// Manage blueprint entries shown on the tracker page.</div>
+      </div>
+      <button class="btn btn-p" onclick="openBpModal(null)">+ Add Blueprint</button>
+    </div>
+    <div id="bp-tbl"></div>
+  </div>
+
+  <!-- AMMO TAB -->
+  <div class="tab-panel" id="tab-ammo" role="tabpanel">
+    <!-- CALIBERS VIEW -->
+    <div id="ammo-cal-view">
+      <div class="adm-sh">
+        <div>
+          <div class="adm-st">Calibers</div>
+          <div class="adm-sd">// Manage calibers. Click "Rounds" to add or edit ammo for a caliber.</div>
+        </div>
+        <button class="btn btn-p" onclick="openCaliberModal(null)">+ Add Caliber</button>
+      </div>
+      <div id="cal-tbl"></div>
+    </div>
+    <!-- ROUNDS VIEW -->
+    <div id="ammo-rounds-view" style="display:none">
+      <button class="back-btn" onclick="showCalView()">&#x2190; All Calibers</button>
+      <div class="ammo-cal-sel">
+        <div>
+          <div class="ammo-cal-nm" id="rounds-cal-name">-</div>
+          <div class="ammo-cal-meta" id="rounds-cal-meta">-</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-s btn-sm" onclick="editActiveCaliber()">Edit Caliber</button>
+          <button class="btn btn-p btn-sm" onclick="openRoundModal(null)">+ Add Round</button>
+        </div>
+      </div>
+      <div id="rounds-tbl"></div>
+    </div>
+  </div>
+
+  <!-- BANNER TAB -->
+  <div class="tab-panel" id="tab-banner" role="tabpanel">
+    <div class="adm-sh">
+      <div>
+        <div class="adm-st">Scrolling Banner Items</div>
+        <div class="adm-sd">// Text that scrolls in the ticker at the top of the tracker. Use short, uppercase sentences.</div>
+      </div>
+    </div>
+    <div class="ban-list" id="ban-list"></div>
+    <div class="add-ban-row">
+      <input class="adm-in" type="text" id="new-ban-txt" placeholder="NEW BANNER ITEM..." onkeydown="if(event.key==='Enter')addBanItem()" />
+      <button class="btn btn-p" onclick="addBanItem()">Add</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS TAB -->
+  <div class="tab-panel" id="tab-settings" role="tabpanel">
+    <div class="adm-sh">
+      <div><div class="adm-st">Admin Settings</div></div>
+    </div>
+    <div class="set-card">
+      <div class="set-card-title">Change Passphrase</div>
+      <div class="fr">
+        <label class="fl" for="cur-pass">Current Passphrase</label>
+        <input class="adm-in" type="password" id="cur-pass" placeholder="Current passphrase..." />
+      </div>
+      <div class="fr">
+        <label class="fl" for="new-pass">New Passphrase</label>
+        <input class="adm-in" type="password" id="new-pass" placeholder="New passphrase..." />
+      </div>
+      <div class="fr" style="margin-bottom:0">
+        <label class="fl" for="confirm-pass">Confirm New Passphrase</label>
+        <input class="adm-in" type="password" id="confirm-pass" placeholder="Confirm new passphrase..." />
+      </div>
+      <div id="pass-err" style="font-family:var(--mono);font-size:11px;color:#e05555;margin-top:10px;display:none"></div>
+      <div style="margin-top:16px"><button class="btn btn-w" onclick="changePass()">Update Passphrase</button></div>
+    </div>
+    <div class="set-card" style="border-color:var(--danger)">
+      <div class="set-card-title" style="color:var(--danger-b)">Danger Zone</div>
+      <div style="font-family:var(--body);font-size:13px;color:var(--ug);margin-bottom:14px">Reset all site data to factory defaults. This cannot be undone.</div>
+      <button class="btn btn-d" onclick="confirmReset()">Reset All Data</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ======================================================
+     DIALOG: BOSS (named boss creation/edit)
+     ====================================================== -->
+<dialog id="boss-modal">
+  <div class="mod-hd">
+    <span class="mod-ti" id="boss-modal-ti">Add Boss</span>
+    <button class="mod-x" onclick="closeBossModal()">&times;</button>
+  </div>
+  <div class="mod-bd">
+    <input type="hidden" id="boss-edit-id" />
+    <!-- Name + Callsign -->
+    <div class="fr2">
+      <div>
+        <label class="fl" for="boss-name">Name</label>
+        <input class="adm-in" type="text" id="boss-name" placeholder="e.g. Songkram" />
+      </div>
+      <div>
+        <label class="fl" for="boss-callsign">Callsign <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(shown in quotes)</span></label>
+        <input class="adm-in" type="text" id="boss-callsign" placeholder="e.g. Golden Boy" />
+      </div>
+    </div>
+    <!-- Faction -->
+    <div class="fr">
+      <label class="fl" for="boss-faction">Faction</label>
+      <input class="adm-in" type="text" id="boss-faction" placeholder="e.g. Lamang Recovery Initiative" />
+    </div>
+    <!-- Type + Difficulty -->
+    <div class="fr2">
+      <div>
+        <label class="fl" for="boss-type">Type</label>
+        <select class="adm-in" id="boss-type">
+          <option value="">- Select -</option>
+          <option>Faction Leader</option>
+          <option>LAF Commander</option>
+          <option>Starter Town Boss</option>
+          <option>Tactical Boss</option>
+          <option>Raid Boss</option>
+          <option>Elite Boss</option>
+          <option>Roaming Vendor</option>
+        </select>
+      </div>
+      <div>
+        <label class="fl" for="boss-diff">Difficulty</label>
+        <select class="adm-in" id="boss-diff">
+          <option value="">- Select -</option>
+          <option>Easy</option>
+          <option>Mid</option>
+          <option>Hard</option>
+          <option>Extreme</option>
+        </select>
+      </div>
+    </div>
+    <!-- Notable Loot -->
+    <div class="fr">
+      <label class="fl" for="boss-loot">Notable Loot <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+      <input class="adm-in" type="text" id="boss-loot" placeholder="e.g. Custom Gold 1911" />
+    </div>
+    <!-- Locations -->
+    <div style="font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--et);margin:20px 0 8px;border-top:1px solid var(--um);padding-top:16px">Locations</div>
+    <div id="boss-loc-list" style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px"></div>
+    <button class="btn btn-s btn-sm" type="button" onclick="addBossLoc()">+ Add Location</button>
+    <!-- Video URL -->
+    <div class="fr" style="margin-top:16px;border-top:1px solid var(--um);padding-top:16px">
+      <label class="fl" for="boss-video">Video URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional - mp4 clip)</span></label>
+      <input class="adm-in" type="url" id="boss-video" placeholder="https://..." />
+    </div>
+    <!-- Intel -->
+    <div class="fr" style="margin-bottom:0">
+      <label class="fl" for="boss-intel">Intel <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional - notes / lore)</span></label>
+      <textarea class="adm-ta" id="boss-intel" rows="2" placeholder="Intel notes..."></textarea>
+    </div>
+  </div>
+  <div class="mod-ft">
+    <button class="btn btn-s" onclick="closeBossModal()">Cancel</button>
+    <button class="btn btn-p" onclick="saveBoss()">Save Boss</button>
+  </div>
+</dialog>
+
+<!-- ======================================================
+     DIALOG: MCO LOCATION (Vulture possible location edit)
+     ====================================================== -->
+<dialog id="loc-modal">
+  <div class="mod-hd">
+    <span class="mod-ti" id="loc-modal-ti">Add Location</span>
+    <button class="mod-x" onclick="closeLocModal()">&times;</button>
+  </div>
+  <div class="mod-bd">
+    <div class="fr">
+      <label class="fl" for="loc-name">Location Name</label>
+      <input class="adm-in" type="text" id="loc-name" placeholder="e.g. Stalwart" />
+    </div>
+    <div class="fr">
+      <label class="fl" for="loc-grid">Grid Ref <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+      <input class="adm-in" type="text" id="loc-grid" placeholder="e.g. 154:160" />
+    </div>
+    <div class="fr" style="margin-bottom:0">
+      <label class="fl" for="loc-img">Image URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional - screenshot)</span></label>
+      <input class="adm-in" type="url" id="loc-img" placeholder="https://..." />
+    </div>
+  </div>
+  <div class="mod-ft">
+    <button class="btn btn-s" onclick="closeLocModal()">Cancel</button>
+    <button class="btn btn-p" onclick="saveLocModal()">Save Location</button>
+  </div>
+</dialog>
+
+<!-- ======================================================
+     DIALOG: BLUEPRINT
+     ====================================================== -->
+<dialog id="bp-modal">
+  <div class="mod-hd">
+    <span class="mod-ti" id="bp-modal-ti">Add Blueprint</span>
+    <button class="mod-x" onclick="closeBpModal()">&times;</button>
+  </div>
+  <div class="mod-bd">
+    <input type="hidden" id="bp-edit-id" />
+    <div class="fr">
+      <label class="fl" for="bp-name">Name</label>
+      <input class="adm-in" type="text" id="bp-name" placeholder="e.g. AK-308" />
+    </div>
+    <div class="fr">
+      <label class="fl" for="bp-camo">Camo</label>
+      <input class="adm-in" type="text" id="bp-camo" placeholder="e.g. Hunter Team" />
+    </div>
+    <div class="fr">
+      <label class="fl" for="bp-loc">Location</label>
+      <input class="adm-in" type="text" id="bp-loc" placeholder="e.g. Fort Narith - Jail" />
+    </div>
+    <div class="fr2">
+      <div>
+        <label class="fl" for="bp-type">Weapon Type</label>
+        <select class="adm-sel" id="bp-type" style="width:100%">
+          <option value="">- Select Type -</option>
+          <option>Assault Rifle</option><option>Battle Rifle</option><option>Carbine</option>
+          <option>DMR</option><option>LMG</option><option>Pistol</option>
+          <option>Shotgun</option><option>SMG</option><option>Sniper Rifle</option>
+        </select>
+      </div>
+      <div>
+        <label class="fl" for="bp-caliber">Caliber</label>
+        <select class="adm-sel" id="bp-caliber" style="width:100%">
+          <option value="">- Select Caliber -</option>
+        </select>
+      </div>
+    </div>
+    <div class="fr">
+      <label class="fl" for="bp-url">Locate URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+      <input class="adm-in" type="url" id="bp-url" placeholder="https://..." />
+    </div>
+    <div class="fr">
+      <label class="fl" for="bp-img">Image URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional - weapon skin preview)</span></label>
+      <input class="adm-in" type="url" id="bp-img" placeholder="https://..." />
+    </div>
+  </div>
+  <div class="mod-ft">
+    <button class="btn btn-s" onclick="closeBpModal()">Cancel</button>
+    <button class="btn btn-p" onclick="saveBp()">Save Blueprint</button>
+  </div>
+</dialog>
+
+<!-- ======================================================
+     DIALOG: CALIBER
+     ====================================================== -->
+<dialog id="cal-modal">
+  <div class="mod-hd">
+    <span class="mod-ti" id="cal-modal-ti">Add Caliber</span>
+    <button class="mod-x" onclick="closeCalModal()">&times;</button>
+  </div>
+  <div class="mod-bd">
+    <input type="hidden" id="cal-edit-id" />
+    <div class="fr">
+      <label class="fl" for="cal-name">Caliber Name</label>
+      <input class="adm-in" type="text" id="cal-name" placeholder="e.g. 5.56x45mm NATO" />
+    </div>
+    <div class="fr" style="margin-bottom:0">
+      <label class="fl" for="cal-wiki">Wiki URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+      <input class="adm-in" type="url" id="cal-wiki" placeholder="https://gray-zone-warfare.fandom.com/wiki/..." />
+    </div>
+  </div>
+  <div class="mod-ft">
+    <button class="btn btn-s" onclick="closeCalModal()">Cancel</button>
+    <button class="btn btn-p" onclick="saveCaliber()">Save Caliber</button>
+  </div>
+</dialog>
+
+<!-- ======================================================
+     DIALOG: ROUND
+     ====================================================== -->
+<dialog id="round-modal">
+  <div class="mod-hd">
+    <span class="mod-ti" id="round-modal-ti">Add Round</span>
+    <button class="mod-x" onclick="closeRoundModal()">&times;</button>
+  </div>
+  <div class="mod-bd">
+    <input type="hidden" id="round-edit-id" />
+    <div class="fr">
+      <label class="fl" for="r-name">Round Name</label>
+      <input class="adm-in" type="text" id="r-name" placeholder="e.g. M995, AP, FMJ..." />
+    </div>
+    <!-- Image -->
+    <div class="fr" style="margin-bottom:4px">
+      <label class="fl" for="r-img">Image URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional - paste URL or upload below)</span></label>
+      <input class="adm-in" type="text" id="r-img" placeholder="https://... or data/images/..." />
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+      <input type="file" id="r-img-file" accept="image/*" style="display:none" onchange="uploadRoundImage(this)" />
+      <button class="btn btn-s btn-sm" type="button" onclick="document.getElementById('r-img-file').click()">Upload Image</button>
+      <span id="r-img-status" style="font-family:var(--mono);font-size:10px;color:var(--ug)"></span>
+      <img id="r-img-preview" src="" alt="" style="display:none;height:36px;width:36px;object-fit:contain;border:1px solid var(--um);background:var(--uc)" />
+    </div>
+    <!-- Price + Vendor -->
+    <div class="fr2">
+      <div>
+        <label class="fl" for="r-price">Price <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+        <input class="adm-in" type="number" id="r-price" placeholder="e.g. 850" min="0" />
+      </div>
+      <div>
+        <label class="fl" for="r-vendor">Vendor <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+        <select class="adm-in" id="r-vendor">
+          <option value="">- none -</option>
+          <option value="Gunny">Gunny</option>
+          <option value="Artisan">Artisan</option>
+          <option value="Turncoat">Turncoat</option>
+          <option value="Banshee">Banshee</option>
+          <option value="Vulture">Vulture</option>
+        </select>
+      </div>
+    </div>
+    <!-- Recoil + Accuracy -->
+    <div class="fr2">
+      <div>
+        <label class="fl" for="r-recoil">Recoil <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(e.g. -12%)</span></label>
+        <input class="adm-in" type="text" id="r-recoil" placeholder="-12% or +5%" />
+      </div>
+      <div>
+        <label class="fl" for="r-accuracy">Accuracy (MOI) <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+        <input class="adm-in" type="text" id="r-accuracy" placeholder="e.g. 1.2" />
+      </div>
+    </div>
+    <!-- Eff Dist + Speed -->
+    <div class="fr2">
+      <div>
+        <label class="fl" for="r-effdist">Eff. Distance <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+        <input class="adm-in" type="text" id="r-effdist" placeholder="e.g. 400m" />
+      </div>
+      <div>
+        <label class="fl" for="r-speed">Speed (m/s) <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+        <input class="adm-in" type="text" id="r-speed" placeholder="e.g. 880" />
+      </div>
+    </div>
+    <!-- Good Against -->
+    <div class="fr">
+      <label class="fl" for="r-ga">Good Against</label>
+      <select class="adm-in" id="r-ga">
+        <option value="None">None</option>
+        <option value="I">Level I</option>
+        <option value="IIA">Level IIA</option>
+        <option value="IIA+">Level IIA+</option>
+        <option value="IIIA">Level IIIA</option>
+        <option value="IIIA+">Level IIIA+</option>
+        <option value="III">Level III</option>
+        <option value="3+">Level 3+</option>
+        <option value="3++">Level 3++</option>
+      </select>
+    </div>
+    <!-- Wiki + Notes -->
+    <div class="fr">
+      <label class="fl" for="r-wiki">Wiki URL <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+      <input class="adm-in" type="url" id="r-wiki" placeholder="https://..." />
+    </div>
+    <div class="fr" style="margin-bottom:0">
+      <label class="fl" for="r-notes">Notes <span style="color:var(--ug);font-size:9px;text-transform:none;letter-spacing:0;font-family:var(--body)">(optional)</span></label>
+      <input class="adm-in" type="text" id="r-notes" placeholder="e.g. Best penetration in caliber..." />
+    </div>
+  </div>
+  <div class="mod-ft">
+    <button class="btn btn-s" onclick="closeRoundModal()">Cancel</button>
+    <button class="btn btn-p" onclick="saveRound()">Save Round</button>
+  </div>
+</dialog>
+
+<script>
+// =============================================================================
+// DATA - loaded from JSON files, saved back via api.php
+// localStorage is only used for wiv_found (per-user blueprint toggles)
+// =============================================================================
+var adminPass   = '';        // kept in memory only - never stored anywhere
+var vultureData = null;      // from data/vulture.json
+var ammoData    = [];        // from data/ammo.json
+var adminData   = { banner: [], blueprints: [] }; // from data/admin.json
+
+var FOUND_KEY = 'wiv_found';
+
+// Default fallbacks (used if files are unreachable - e.g. local dev)
+var DEFAULT_VULTURE = {
+  description: 'Roaming black-market vendor. Always found at 2 Major Combat Outposts that rotate each Monday.',
+  tacMapUrl: '',
+  currentLocations: ['Stalwart', 'Westmore'],
+  possibleLocations: [
+    { name:'Stalwart',   gridRef:'154:160', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Westmore',   gridRef:'168:161', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Winchester', gridRef:'201:148', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Harrison',   gridRef:'197:125', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Spielberk',  gridRef:'182:123', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Titan',      gridRef:'153:121', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Bronco',     gridRef:'142:134', detail:'Major Combat Outpost', imageUrl:'' },
+    { name:'Crusader',   gridRef:'137:151', detail:'Major Combat Outpost', imageUrl:'' }
+  ],
+  history: []
+};
+var DEFAULT_ADMIN = {
+  banner: ['WEEK 24 UPDATE ACTIVE','BLUEPRINTS - 0.4 SPEARHEAD UPDATE NOW LIVE','COMMUNITY EVENT: FRIDAY PVP STREAMS'],
+  blueprints: []
+};
+
+// =============================================================================
+// API HELPERS
+// =============================================================================
+function apiCall(body, onSuccess, onError) {
+  body.pass = adminPass;
+  fetch('api.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  })
+  .then(function(r) {
+    return r.json().then(function(data) {
+      if (!r.ok) throw new Error(data.error || 'Request failed (' + r.status + ')');
+      return data;
+    });
+  })
+  .then(onSuccess || function() {})
+  .catch(onError || function(e) { toast((e && e.message) || 'Server error', 'error'); });
+}
+
+function saveVulture(cb) {
+  apiCall({ action:'save', file:'vulture', data:vultureData }, function() {
+    toast('✔ Vulture data saved.');
+    if (cb) cb();
+  });
+}
+function saveAmmoFile(cb) {
+  apiCall({ action:'save', file:'ammo', data:ammoData }, function() {
+    toast('✔ Ammo data saved.');
+    if (cb) cb();
+  });
+}
+function saveAdminFile(cb) {
+  apiCall({ action:'save', file:'admin', data:adminData }, function() {
+    toast('✔ Admin data saved.');
+    if (cb) cb();
+  });
+}
+
+// =============================================================================
+// LOAD ALL DATA
+// =============================================================================
+function loadAllData() {
+  var bust = '?t=' + Date.now();
+  fetch('data/bosses.json' + bust)
+    .then(function(r) { return r.json(); })
+    .then(function(d) { bossesData = Array.isArray(d) ? d : []; renderNamedBosses(); })
+    .catch(function() { bossesData = []; renderNamedBosses(); });
+
+  fetch('data/vulture.json' + bust)
+    .then(function(r) { return r.json(); })
+    .then(function(d) { vultureData = d; renderBossesTab(); })
+    .catch(function() { vultureData = DEFAULT_VULTURE; renderBossesTab(); toast('Warning: could not load vulture.json', 'error'); });
+
+  fetch('data/ammo.json' + bust)
+    .then(function(r) { return r.json(); })
+    .then(function(d) { ammoData = d; renderAmmoTab(); })
+    .catch(function() { ammoData = []; renderAmmoTab(); toast('Warning: could not load ammo.json', 'error'); });
+
+  fetch('data/admin.json' + bust)
+    .then(function(r) { return r.json(); })
+    .then(function(d) { adminData = d; renderBpTab(); renderBannerTab(); })
+    .catch(function() { adminData = DEFAULT_ADMIN; renderBpTab(); renderBannerTab(); toast('Warning: could not load admin.json', 'error'); });
+}
+
+function esc(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function slugify(str) {
+  return String(str).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'') + '-' + Date.now().toString(36);
+}
+function getWeekNum(d) {
+  var jan = new Date(d.getFullYear(), 0, 1);
+  return Math.ceil((((d - jan) / 86400000) + jan.getDay() + 1) / 7);
+}
+
+// =============================================================================
+// MATH CAPTCHA
+// =============================================================================
+var captchaAnswer = 0;
+function generateCaptcha() {
+  var a = Math.floor(Math.random() * 12) + 2;
+  var b = Math.floor(Math.random() * 12) + 2;
+  var add = Math.random() > 0.4;
+  if (!add && b > a) { var t = a; a = b; b = t; }
+  captchaAnswer = add ? a + b : a - b;
+  var el = document.getElementById('captcha-q');
+  if (el) el.textContent = a + (add ? ' + ' : ' - ') + b + ' = ?';
+}
+
+// =============================================================================
+// AUTH
+// =============================================================================
+var authenticated = false;
+
+function attemptLogin() {
+  var captchaInput = parseInt(document.getElementById('gate-captcha').value, 10);
+  var pass  = document.getElementById('gate-pass').value;
+  var errEl = document.getElementById('gate-err');
+  errEl.style.display = 'none';
+
+  if (isNaN(captchaInput) || captchaInput !== captchaAnswer) {
+    errEl.textContent = 'Incorrect answer to verification problem.';
+    errEl.style.display = 'block';
+    document.getElementById('gate-captcha').value = '';
+    document.getElementById('gate-pass').value = '';
+    generateCaptcha();
+    document.getElementById('gate-captcha').focus();
+    return;
+  }
+
+  // Verify password server-side
+  fetch('api.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'verify', pass: pass })
+  })
+  .then(function(r) {
+    return r.json().then(function(d) {
+      if (!r.ok) throw new Error(d.error || 'Incorrect passphrase');
+      return d;
+    });
+  })
+  .then(function() {
+    adminPass = pass;
+    authenticated = true;
+    document.getElementById('gate-wrap').style.display   = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    document.getElementById('logout-link').style.display = 'inline';
+    loadAllData();
+  })
+  .catch(function(e) {
+    errEl.textContent = (e && e.message) || 'Incorrect passphrase. Access denied.';
+    errEl.style.display = 'block';
+    document.getElementById('gate-pass').value = '';
+    document.getElementById('gate-captcha').value = '';
+    generateCaptcha();
+    document.getElementById('gate-captcha').focus();
+  });
+}
+
+function logout() {
+  authenticated = false;
+  adminPass = '';
+  document.getElementById('gate-wrap').style.display   = 'flex';
+  document.getElementById('admin-panel').style.display = 'none';
+  document.getElementById('logout-link').style.display = 'none';
+  document.getElementById('gate-err').style.display    = 'none';
+  document.getElementById('gate-pass').value = '';
+  document.getElementById('gate-captcha').value = '';
+  generateCaptcha();
+  document.getElementById('gate-captcha').focus();
+}
+
+// =============================================================================
+// TABS
+// =============================================================================
+function switchTab(name) {
+  var panels = document.querySelectorAll('.tab-panel');
+  var btns   = document.querySelectorAll('.tab-btn');
+  for (var i = 0; i < panels.length; i++) panels[i].classList.remove('active');
+  for (var i = 0; i < btns.length; i++)   btns[i].classList.remove('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('tab-btn-' + name).classList.add('active');
+}
+
+// =============================================================================
+// TOAST
+// =============================================================================
+var toastTimer = null;
+function toast(msg, type) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.borderColor = type === 'error' ? 'var(--danger-b)' : 'var(--jg)';
+  el.style.color = type === 'error' ? '#e05555' : 'var(--jp)';
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { el.classList.remove('show'); }, 3500);
+}
+
+// =============================================================================
+// BOSSES TAB  (Vulture-specific - manages vulture.json)
+// =============================================================================
+function renderBossesTab() {
+  var wrap = document.getElementById('bosses-tbl');
+  if (!wrap || !vultureData) return;
+
+  var poss    = vultureData.possibleLocations || [];
+  var curLocs = vultureData.currentLocations  || [];
+  var history = vultureData.history           || [];
+
+  // Build dropdown options
+  function makeOpts(selectedName) {
+    var html = '';
+    for (var i = 0; i < poss.length; i++) {
+      var sel = poss[i].name === selectedName ? ' selected' : '';
+      html += '<option value="' + esc(poss[i].name) + '"' + sel + '>' + esc(poss[i].name) + ' (' + esc(poss[i].gridRef || '') + ')</option>';
+    }
+    return html;
+  }
+
+  // --- Current week section ---
+  var html = '<div style="margin-bottom:28px">';
+  html += '<div class="adm-sh" style="margin-bottom:14px"><div><div class="adm-st">This Week\'s Locations</div><div class="adm-sd">// Vulture is always active at exactly 2 MCOs simultaneously.</div></div></div>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px">';
+  html += '<div><label class="fl">COP Alpha</label><select class="adm-sel" id="loc-sel-0" style="width:100%">' + makeOpts(curLocs[0]) + '</select></div>';
+  html += '<div><label class="fl">COP Bravo</label><select class="adm-sel" id="loc-sel-1" style="width:100%">' + makeOpts(curLocs[1]) + '</select></div>';
+  html += '</div>';
+  html += '<button class="btn btn-p" onclick="setVultureLocs()">&#x25B6; Set This Week\'s Locations</button>';
+  html += '</div>';
+
+  // --- Possible locations section ---
+  html += '<div style="margin-bottom:28px">';
+  html += '<div class="adm-sh" style="margin-bottom:14px"><div><div class="adm-st">Possible Locations</div><div class="adm-sd">// All MCOs Vulture can rotate through. Image URLs will show photos on the tracker page.</div></div>';
+  html += '<button class="btn btn-p btn-sm" onclick="openPossLocModal(null)">+ Add Location</button></div>';
+  if (!poss.length) {
+    html += '<div class="empty-state">No locations configured.</div>';
+  } else {
+    html += '<table class="adm-tbl"><thead><tr><th>Name</th><th>Grid Ref</th><th>Detail</th><th>Image</th><th style="text-align:right">Actions</th></tr></thead><tbody>';
+    for (var i = 0; i < poss.length; i++) {
+      var l = poss[i];
+      var hasImg = l.imageUrl ? '<span style="color:var(--success-b)">&#x2714;</span>' : '<span style="color:var(--ug)">-</span>';
+      html += '<tr><td><strong style="font-family:var(--disp);letter-spacing:.07em;text-transform:uppercase;color:var(--uw)">' + esc(l.name) + '</strong></td>';
+      html += '<td class="mono">' + esc(l.gridRef || '-') + '</td>';
+      html += '<td style="font-size:13px;color:var(--ug)">' + esc(l.detail || '-') + '</td>';
+      html += '<td style="text-align:center">' + hasImg + '</td>';
+      html += '<td><div class="acts">';
+      html += '<button class="btn btn-s btn-sm" onclick="openPossLocModal(' + i + ')">Edit</button>';
+      html += '<button class="btn btn-d btn-sm" onclick="deletePossLoc(' + i + ')">Delete</button>';
+      html += '</div></td></tr>';
+    }
+    html += '</tbody></table>';
+  }
+  html += '</div>';
+
+  // --- History section ---
+  html += '<div>';
+  html += '<div class="adm-sh" style="margin-bottom:14px"><div><div class="adm-st">Location History</div><div class="adm-sd">// Updated automatically when you change the current week\'s locations.</div></div>';
+  html += '<button class="btn btn-d btn-sm" onclick="clearHistory()">Clear History</button></div>';
+  if (!history.length) {
+    html += '<div class="empty-state">No history yet.</div>';
+  } else {
+    html += '<table class="adm-tbl"><thead><tr><th>Week</th><th>Locations</th></tr></thead><tbody>';
+    for (var h = 0; h < history.length; h++) {
+      var hw = history[h];
+      var lstr = Array.isArray(hw.locations) ? hw.locations.join(' + ') : (hw.location || '-');
+      html += '<tr><td class="mono">' + esc(hw.week) + '</td><td>' + esc(lstr) + '</td></tr>';
+    }
+    html += '</tbody></table>';
+  }
+  html += '</div>';
+
+  wrap.innerHTML = html;
+}
+
+function setVultureLocs() {
+  if (!vultureData) return;
+  var sel0 = document.getElementById('loc-sel-0');
+  var sel1 = document.getElementById('loc-sel-1');
+  if (!sel0 || !sel1) return;
+  var loc0 = sel0.value;
+  var loc1 = sel1.value;
+  if (loc0 === loc1) { toast('Both locations are the same - please select 2 different MCOs.', 'error'); return; }
+  var oldLocs = vultureData.currentLocations || [];
+  var changed = (oldLocs[0] !== loc0 || oldLocs[1] !== loc1);
+  if (changed && (oldLocs[0] || oldLocs[1])) {
+    if (!vultureData.history) vultureData.history = [];
+    vultureData.history.unshift({ week: 'WK ' + getWeekNum(new Date()), locations: oldLocs.slice() });
+    if (vultureData.history.length > 12) vultureData.history = vultureData.history.slice(0, 12);
+  }
+  vultureData.currentLocations = [loc0, loc1];
+  saveVulture(function() { renderBossesTab(); });
+}
+
+function clearHistory() {
+  if (!vultureData) return;
+  if (!confirm('Clear location history?')) return;
+  vultureData.history = [];
+  saveVulture(function() { renderBossesTab(); });
+}
+
+function deletePossLoc(idx) {
+  if (!vultureData) return;
+  var loc = (vultureData.possibleLocations || [])[idx];
+  if (!loc) return;
+  if (!confirm('Delete "' + loc.name + '" from possible locations?')) return;
+  vultureData.possibleLocations.splice(idx, 1);
+  // If this was a current location, clear it
+  vultureData.currentLocations = (vultureData.currentLocations || []).filter(function(n) { return n !== loc.name; });
+  saveVulture(function() { renderBossesTab(); });
+}
+
+// =============================================================================
+// NAMED BOSSES  (reads/writes data/bosses.json)
+// =============================================================================
+var bossesData = [];
+
+function saveBossesFile(cb) {
+  apiCall({ action:'save', file:'bosses', data:bossesData }, function() {
+    toast('✔ Boss data saved.');
+    if (cb) cb();
+  });
+}
+
+function renderNamedBosses() {
+  var wrap = document.getElementById('named-bosses-tbl');
+  if (!wrap) return;
+  if (!bossesData.length) {
+    wrap.innerHTML = '<div class="empty-state">No bosses yet. Click "+ Add Boss" to add one.</div>';
+    return;
+  }
+  var html = '<table class="adm-tbl"><thead><tr>'
+    + '<th>Name</th><th>Callsign</th><th>Faction</th><th>Type</th><th>Difficulty</th><th>Locations</th><th style="text-align:right">Actions</th>'
+    + '</tr></thead><tbody>';
+  for (var i = 0; i < bossesData.length; i++) {
+    var b = bossesData[i];
+    var locs = Array.isArray(b.locations) ? b.locations.join(', ') : (b.locations || '-');
+    html += '<tr>'
+      + '<td><strong style="font-family:var(--disp);letter-spacing:.07em;text-transform:uppercase;color:var(--uw)">' + esc(b.name || '-') + '</strong></td>'
+      + '<td class="mono" style="font-size:11px;color:var(--es)">"' + esc(b.callsign || '') + '"</td>'
+      + '<td style="font-size:13px;color:var(--ug)">' + esc(b.faction || '-') + '</td>'
+      + '<td class="mono" style="font-size:11px">' + esc(b.type || '-') + '</td>'
+      + '<td class="mono" style="font-size:11px">' + esc(b.difficulty || '-') + '</td>'
+      + '<td style="font-size:12px;color:var(--ul)">' + esc(locs) + '</td>'
+      + '<td><div class="acts">'
+        + '<button class="btn btn-s btn-sm" onclick="openBossModal(\'' + esc(b.id) + '\')">Edit</button>'
+        + '<button class="btn btn-d btn-sm" onclick="deleteBoss(\'' + esc(b.id) + '\')">Delete</button>'
+      + '</div></td>'
+      + '</tr>';
+  }
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function getBossById(id) {
+  for (var i = 0; i < bossesData.length; i++) { if (bossesData[i].id === id) return bossesData[i]; }
+  return null;
+}
+
+function openBossModal(id) {
+  var modal = document.getElementById('boss-modal');
+  document.getElementById('boss-edit-id').value = id || '';
+  // Clear location list
+  document.getElementById('boss-loc-list').innerHTML = '';
+  if (id) {
+    var b = getBossById(id);
+    if (!b) return;
+    document.getElementById('boss-modal-ti').textContent = 'Edit Boss - ' + b.name;
+    document.getElementById('boss-name').value     = b.name      || '';
+    document.getElementById('boss-callsign').value = b.callsign  || '';
+    document.getElementById('boss-faction').value  = b.faction   || '';
+    document.getElementById('boss-loot').value     = b.notableLoot || '';
+    document.getElementById('boss-video').value      = b.videoUrl  || '';
+    document.getElementById('boss-intel').value    = b.intel     || '';
+    setSelVal('boss-type', b.type);
+    setSelVal('boss-diff', b.difficulty);
+    var locs = b.locations || [];
+    for (var i = 0; i < locs.length; i++) addBossLoc(locs[i]);
+  } else {
+    document.getElementById('boss-modal-ti').textContent = 'Add Boss';
+    document.getElementById('boss-name').value     = '';
+    document.getElementById('boss-callsign').value = '';
+    document.getElementById('boss-faction').value  = '';
+    document.getElementById('boss-loot').value     = '';
+    document.getElementById('boss-video').value      = '';
+    document.getElementById('boss-intel').value    = '';
+    document.getElementById('boss-type').value     = '';
+    document.getElementById('boss-diff').value     = '';
+    addBossLoc(''); // start with one blank row
+  }
+  modal.showModal();
+}
+
+function addBossLoc(val) {
+  var list = document.getElementById('boss-loc-list');
+  var row = document.createElement('div');
+  row.style.cssText = 'display:flex;gap:6px;align-items:center';
+  var inp = document.createElement('input');
+  inp.type = 'text';
+  inp.className = 'adm-in boss-loc-inp';
+  inp.placeholder = 'e.g. Pha Lang Marketplace';
+  inp.value = val || '';
+  inp.style.flex = '1';
+  var rm = document.createElement('button');
+  rm.type = 'button';
+  rm.className = 'btn btn-d btn-sm';
+  rm.textContent = 'x';
+  rm.onclick = function() { list.removeChild(row); };
+  row.appendChild(inp);
+  row.appendChild(rm);
+  list.appendChild(row);
+}
+
+function closeBossModal() {
+  document.getElementById('boss-modal').close();
+}
+
+function saveBoss() {
+  var name = document.getElementById('boss-name').value.trim();
+  if (!name) { toast('Boss name is required.', 'error'); return; }
+  var id = document.getElementById('boss-edit-id').value.trim();
+  // Collect locations
+  var locInputs = document.querySelectorAll('#boss-loc-list .boss-loc-inp');
+  var locs = [];
+  for (var i = 0; i < locInputs.length; i++) {
+    var v = locInputs[i].value.trim();
+    if (v) locs.push(v);
+  }
+  var entry = {
+    id:          id || (Date.now().toString(36) + Math.random().toString(36).slice(2,6)),
+    name:        name,
+    callsign:    document.getElementById('boss-callsign').value.trim(),
+    faction:     document.getElementById('boss-faction').value.trim(),
+    type:        document.getElementById('boss-type').value,
+    difficulty:  document.getElementById('boss-diff').value,
+    locations:   locs,
+    notableLoot: document.getElementById('boss-loot').value.trim(),
+    videoUrl:    document.getElementById('boss-video').value.trim(),
+    intel:       document.getElementById('boss-intel').value.trim()
+  };
+  if (id) {
+    for (var i = 0; i < bossesData.length; i++) {
+      if (bossesData[i].id === id) { bossesData[i] = entry; break; }
+    }
+  } else {
+    bossesData.push(entry);
+  }
+  saveBossesFile(function() { closeBossModal(); renderNamedBosses(); });
+}
+
+function deleteBoss(id) {
+  var b = getBossById(id);
+  if (!b) return;
+  if (!confirm('Delete "' + b.name + '"?')) return;
+  bossesData = bossesData.filter(function(x) { return x.id !== id; });
+  saveBossesFile(function() { renderNamedBosses(); });
+}
+
+// =============================================================================
+// MCO LOCATION MODAL  (Vulture possible location edit)
+// =============================================================================
+var editingLocIdx = null;
+
+function openPossLocModal(idx) {
+  editingLocIdx = idx;
+  var title = document.getElementById('loc-modal-ti');
+  if (idx !== null && vultureData) {
+    var loc = (vultureData.possibleLocations || [])[idx];
+    if (!loc) return;
+    title.textContent = 'Edit Location - ' + loc.name;
+    document.getElementById('loc-name').value = loc.name     || '';
+    document.getElementById('loc-grid').value = loc.gridRef  || '';
+    document.getElementById('loc-img').value  = loc.imageUrl || '';
+  } else {
+    title.textContent = 'Add Possible Location';
+    document.getElementById('loc-name').value = '';
+    document.getElementById('loc-grid').value = '';
+    document.getElementById('loc-img').value  = '';
+  }
+  document.getElementById('loc-modal').showModal();
+}
+
+function closeLocModal() {
+  document.getElementById('loc-modal').close();
+}
+
+function saveLocModal() {
+  if (!vultureData) return;
+  var name   = document.getElementById('loc-name').value.trim();
+  var gridRef= document.getElementById('loc-grid').value.trim();
+  var imgUrl = document.getElementById('loc-img').value.trim();
+  if (!name) { toast('Location name is required.', 'error'); return; }
+  var entry = { name: name, gridRef: gridRef, detail: 'Major Combat Outpost', imageUrl: imgUrl };
+  if (editingLocIdx !== null) {
+    vultureData.possibleLocations[editingLocIdx] = entry;
+  } else {
+    if (!vultureData.possibleLocations) vultureData.possibleLocations = [];
+    vultureData.possibleLocations.push(entry);
+  }
+  saveVulture(function() { closeLocModal(); renderBossesTab(); });
+}
+
+// =============================================================================
+// BLUEPRINTS TAB  (reads/writes adminData.blueprints)
+// =============================================================================
+function renderBpTab() {
+  var wrap = document.getElementById('bp-tbl');
+  if (!wrap) return;
+  var blueprints = adminData.blueprints || [];
+  if (!blueprints.length) {
+    wrap.innerHTML = '<div class="empty-state">No blueprints configured. Click "+ Add Blueprint" to get started.</div>';
+    return;
+  }
+  var html = '<table class="adm-tbl"><thead><tr>' +
+    '<th style="width:52px">Img</th><th>Name</th><th>Camo</th><th>Location</th><th>Type</th><th>Caliber</th><th>URL</th><th style="text-align:right">Actions</th>' +
+    '</tr></thead><tbody>';
+  for (var i = 0; i < blueprints.length; i++) {
+    var bp = blueprints[i];
+    var hasUrl = bp.locateUrl ? '<span style="color:var(--success-b)">&#x2714;</span>' : '<span style="color:var(--ug)">-</span>';
+    var thumb = bp.imageUrl
+      ? '<img src="' + esc(bp.imageUrl) + '" style="width:44px;height:56px;object-fit:cover;object-position:center;border:1px solid var(--um);display:block" loading="lazy" />'
+      : '<div style="width:44px;height:56px;border:1px solid var(--um);background:var(--uc);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ug)">N/A</div>';
+    html += '<tr>' +
+      '<td style="padding:6px 8px">' + thumb + '</td>' +
+      '<td><strong style="font-family:var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--uw)">' + esc(bp.name) + '</strong></td>' +
+      '<td class="mono" style="font-size:11px;color:var(--ul)">' + esc(bp.camo) + '</td>' +
+      '<td style="font-size:13px;color:var(--es)">' + esc(bp.location) + '</td>' +
+      '<td class="mono" style="font-size:11px">' + esc(bp.weaponType) + '</td>' +
+      '<td class="mono" style="font-size:11px">' + esc(bp.caliber) + '</td>' +
+      '<td style="text-align:center">' + hasUrl + '</td>' +
+      '<td><div class="acts">' +
+        '<button class="btn btn-s btn-sm" onclick="openBpModal(\'' + esc(bp.id) + '\')">Edit</button>' +
+        '<button class="btn btn-d btn-sm" onclick="deleteBp(\'' + esc(bp.id) + '\')">Delete</button>' +
+      '</div></td></tr>';
+  }
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function getBpById(id) {
+  var bps = adminData.blueprints || [];
+  for (var i = 0; i < bps.length; i++) { if (bps[i].id === id) return bps[i]; }
+  return null;
+}
+
+function populateBpCaliberSelect() {
+  var sel = document.getElementById('bp-caliber');
+  var current = sel.value;
+  sel.innerHTML = '<option value="">- Select Caliber -</option>';
+  for (var i = 0; i < ammoData.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = ammoData[i].name;
+    opt.textContent = ammoData[i].name;
+    sel.appendChild(opt);
+  }
+  if (current) sel.value = current;
+}
+
+function openBpModal(id) {
+  var modal = document.getElementById('bp-modal');
+  populateBpCaliberSelect();
+  document.getElementById('bp-edit-id').value = id || '';
+  if (id) {
+    var bp = getBpById(id);
+    if (!bp) return;
+    document.getElementById('bp-modal-ti').textContent = 'Edit Blueprint - ' + bp.name;
+    document.getElementById('bp-name').value = bp.name || '';
+    document.getElementById('bp-camo').value = bp.camo || '';
+    document.getElementById('bp-loc').value  = bp.location || '';
+    document.getElementById('bp-url').value  = bp.locateUrl || '';
+    document.getElementById('bp-img').value  = bp.imageUrl  || '';
+    setSelVal('bp-type',   bp.weaponType);
+    setSelVal('bp-caliber',bp.caliber);
+  } else {
+    document.getElementById('bp-modal-ti').textContent = 'Add Blueprint';
+    document.getElementById('bp-name').value = '';
+    document.getElementById('bp-camo').value = '';
+    document.getElementById('bp-loc').value  = '';
+    document.getElementById('bp-url').value  = '';
+    document.getElementById('bp-img').value  = '';
+    document.getElementById('bp-type').value    = '';
+    document.getElementById('bp-caliber').value = '';
+  }
+  modal.showModal();
+}
+
+function setSelVal(id, val) {
+  var el = document.getElementById(id);
+  if (!el || !val) return;
+  for (var i = 0; i < el.options.length; i++) {
+    if (el.options[i].value === val) { el.selectedIndex = i; return; }
+  }
+}
+function closeBpModal() { document.getElementById('bp-modal').close(); }
+
+function saveBp() {
+  var name   = document.getElementById('bp-name').value.trim();
+  var camo   = document.getElementById('bp-camo').value.trim();
+  var loc    = document.getElementById('bp-loc').value.trim();
+  var type   = document.getElementById('bp-type').value;
+  var caliber= document.getElementById('bp-caliber').value;
+  var url    = document.getElementById('bp-url').value.trim();
+  var imgUrl = document.getElementById('bp-img').value.trim();
+  var editId = document.getElementById('bp-edit-id').value;
+  if (!name)    { alert('Blueprint name is required.'); return; }
+  if (!type)    { alert('Weapon type is required.'); return; }
+  if (!caliber) { alert('Caliber is required.'); return; }
+  if (!adminData.blueprints) adminData.blueprints = [];
+  if (editId) {
+    var bp = getBpById(editId);
+    if (bp) { bp.name=name; bp.camo=camo; bp.location=loc; bp.weaponType=type; bp.caliber=caliber; bp.locateUrl=url; bp.imageUrl=imgUrl; }
+  } else {
+    adminData.blueprints.push({ id:slugify(name), name:name, camo:camo, location:loc, weaponType:type, caliber:caliber, locateUrl:url, imageUrl:imgUrl });
+  }
+  saveAdminFile(function() { closeBpModal(); renderBpTab(); });
+}
+
+function deleteBp(id) {
+  if (!confirm('Delete this blueprint?')) return;
+  adminData.blueprints = (adminData.blueprints || []).filter(function(b) { return b.id !== id; });
+  saveAdminFile(function() { renderBpTab(); });
+}
+
+// =============================================================================
+// AMMO TAB  (reads/writes ammoData -> data/ammo.json)
+// =============================================================================
+var activeCalId = null;
+
+function showCalView() {
+  document.getElementById('ammo-cal-view').style.display    = 'block';
+  document.getElementById('ammo-rounds-view').style.display = 'none';
+  activeCalId = null;
+  renderCalTable();
+}
+
+function showRoundsView(calId) {
+  activeCalId = calId;
+  var cal = getCalById(calId);
+  if (!cal) return;
+  document.getElementById('ammo-cal-view').style.display    = 'none';
+  document.getElementById('ammo-rounds-view').style.display = 'block';
+  document.getElementById('rounds-cal-name').textContent = cal.name;
+  document.getElementById('rounds-cal-meta').textContent = (cal.ammo ? cal.ammo.length : 0) + ' rounds' + (cal.wikiUrl ? ' - wiki linked' : '');
+  renderRoundsTable(calId);
+}
+
+function renderAmmoTab() {
+  renderCalTable();
+  if (activeCalId) renderRoundsTable(activeCalId);
+}
+
+function renderCalTable() {
+  var wrap = document.getElementById('cal-tbl');
+  if (!wrap) return;
+  if (!ammoData.length) {
+    wrap.innerHTML = '<div class="empty-state">No calibers yet. Click "+ Add Caliber" to get started.</div>';
+    return;
+  }
+  var html = '<table class="adm-tbl"><thead><tr>' +
+    '<th>Caliber</th><th>Wiki</th><th style="text-align:center">Rounds</th><th style="text-align:right">Actions</th>' +
+    '</tr></thead><tbody>';
+  for (var i = 0; i < ammoData.length; i++) {
+    var c = ammoData[i];
+    var cnt = c.ammo ? c.ammo.length : 0;
+    var wikiLink = c.wikiUrl
+      ? '<a href="' + esc(c.wikiUrl) + '" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;color:var(--et);text-decoration:none">Wiki &#x2197;</a>'
+      : '<span style="color:var(--ug);font-family:var(--mono);font-size:10px">-</span>';
+    html += '<tr><td><strong style="font-family:var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--uw)">' + esc(c.name) + '</strong></td>' +
+      '<td>' + wikiLink + '</td>' +
+      '<td style="text-align:center;font-family:var(--mono);font-size:13px;color:var(--up)">' + cnt + '</td>' +
+      '<td><div class="acts">' +
+        '<button class="btn btn-p btn-sm" onclick="showRoundsView(\'' + esc(c.id) + '\')">Rounds (' + cnt + ')</button>' +
+        '<button class="btn btn-s btn-sm" onclick="openCaliberModal(\'' + esc(c.id) + '\')">Edit</button>' +
+        '<button class="btn btn-d btn-sm" onclick="deleteCaliber(\'' + esc(c.id) + '\')">Delete</button>' +
+      '</div></td></tr>';
+  }
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function renderRoundsTable(calId) {
+  var wrap = document.getElementById('rounds-tbl');
+  if (!wrap) return;
+  var cal = getCalById(calId);
+  if (!cal) { wrap.innerHTML = '<div class="empty-state">Caliber not found.</div>'; return; }
+  var rounds = cal.ammo || [];
+  var meta = document.getElementById('rounds-cal-meta');
+  if (meta) meta.textContent = rounds.length + ' round' + (rounds.length !== 1 ? 's' : '') + (cal.wikiUrl ? ' - wiki linked' : '');
+  if (!rounds.length) {
+    wrap.innerHTML = '<div class="empty-state">No rounds. Click "+ Add Round" to get started.</div>';
+    return;
+  }
+  var html = '<table class="adm-tbl"><thead><tr>' +
+    '<th style="width:40px"></th>' +
+    '<th>Name</th>' +
+    '<th style="text-align:right">Price</th>' +
+    '<th>Vendor</th>' +
+    '<th style="text-align:right">Recoil</th>' +
+    '<th style="text-align:right">Accuracy</th>' +
+    '<th style="text-align:right">Eff Dist</th>' +
+    '<th style="text-align:right">Speed</th>' +
+    '<th>Good Against</th>' +
+    '<th style="text-align:right">Actions</th></tr></thead><tbody>';
+  for (var i = 0; i < rounds.length; i++) {
+    var r = rounds[i];
+    var imgEl = r.imageUrl
+      ? '<img src="' + esc(r.imageUrl) + '" style="width:32px;height:32px;object-fit:contain;background:var(--uc);border:1px solid var(--um)" />'
+      : '<div style="width:32px;height:32px;background:var(--uc);border:1px solid var(--um)"></div>';
+    var v = function(x) { return (x !== null && x !== undefined && x !== '') ? esc(String(x)) : '<span style="color:var(--ug)">-</span>'; };
+    html += '<tr>' +
+      '<td>' + imgEl + '</td>' +
+      '<td><strong style="color:var(--uw)">' + esc(r.name) + '</strong>' +
+        (r.wikiUrl ? ' <a href="' + esc(r.wikiUrl) + '" target="_blank" style="font-family:var(--mono);font-size:9px;color:var(--et);text-decoration:none">&#x2197;</a>' : '') +
+      '</td>' +
+      '<td class="mono" style="text-align:right;color:var(--es)">' + (r.price != null && r.price !== '' ? Number(r.price).toLocaleString() : '<span style="color:var(--ug)">-</span>') + '</td>' +
+      '<td class="mono" style="font-size:11px">' + v(r.vendor) + '</td>' +
+      '<td class="mono" style="text-align:right">' + v(r.recoil) + '</td>' +
+      '<td class="mono" style="text-align:right">' + v(r.accuracy) + '</td>' +
+      '<td class="mono" style="text-align:right">' + v(r.effDist) + '</td>' +
+      '<td class="mono" style="text-align:right">' + v(r.speed) + '</td>' +
+      '<td class="mono" style="font-size:11px;color:var(--jp)">' + esc(r.goodAgainst || 'None') + '</td>' +
+      '<td><div class="acts">' +
+        '<button class="btn btn-s btn-sm" onclick="openRoundModal(\'' + esc(r.id) + '\')">Edit</button>' +
+        '<button class="btn btn-d btn-sm" onclick="deleteRound(\'' + esc(r.id) + '\')">Delete</button>' +
+      '</div></td></tr>';
+  }
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function getCalById(id) {
+  for (var i = 0; i < ammoData.length; i++) { if (ammoData[i].id === id) return ammoData[i]; }
+  return null;
+}
+
+function openCaliberModal(id) {
+  document.getElementById('cal-edit-id').value = id || '';
+  if (id) {
+    var cal = getCalById(id);
+    if (!cal) return;
+    document.getElementById('cal-modal-ti').textContent = 'Edit Caliber - ' + cal.name;
+    document.getElementById('cal-name').value = cal.name || '';
+    document.getElementById('cal-wiki').value = cal.wikiUrl || '';
+  } else {
+    document.getElementById('cal-modal-ti').textContent = 'Add Caliber';
+    document.getElementById('cal-name').value = '';
+    document.getElementById('cal-wiki').value = '';
+  }
+  document.getElementById('cal-modal').showModal();
+}
+function editActiveCaliber() { if (activeCalId) openCaliberModal(activeCalId); }
+function closeCalModal() { document.getElementById('cal-modal').close(); }
+
+function saveCaliber() {
+  var name   = document.getElementById('cal-name').value.trim();
+  var wiki   = document.getElementById('cal-wiki').value.trim();
+  var editId = document.getElementById('cal-edit-id').value;
+  if (!name) { alert('Caliber name is required.'); return; }
+  if (editId) {
+    var cal = getCalById(editId);
+    if (cal) { cal.name = name; cal.wikiUrl = wiki; }
+  } else {
+    ammoData.push({ id: slugify(name), name: name, wikiUrl: wiki, ammo: [] });
+  }
+  saveAmmoFile(function() {
+    closeCalModal();
+    if (activeCalId) {
+      renderRoundsTable(activeCalId);
+      var cn = document.getElementById('rounds-cal-name');
+      if (cn && editId === activeCalId) { var c2 = getCalById(activeCalId); if (c2) cn.textContent = c2.name; }
+    } else {
+      renderCalTable();
+    }
+  });
+}
+
+function deleteCaliber(id) {
+  var cal = getCalById(id);
+  if (!cal) return;
+  var cnt = cal.ammo ? cal.ammo.length : 0;
+  if (!confirm('Delete caliber "' + cal.name + '"' + (cnt ? ' and all ' + cnt + ' rounds?' : '?') + '\nThis cannot be undone.')) return;
+  ammoData = ammoData.filter(function(c) { return c.id !== id; });
+  saveAmmoFile(function() {
+    if (activeCalId === id) showCalView();
+    else renderCalTable();
+  });
+}
+
+function openRoundModal(id) {
+  document.getElementById('round-edit-id').value = id || '';
+  // Reset image preview + status
+  document.getElementById('r-img-status').textContent = '';
+  document.getElementById('r-img-file').value = '';
+  var prevEl = document.getElementById('r-img-preview');
+  prevEl.src = ''; prevEl.style.display = 'none';
+
+  if (id) {
+    var cal = getCalById(activeCalId);
+    if (!cal) return;
+    var r = null;
+    for (var i = 0; i < (cal.ammo || []).length; i++) { if (cal.ammo[i].id === id) { r = cal.ammo[i]; break; } }
+    if (!r) return;
+    document.getElementById('round-modal-ti').textContent = 'Edit Round - ' + r.name;
+    document.getElementById('r-name').value     = r.name         || '';
+    document.getElementById('r-img').value      = r.imageUrl     || '';
+    document.getElementById('r-price').value    = r.price        != null ? r.price    : '';
+    document.getElementById('r-vendor').value   = r.vendor       || '';
+    document.getElementById('r-recoil').value   = r.recoil       || '';
+    document.getElementById('r-accuracy').value = r.accuracy     || '';
+    document.getElementById('r-effdist').value  = r.effDist      || '';
+    document.getElementById('r-speed').value    = r.speed        || '';
+    document.getElementById('r-ga').value       = r.goodAgainst  || 'None';
+    document.getElementById('r-wiki').value     = r.wikiUrl      || '';
+    document.getElementById('r-notes').value    = r.notes        || '';
+    if (r.imageUrl) { prevEl.src = r.imageUrl; prevEl.style.display = 'inline-block'; }
+  } else {
+    document.getElementById('round-modal-ti').textContent = 'Add Round';
+    ['r-name','r-img','r-price','r-recoil','r-accuracy','r-effdist','r-speed','r-wiki','r-notes'].forEach(function(fid) {
+      document.getElementById(fid).value = '';
+    });
+    document.getElementById('r-vendor').value = '';
+    document.getElementById('r-ga').value = 'None';
+  }
+  document.getElementById('round-modal').showModal();
+}
+function closeRoundModal() { document.getElementById('round-modal').close(); }
+
+function uploadRoundImage(input) {
+  if (!input.files || !input.files[0]) return;
+  var statusEl = document.getElementById('r-img-status');
+  var prevEl   = document.getElementById('r-img-preview');
+  statusEl.textContent = 'Uploading...';
+  statusEl.style.color = 'var(--ug)';
+  var fd = new FormData();
+  fd.append('action', 'upload-image');
+  fd.append('pass', adminPass);
+  fd.append('image', input.files[0]);
+  fetch('api.php', { method: 'POST', body: fd })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.ok) {
+        document.getElementById('r-img').value = d.url;
+        statusEl.textContent = 'Uploaded';
+        statusEl.style.color = 'var(--jb)';
+        prevEl.src = d.url; prevEl.style.display = 'inline-block';
+      } else {
+        statusEl.textContent = d.error || 'Upload failed';
+        statusEl.style.color = 'var(--t0c)';
+      }
+    })
+    .catch(function() {
+      statusEl.textContent = 'Upload failed';
+      statusEl.style.color = 'var(--t0c)';
+    });
+}
+
+function saveRound() {
+  var name   = document.getElementById('r-name').value.trim();
+  var editId = document.getElementById('round-edit-id').value;
+  if (!name) { alert('Round name is required.'); return; }
+  var cal = getCalById(activeCalId);
+  if (!cal) { alert('No active caliber.'); return; }
+  if (!cal.ammo) cal.ammo = [];
+  var entry = {
+    id:          editId || slugify(name),
+    name:        name,
+    imageUrl:    document.getElementById('r-img').value.trim(),
+    price:       parseNumOrNull(document.getElementById('r-price').value),
+    vendor:      document.getElementById('r-vendor').value,
+    recoil:      document.getElementById('r-recoil').value.trim(),
+    accuracy:    document.getElementById('r-accuracy').value.trim(),
+    effDist:     document.getElementById('r-effdist').value.trim(),
+    speed:       document.getElementById('r-speed').value.trim(),
+    goodAgainst: document.getElementById('r-ga').value || 'None',
+    wikiUrl:     document.getElementById('r-wiki').value.trim(),
+    notes:       document.getElementById('r-notes').value.trim()
+  };
+  if (editId) {
+    for (var i = 0; i < cal.ammo.length; i++) {
+      if (cal.ammo[i].id === editId) { cal.ammo[i] = entry; break; }
+    }
+  } else {
+    cal.ammo.push(entry);
+  }
+  saveAmmoFile(function() { closeRoundModal(); renderRoundsTable(activeCalId); });
+}
+
+function deleteRound(id) {
+  if (!confirm('Delete this round?')) return;
+  var cal = getCalById(activeCalId);
+  if (!cal) return;
+  cal.ammo = (cal.ammo || []).filter(function(r) { return r.id !== id; });
+  saveAmmoFile(function() { renderRoundsTable(activeCalId); });
+}
+function parseNumOrNull(val) {
+  var v = val.toString().trim();
+  if (v === '') return null;
+  var n = parseFloat(v);
+  return isNaN(n) ? null : n;
+}
+
+// =============================================================================
+// BANNER TAB
+// =============================================================================
+function renderBannerTab() {
+  var list = document.getElementById('ban-list');
+  if (!list) return;
+  var banner = adminData.banner || [];
+  if (!banner.length) {
+    list.innerHTML = '<div class="empty-state">No banner items. Add one below.</div>';
+    return;
+  }
+  var html = '';
+  for (var i = 0; i < banner.length; i++) {
+    html += '<div class="ban-item"><span class="ban-text">' + esc(banner[i]) + '</span>' +
+      '<div class="ban-acts">' +
+        '<button class="ord-btn" onclick="moveBan(' + i + ',-1)">&#x25B2;</button>' +
+        '<button class="ord-btn" onclick="moveBan(' + i + ', 1)">&#x25BC;</button>' +
+        '<button class="btn btn-d btn-sm" onclick="deleteBan(' + i + ')">Remove</button>' +
+      '</div></div>';
+  }
+  list.innerHTML = html;
+}
+
+function addBanItem() {
+  var input = document.getElementById('new-ban-txt');
+  var text  = (input.value || '').trim().toUpperCase();
+  if (!text) return;
+  if (!adminData.banner) adminData.banner = [];
+  adminData.banner.push(text);
+  saveAdminFile(function() { input.value = ''; renderBannerTab(); });
+}
+
+function deleteBan(idx) {
+  if (!adminData.banner) return;
+  adminData.banner.splice(idx, 1);
+  saveAdminFile(function() { renderBannerTab(); });
+}
+
+function moveBan(idx, dir) {
+  var arr = adminData.banner || [];
+  var to  = idx + dir;
+  if (to < 0 || to >= arr.length) return;
+  var tmp = arr[idx]; arr[idx] = arr[to]; arr[to] = tmp;
+  saveAdminFile(function() { renderBannerTab(); });
+}
+
+// =============================================================================
+// SETTINGS TAB
+// =============================================================================
+function changePass() {
+  var cur     = document.getElementById('cur-pass').value;
+  var next    = document.getElementById('new-pass').value;
+  var confirm = document.getElementById('confirm-pass').value;
+  var errEl   = document.getElementById('pass-err');
+  errEl.style.display = 'none';
+
+  if (!cur || !next || !confirm) {
+    errEl.textContent = 'All fields are required.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (next.length < 6) {
+    errEl.textContent = 'New passphrase must be at least 6 characters.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (next !== confirm) {
+    errEl.textContent = 'New passphrases do not match.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  apiCall({ action: 'change-pass', pass: cur, newPass: next }, function() {
+    adminPass = next;
+    toast('Passphrase updated.');
+    document.getElementById('cur-pass').value = '';
+    document.getElementById('new-pass').value = '';
+    document.getElementById('confirm-pass').value = '';
+  }, function(e) {
+    errEl.textContent = (e && e.message) || 'Failed to update passphrase.';
+    errEl.style.display = 'block';
+  });
+}
+
+function confirmReset() {
+  if (!confirm('Reset ALL site data to defaults?\n\nThis will wipe vulture locations, ammo data, blueprints, and banner items.\n\nThis CANNOT be undone.')) return;
+  var def = {
+    vulture: {
+      description: 'Vulture is the primary target. He rotates between 2 locations simultaneously each week.',
+      tacMapUrl: '',
+      currentLocations: [],
+      possibleLocations: [],
+      history: []
+    },
+    ammo:  [],
+    admin: { banner: [], blueprints: [] }
+  };
+  Promise.all([
+    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'vulture', pass:adminPass, data:def.vulture}) }).then(function(r){return r.json();}),
+    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'ammo',    pass:adminPass, data:def.ammo})    }).then(function(r){return r.json();}),
+    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'admin',   pass:adminPass, data:def.admin})   }).then(function(r){return r.json();})
+  ]).then(function() {
+    vultureData = def.vulture;
+    ammoData    = def.ammo;
+    adminData   = def.admin;
+    renderBossesTab();
+    renderAmmoTab();
+    renderBpTab();
+    renderBannerTab();
+    toast('All data reset to defaults.');
+  }).catch(function() {
+    toast('Reset failed - check server logs.', 'error');
+  });
+}
+
+// =============================================================================
+// INIT
+// =============================================================================
+generateCaptcha();
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    if (document.getElementById('gate-wrap').style.display !== 'none') {
+      attemptLogin();
+    }
+  }
+});
+</script>
+</body>
+</html>

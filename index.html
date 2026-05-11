@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GZW Guides | Gray Zone Warfare Community Hub - Ammo, Bosses &amp; Vulture Tracking</title>
+<meta name="description" content="GZW Guides is the community reference hub for Gray Zone Warfare. Track Vulture's current weekly location, compare ammo penetration and damage across every caliber, and look up boss spawn zones on Lamang Island." />
+<meta name="keywords" content="Gray Zone Warfare, GZW, ammo chart, boss locations, Vulture tracker, Lamang Island, GZW guides, ammo penetration, ballistics, boss spawns, Gray Zone Warfare tips" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://lamangintel.net/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="GZW Guides" />
+<meta property="og:title" content="GZW Guides | Gray Zone Warfare Community Hub" />
+<meta property="og:description" content="Community tools for Gray Zone Warfare. Vulture tracking, ammo penetration chart, boss intel, and weapon blueprints for Lamang operators." />
+<meta property="og:url" content="https://lamangintel.net/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="GZW Guides | Gray Zone Warfare Community Hub" />
+<meta name="twitter:description" content="Vulture tracking, ammo chart, boss spawn locations and blueprints for Gray Zone Warfare." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GZW Guides",
+      "alternateName": "Gray Zone Warfare Guides",
+      "description": "Community-maintained tools and reference data for Gray Zone Warfare players. Covers Vulture tracking, ammo ballistics, boss spawn locations, and weapon blueprints.",
+      "url": "https://lamangintel.net",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://lamangintel.net/ammo.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "GZW Guides - Gray Zone Warfare Community Hub",
+      "url": "https://lamangintel.net/",
+      "description": "Gray Zone Warfare community hub. Track Vulture, compare ammo, research boss locations.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lamangintel.net/" }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "GZW Guides Tools",
+      "description": "Community tools for Gray Zone Warfare players",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://lamangintel.net/tracker.html", "name": "Vulture Tracking - Current weekly location of Vulture in Gray Zone Warfare" },
+        { "@type": "ListItem", "position": 2, "url": "https://lamangintel.net/ammo.html", "name": "Ammo Chart - Penetration, damage and tier data for every caliber in GZW" },
+        { "@type": "ListItem", "position": 3, "url": "https://lamangintel.net/bosses.html", "name": "Boss Intel - Spawn locations and loot for all Gray Zone Warfare bosses" },
+        { "@type": "ListItem", "position": 4, "url": "https://lamangintel.net/blueprints.html", "name": "Weapon Blueprints - GZW blueprint tracker and checklist" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --jd:#1a2612;--jm:#2d4220;--jg:#4a6741;--jb:#6b9c5e;--jp:#8db87e;
+  --ed:#2e1c0c;--eb:#5c3d1e;--em:#7a5230;--et:#a07040;--es:#c4a066;
+  --uk:#0e0e0e;--ud:#1c1c1c;--uc:#2a2a2a;--um:#3e3e3e;--ug:#5a5a5a;--ul:#8a8a8a;--up:#b8b8b8;--uw:#e2e2e2;
+  --mono:'Share Tech Mono',monospace;--disp:'Oswald',sans-serif;--body:'Barlow Condensed',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--uk);color:var(--up);font-family:var(--body);font-size:16px;line-height:1.5;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.025) 3px,rgba(0,0,0,.025) 4px);pointer-events:none;z-index:9999}
+
+/* HEADER */
+.sh{background:var(--jd);border-bottom:2px solid var(--jg);position:sticky;top:0;z-index:100}
+.shi{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{width:36px;height:36px;flex-shrink:0}
+.lm{font-family:var(--disp);font-size:22px;font-weight:700;letter-spacing:.1em;color:var(--jb);text-transform:uppercase;line-height:1}
+.ls{font-family:var(--mono);font-size:9px;color:var(--ul);letter-spacing:.2em;text-transform:uppercase}
+.hnav{display:flex;align-items:center;gap:4px}
+.nl{font-family:var(--body);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ul);text-decoration:none;padding:6px 14px;border:1px solid transparent;transition:all .18s}
+.nl:hover{color:var(--jb);border-color:var(--jm);background:rgba(74,103,65,.12)}
+.nl.active{color:var(--jp);border-color:var(--jg);background:rgba(74,103,65,.2)}
+
+/* HERO */
+.hero{background:var(--jd);border-bottom:1px solid var(--jm);padding:88px 32px 76px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 50%,rgba(45,66,32,.35) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 10% 60%,rgba(46,28,12,.3) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(74,103,65,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,103,65,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero-i{max-width:1280px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center}
+.h-ey{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--jg);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.h-ey::before{content:'';display:block;width:32px;height:1px;background:var(--jg)}
+.h-t1{font-family:var(--disp);font-size:80px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--uw);line-height:.9;margin-bottom:6px}
+.h-t1 span{color:var(--jb);display:block}
+.h-sub{font-family:var(--disp);font-size:18px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--es);margin-bottom:26px}
+.h-desc{font-family:var(--body);font-size:17px;color:var(--ul);line-height:1.65;max-width:500px;margin-bottom:34px}
+.h-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-hp{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--jb);color:var(--jd);border:none;padding:13px 28px;text-decoration:none;display:inline-block;transition:background .18s}
+.btn-hp:hover{background:var(--jp)}
+.btn-ho{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:none;color:var(--up);border:1px solid var(--um);padding:12px 24px;text-decoration:none;display:inline-block;transition:all .18s}
+.btn-ho:hover{border-color:var(--ul);color:var(--uw)}
+
+/* HERO SIDE CARDS */
+.h-cards{display:flex;flex-direction:column;gap:10px}
+.hc{background:rgba(14,14,14,.6);border:1px solid var(--um);border-left:3px solid var(--jg);padding:15px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:all .18s}
+.hc:hover{border-color:var(--jg);background:rgba(26,38,18,.5)}
+.hc.earth{border-left-color:var(--et)}.hc.earth:hover{border-color:var(--et)}
+.hc.grey{border-left-color:var(--ul)}.hc.grey:hover{border-color:var(--ul)}
+.hc svg{width:30px;height:30px;flex-shrink:0;opacity:.85}
+.hc-t{flex:1}
+.hc-n{font-family:var(--disp);font-size:14px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--uw);line-height:1;margin-bottom:2px}
+.hc-d{font-family:var(--mono);font-size:10px;color:var(--ug);letter-spacing:.06em}
+.hc-arr{font-family:var(--mono);font-size:13px;color:var(--um);transition:color .18s}
+.hc:hover .hc-arr{color:var(--jb)}
+
+/* MAIN */
+.mw{max-width:1280px;margin:0 auto;padding:60px 32px}
+.sh2{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.sl{font-family:var(--disp);font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ul);white-space:nowrap}
+.sline{flex:1;height:1px;background:var(--um)}
+
+/* UPDATE STRIP */
+.us{background:var(--ed);border:1px solid var(--eb);padding:18px 26px;margin-bottom:56px;display:flex;align-items:flex-start;gap:22px}
+.us-b{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--es);background:rgba(92,61,30,.5);border:1px solid var(--eb);padding:4px 12px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.us-ti{font-family:var(--disp);font-size:15px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--es);margin-bottom:3px}
+.us-de{font-family:var(--body);font-size:13px;color:var(--ug)}
+.us-dt{font-family:var(--mono);font-size:10px;color:var(--ug);letter-spacing:.1em;white-space:nowrap;margin-top:2px}
+
+/* FEATURE CARDS */
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:60px}
+.fc{background:var(--ud);border:1px solid var(--um);text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s;position:relative;overflow:hidden}
+.fc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.fc.g::after{background:var(--jb)}.fc.e::after{background:var(--et)}.fc.gr::after{background:var(--ul)}
+.fc:hover{border-color:var(--jg)}.fc.e:hover{border-color:var(--et)}.fc.gr:hover{border-color:var(--ul)}
+.fc:hover::after{transform:scaleX(1)}
+.fc-top{padding:26px 22px 18px;flex:1}
+.fc-badge{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:3px 10px;margin-bottom:14px;display:inline-block}
+.fc-badge.g{background:rgba(45,66,32,.5);border:1px solid var(--jm);color:var(--jp)}
+.fc-badge.e{background:rgba(46,28,12,.5);border:1px solid var(--eb);color:var(--es)}
+.fc-badge.gr{background:rgba(42,42,42,.8);border:1px solid var(--um);color:var(--ul)}
+.fc-icon{width:44px;height:44px;margin-bottom:16px;opacity:.9}
+.fc-ti{font-family:var(--disp);font-size:22px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--uw);margin-bottom:8px;line-height:1}
+.fc-de{font-family:var(--body);font-size:14px;color:var(--ug);line-height:1.55}
+.fc-foot{border-top:1px solid var(--um);padding:13px 22px;display:flex;align-items:center;justify-content:space-between}
+.fc-lt{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.fc.g .fc-lt{color:var(--jg)}.fc.e .fc-lt{color:var(--et)}.fc.gr .fc-lt{color:var(--ul)}
+.fc-ar{font-family:var(--mono);font-size:13px;color:var(--um);transition:color .18s}
+.fc:hover .fc-ar{color:var(--jp)}
+
+/* ABOUT */
+.ab{display:grid;grid-template-columns:1fr 340px;gap:48px;margin-bottom:60px;align-items:start}
+.ab-ti{font-family:var(--disp);font-size:34px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--uw);margin-bottom:16px;line-height:1}
+.ab-ti span{color:var(--jb)}
+.ab-p{font-family:var(--body);font-size:15px;color:var(--ul);line-height:1.7;margin-bottom:14px}
+.ab-p a{color:var(--es);text-decoration:none;border-bottom:1px solid var(--eb);transition:border-color .15s}
+.ab-p a:hover{border-color:var(--et)}
+.ab-p strong{color:var(--up);font-weight:500}
+
+/* QUICK LINKS */
+.ql{display:flex;flex-direction:column;gap:1px}
+.ql-h{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ug);padding:10px 16px;background:var(--uc);border:1px solid var(--um);border-bottom:none}
+.ql-i{background:var(--ud);border:1px solid var(--um);border-top:none;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:background .15s}
+.ql-i:hover{background:rgba(26,38,18,.5)}
+.ql-n{font-family:var(--body);font-size:14px;font-weight:500;color:var(--up)}
+.ql-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px}
+.ql-tag.live{background:rgba(42,107,58,.25);border:1px solid #2a6b3a;color:#5fcb78}
+.ql-tag.ext{background:rgba(62,62,62,.4);border:1px solid var(--um);color:var(--ul)}
+.ql-tag.tool{background:rgba(45,66,32,.3);border:1px solid var(--jm);color:var(--jp)}
+
+/* FOOTER */
+.ft{background:var(--jd);border-top:1px solid var(--jm);padding:40px 32px}
+.ft-i{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+.ft-ctt{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ug);margin-bottom:12px}
+.ft-br{font-family:var(--disp);font-size:20px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--jg);margin-bottom:6px}
+.ft-sub{font-family:var(--body);font-size:13px;color:var(--ug);line-height:1.5}
+.ft-lks{display:flex;flex-direction:column;gap:8px}
+.ft-lk{font-family:var(--body);font-size:14px;color:var(--ul);text-decoration:none;transition:color .15s}
+.ft-lk:hover{color:var(--jb)}
+.ft-disc{font-family:var(--mono);font-size:10px;color:var(--ug);line-height:1.6}
+.ft-bot{max-width:1280px;margin:24px auto 0;padding-top:18px;border-top:1px solid var(--um);display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--ug)}
+
+@media(max-width:1100px){.hero-i{grid-template-columns:1fr}.h-cards{display:grid;grid-template-columns:1fr 1fr}.h-t1{font-size:58px}.ab{grid-template-columns:1fr}.ft-i{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.fg{grid-template-columns:1fr}.h-cards{grid-template-columns:1fr}.hnav{display:none}.h-t1{font-size:44px}.ft-i{grid-template-columns:1fr}.ft-bot{flex-direction:column;gap:8px;text-align:center}.hero{padding:56px 20px 46px}.mw{padding:40px 20px}}
+</style>
+</head>
+<body>
+<header class="sh">
+  <div class="shi">
+    <a href="index.html" class="logo">
+      <img src="logo.png" width="36" height="36" alt="GZW Guides" />
+      <div><div class="lm">GZW Guides</div><div class="ls">Gray Zone Warfare Community Hub</div></div>
+    </a>
+    <nav class="hnav" aria-label="Main navigation">
+      <a href="index.html"       class="nl active">Home</a>
+      <a href="tracker.html"     class="nl">Vulture Tracking</a>
+      <a href="bosses.html"      class="nl">Bosses</a>
+      <a href="ammo.html"        class="nl">Ammo Chart</a>
+      <a href="blueprints.html"  class="nl">Blueprints</a>
+      <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="nl">Wiki &#x2197;</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Site introduction">
+  <div class="hero-i">
+    <div>
+      <div class="h-ey">Gray Zone Warfare Community Resource</div>
+      <div class="h-t1">GZW<span>Guides</span></div>
+      <div class="h-sub">Lamang Intelligence Network</div>
+      <p class="h-desc">Community-maintained tools and reference data for Gray Zone Warfare. Track vendor locations, study ballistics, review boss intel, and plan your kit before you drop in.</p>
+      <div class="h-ctas">
+        <a href="tracker.html" class="btn-hp">&#x25CF; Vulture Tracking</a>
+        <a href="ammo.html"    class="btn-ho">Ammo Chart</a>
+        <a href="bosses.html"  class="btn-ho">Boss Intel</a>
+      </div>
+    </div>
+    <div class="h-cards">
+      <a href="tracker.html" class="hc">
+        <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="13" stroke="#4a6741" stroke-width="1.2"/><circle cx="15" cy="15" r="3" fill="#6b9c5e"/><line x1="15" y1="3" x2="15" y2="7" stroke="#6b9c5e" stroke-width="1.4"/><line x1="15" y1="23" x2="15" y2="27" stroke="#6b9c5e" stroke-width="1.4"/><line x1="3" y1="15" x2="7" y2="15" stroke="#6b9c5e" stroke-width="1.4"/><line x1="23" y1="15" x2="27" y2="15" stroke="#6b9c5e" stroke-width="1.4"/></svg>
+        <div class="hc-t"><div class="hc-n">Vulture Tracking</div><div class="hc-d">Live weekly location intel</div></div>
+        <span class="hc-arr">&#x2192;</span>
+      </a>
+      <a href="ammo.html" class="hc earth">
+        <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="4" width="8" height="22" rx="1" stroke="#a07040" stroke-width="1.2"/><rect x="5" y="7" width="6" height="3" fill="#5c3d1e"/><path d="M12 15L26 9L26 21Z" stroke="#c4a066" stroke-width="1.2" fill="rgba(92,61,30,.3)"/></svg>
+        <div class="hc-t"><div class="hc-n">Ammo Chart</div><div class="hc-d">Pen, damage and tier data</div></div>
+        <span class="hc-arr">&#x2192;</span>
+      </a>
+      <a href="bosses.html" class="hc earth">
+        <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 3L27 9L27 21L15 27L3 21L3 9Z" stroke="#a07040" stroke-width="1.2" fill="none"/><circle cx="15" cy="15" r="4" stroke="#c4a066" stroke-width="1.2"/></svg>
+        <div class="hc-t"><div class="hc-n">Boss Intel</div><div class="hc-d">All known operating zones</div></div>
+        <span class="hc-arr">&#x2192;</span>
+      </a>
+      <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="hc grey">
+        <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="3" width="14" height="20" rx="1" stroke="#8a8a8a" stroke-width="1.2"/><rect x="9" y="7" width="14" height="20" rx="1" stroke="#5a5a5a" stroke-width="1.2" fill="#1c1c1c"/><line x1="12" y1="12" x2="21" y2="12" stroke="#8a8a8a" stroke-width="1"/><line x1="12" y1="16" x2="21" y2="16" stroke="#8a8a8a" stroke-width="1"/><line x1="12" y1="20" x2="18" y2="20" stroke="#8a8a8a" stroke-width="1"/></svg>
+        <div class="hc-t"><div class="hc-n">GZW Wiki</div><div class="hc-d">gray-zone-warfare.fandom.com</div></div>
+        <span class="hc-arr">&#x2197;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main class="mw">
+  <div class="us" role="complementary">
+    <div class="us-b">0.4 Spearhead</div>
+    <div style="flex:1"><div class="us-ti">Latest Patch - Spearhead Update</div><div class="us-de">New magazine blueprints added to tracker. Boss location data and ammo chart updated for 0.4 content.</div></div>
+    <div class="us-dt">Updated<br>April 2026</div>
+  </div>
+
+  <div class="sh2"><span class="sl">// Community Tools</span><div class="sline"></div></div>
+  <div class="fg" aria-label="Available tools">
+    <a href="tracker.html" class="fc g">
+      <div class="fc-top">
+        <div class="fc-badge g">&#x25CF; Live Weekly</div>
+        <svg class="fc-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="20" stroke="#4a6741" stroke-width="1.4"/><path d="M11 28L16 14L22 21L28 10L33 28" stroke="#6b9c5e" stroke-width="1.7" stroke-linejoin="round" fill="none"/><circle cx="22" cy="22" r="3.5" fill="#4a6741"/><line x1="22" y1="4" x2="22" y2="9" stroke="#2d4220" stroke-width="1.4"/><line x1="22" y1="35" x2="22" y2="40" stroke="#2d4220" stroke-width="1.4"/><line x1="4" y1="22" x2="9" y2="22" stroke="#2d4220" stroke-width="1.4"/><line x1="35" y1="22" x2="40" y2="22" stroke="#2d4220" stroke-width="1.4"/></svg>
+        <div class="fc-ti">Vulture Tracking</div>
+        <div class="fc-de">Track the current weekly location of Vulture across Lamang. Updated every Monday with verified community intel. Includes a weekly reset countdown.</div>
+      </div>
+      <div class="fc-foot"><span class="fc-lt">View Tracker</span><span class="fc-ar">&#x2192;</span></div>
+    </a>
+    <a href="ammo.html" class="fc e">
+      <div class="fc-top">
+        <div class="fc-badge e">Reference</div>
+        <svg class="fc-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><rect x="5" y="5" width="11" height="34" rx="2" stroke="#a07040" stroke-width="1.4"/><rect x="6" y="9" width="9" height="4" fill="#5c3d1e"/><rect x="6" y="17" width="9" height="4" fill="#5c3d1e"/><path d="M16 22L39 13L39 31Z" stroke="#c4a066" stroke-width="1.4" fill="rgba(92,61,30,.22)"/></svg>
+        <div class="fc-ti">Ammo Chart</div>
+        <div class="fc-de">Ballistics reference for every caliber in GZW. Compare penetration power, damage, armor damage %, and muzzle velocity to choose the right round for the job.</div>
+      </div>
+      <div class="fc-foot"><span class="fc-lt">View Chart</span><span class="fc-ar">&#x2192;</span></div>
+    </a>
+    <a href="bosses.html" class="fc e">
+      <div class="fc-top">
+        <div class="fc-badge e">Intel</div>
+        <svg class="fc-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 4L38 12L38 32L22 40L6 32L6 12Z" stroke="#a07040" stroke-width="1.4" fill="none"/><circle cx="22" cy="22" r="5" stroke="#c4a066" stroke-width="1.4"/><line x1="22" y1="17" x2="22" y2="10" stroke="#7a5230" stroke-width="1"/><line x1="22" y1="27" x2="22" y2="34" stroke="#7a5230" stroke-width="1"/><line x1="17" y1="22" x2="10" y2="22" stroke="#7a5230" stroke-width="1"/><line x1="27" y1="22" x2="34" y2="22" stroke="#7a5230" stroke-width="1"/></svg>
+        <div class="fc-ti">Boss Intel</div>
+        <div class="fc-de">Detailed profiles for every tracked boss and vendor. All possible operating zones, grid references, and zone type data - click any boss to expand their full location roster.</div>
+      </div>
+      <div class="fc-foot"><span class="fc-lt">View Bosses</span><span class="fc-ar">&#x2192;</span></div>
+    </a>
+  </div>
+
+  <div class="sh2"><span class="sl">// About GZW Guides</span><div class="sline"></div></div>
+  <div class="ab">
+    <div>
+      <div class="ab-ti">Community Intel<br><span>for Lamang Operators</span></div>
+      <p class="ab-p">GZW Guides is a community-maintained reference hub for Gray Zone Warfare. Every tool here is built to answer the questions you'd otherwise need to alt-tab out of the game to find - where is Vulture this week, which ammo punches through armor, what are the possible spawn zones for a given boss.</p>
+      <p class="ab-p">The <strong>Vulture Tracking</strong> updates every Monday with confirmed vendor and boss locations, with a live countdown to the next weekly reset. The <strong>Ammo Chart</strong> covers penetration power, damage, armor damage %, and muzzle velocity for every caliber in GZW - inspired by the kind of structured ballistics data Tarkov players expect. <strong>Boss Intel</strong> documents all known possible locations for each tracked target.</p>
+      <p class="ab-p">For deeper lore, item descriptions, quest walkthroughs and more, the <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener">GZW Fandom Wiki</a> is the most comprehensive community knowledge base available. Weapon and item links throughout this site point directly to wiki pages.</p>
+    </div>
+    <div>
+      <div class="ql" aria-label="Quick links">
+        <div class="ql-h">// Site Links</div>
+        <a href="tracker.html" class="ql-i"><span class="ql-n">Vulture Tracking</span><span class="ql-tag live">Live</span></a>
+        <a href="ammo.html"    class="ql-i"><span class="ql-n">Ammo Chart</span><span class="ql-tag tool">Tool</span></a>
+        <a href="bosses.html"  class="ql-i"><span class="ql-n">Boss Intel</span><span class="ql-tag tool">Tool</span></a>
+        <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="ql-i"><span class="ql-n">GZW Wiki</span><span class="ql-tag ext">External &#x2197;</span></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="ft-i">
+    <div><div class="ft-br">GZW Guides</div><div class="ft-ctt" style="margin-top:4px;">Gray Zone Warfare Community Hub</div><div class="ft-sub">Community-maintained tools and reference data for Gray Zone Warfare operators.</div></div>
+    <div>
+      <div class="ft-ctt">Tools</div>
+      <div class="ft-lks">
+        <a href="tracker.html" class="ft-lk">Vulture Tracking</a>
+        <a href="bosses.html"  class="ft-lk">Boss Intel</a>
+        <a href="ammo.html"    class="ft-lk">Ammo Chart</a>
+        <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="ft-lk">GZW Wiki &#x2197;</a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-ctt">Info</div>
+      <div class="ft-disc">Not affiliated with MADFINGER Games.<br>Game content and materials are trademarks of MADFINGER Games and its licensors. All rights reserved.<br><br>Data maintained by the GZW community.<br><a href="admin.html" style="color:var(--ug);text-decoration:none;border-bottom:1px solid var(--um);">Admin</a></div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>GZW Guides &copy; 2026 - Community Project</span>
+    <span>Not affiliated with MADFINGER Games</span>
+  </div>
+</footer>
+</body>
+</html>
