@@ -120,16 +120,85 @@ async function getAllData() {
         }));
         gadgets.push(...loaded);
     } catch  {}
+    // Load all headwear
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const headwear = [];
+    try {
+        const headwearFiles = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readdir(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "headwear"));
+        const loaded = await Promise.all(headwearFiles.filter((f)=>f.endsWith(".json") && f !== "index.json").map(async (f)=>{
+            const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "headwear", f), "utf-8");
+            return JSON.parse(raw);
+        }));
+        headwear.push(...loaded);
+    } catch  {}
+    // Load armor items
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const armorItems = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "armor", "index.json"), "utf-8");
+        armorItems.push(...JSON.parse(raw));
+    } catch  {}
+    // Load tactical rigs
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rigs = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "rigs", "index.json"), "utf-8");
+        rigs.push(...JSON.parse(raw));
+    } catch  {}
+    // Load consumables
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const consumables = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "consumables", "index.json"), "utf-8");
+        consumables.push(...JSON.parse(raw));
+    } catch  {}
+    // Load medical items
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const medicalItems = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "medical", "index.json"), "utf-8");
+        medicalItems.push(...JSON.parse(raw));
+    } catch  {}
+    // Load containers
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const containerItems = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "containers", "index.json"), "utf-8");
+        containerItems.push(...JSON.parse(raw));
+    } catch  {}
+    // Load keys
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const keyItems = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "keys", "index.json"), "utf-8");
+        keyItems.push(...JSON.parse(raw));
+    } catch  {}
+    // Load belts
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const beltItems = [];
+    try {
+        const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(__TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(dataDir, "belts", "index.json"), "utf-8");
+        beltItems.push(...JSON.parse(raw));
+    } catch  {}
     return {
         weapons,
         allAttachments,
-        gadgets
+        gadgets,
+        headwear,
+        armorItems,
+        rigs,
+        consumables,
+        medicalItems,
+        containerItems,
+        keyItems,
+        beltItems
     };
 }
 async function BuilderPage() {
-    const { weapons, allAttachments, gadgets } = await getAllData();
+    const { weapons, allAttachments, gadgets, headwear, armorItems, rigs, consumables, medicalItems, containerItems, keyItems, beltItems } = await getAllData();
     const sortedWeapons = weapons.sort((a, b)=>a.name.localeCompare(b.name));
     const sortedGadgets = gadgets.sort((a, b)=>a.name.localeCompare(b.name));
+    const sortedHeadwear = headwear.sort((a, b)=>a.name.localeCompare(b.name));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "flex flex-col min-h-screen",
         children: [
@@ -148,7 +217,7 @@ async function BuilderPage() {
                                 className: "object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 67,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -160,13 +229,13 @@ async function BuilderPage() {
                                         children: "Armory"
                                     }, void 0, false, {
                                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 142,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 68,
+                                lineNumber: 141,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -174,13 +243,13 @@ async function BuilderPage() {
                                 children: "v0.4.0.3"
                             }, void 0, false, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 71,
+                                lineNumber: 144,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                        lineNumber: 66,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -192,7 +261,7 @@ async function BuilderPage() {
                                 children: "Weapon Builder"
                             }, void 0, false, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 76,
+                                lineNumber: 149,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -201,23 +270,23 @@ async function BuilderPage() {
                                 children: "Loadout Calc"
                             }, void 0, false, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 77,
+                                lineNumber: 150,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                        lineNumber: 75,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                lineNumber: 65,
+                lineNumber: 138,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 px-6 py-8 max-w-6xl mx-auto w-full",
+                className: "flex-1 px-6 py-6 max-w-7xl mx-auto w-full",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-6 flex items-start gap-3 bg-amber-950/40 border border-amber-800/50 rounded-lg px-4 py-3 text-sm text-amber-300/80",
@@ -227,7 +296,7 @@ async function BuilderPage() {
                                 children: "⚠"
                             }, void 0, false, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 84,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -237,7 +306,7 @@ async function BuilderPage() {
                                         children: "Vendor & rank data may be outdated."
                                     }, void 0, false, {
                                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 159,
                                         columnNumber: 13
                                     }, this),
                                     " ",
@@ -251,49 +320,57 @@ async function BuilderPage() {
                                         children: "submitting a correction"
                                     }, void 0, false, {
                                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 161,
                                         columnNumber: 13
                                     }, this),
                                     "."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                                lineNumber: 85,
+                                lineNumber: 158,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                        lineNumber: 83,
+                        lineNumber: 156,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$app$2f$components$2f$WeaponBuilderShell$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                         weapons: sortedWeapons,
                         allAttachments: allAttachments,
-                        gadgets: sortedGadgets
+                        gadgets: sortedGadgets,
+                        headwear: sortedHeadwear,
+                        armorItems: armorItems,
+                        rigs: rigs,
+                        consumables: consumables,
+                        medicalItems: medicalItems,
+                        containerItems: containerItems,
+                        keyItems: keyItems,
+                        beltItems: beltItems
                     }, void 0, false, {
                         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                        lineNumber: 92,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                lineNumber: 81,
-                columnNumber: 7
+                lineNumber: 154,
+                columnNumber: 11
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$killer6oose$2f$GZW$2d$Guides$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
                 className: "border-t border-gray-800 px-6 py-6 text-center text-xs text-gray-600",
                 children: "The Lamang Intelligence Network is not affiliated with or endorsed by MADFINGER Games."
             }, void 0, false, {
                 fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-                lineNumber: 97,
+                lineNumber: 180,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/killer6oose/GZW-Guides/app/builder/page.tsx",
-        lineNumber: 64,
+        lineNumber: 137,
         columnNumber: 5
     }, this);
 }

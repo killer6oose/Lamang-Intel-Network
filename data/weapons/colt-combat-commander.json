@@ -1,0 +1,78 @@
+{
+  "id": "colt-combat-commander",
+  "name": "Colt Combat Commander",
+  "type": "Pistol",
+  "slot": "Secondary",
+  "caliber": ".45 ACP",
+  "manufacturer": "Colt",
+  "vendor": "Vulture",
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 1.203,
+    "accuracy": 11.0,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "rateOfFire": 600,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    ".45 ACP AP",
+    ".45 ACP FMJ",
+    ".45 ACP Hydra-Shok",
+    ".45 ACP JHP +P"
+  ],
+  "slots": {
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "colt-1911-standard-grip"
+      ]
+    },
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "colt-1911-commander-barrel-425"
+      ]
+    },
+    "slide": {
+      "label": "Slide",
+      "required": false,
+      "compatible": [
+        "1911-commander-slide"
+      ]
+    },
+    "auxiliary": {
+      "label": "Auxiliary",
+      "required": false,
+      "compatible": [
+        "colt-1911-commander-hammer"
+      ]
+    },
+    "optic": {
+      "label": "Sights",
+      "required": false,
+      "compatible": [
+        "colt-1911-commander-front-sight",
+        "colt-1911-commander-rear-sight"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "1911-45acp-15rd-extended-magazine",
+        "colt-1911-45acp-7rd-magazine"
+      ]
+    }
+  },
+  "notes": "Grin's Colt 1911 Commander is a variant with unique skin - obtainable by killing Grin or from Vulture after completing 'Like a Boss - Grin's 1911 C'. Standard variant vendor unconfirmed.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/dc/1911_Com_inspect.png"
+}

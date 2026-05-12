@@ -467,7 +467,7 @@
   },
   {
     "id": "ak-5-45-39mm-30-round-bakelite-magazine",
-    "name": "AK 5.45×39mm 30-Round Bakelite Magazine",
+    "name": "AK 5.45\u00d739mm 30-Round Bakelite Magazine",
     "category": "magazine",
     "statModifiers": {
       "sizeChangeY": 1.0
@@ -486,7 +486,7 @@
   },
   {
     "id": "ak-5-45-39mm-30-round-black-magazine",
-    "name": "AK 5.45×39mm 30-Round Black Magazine",
+    "name": "AK 5.45\u00d739mm 30-Round Black Magazine",
     "category": "magazine",
     "statModifiers": {},
     "weight": 0,
@@ -843,5 +843,53 @@
     "_raw": {
       "reload": "+6"
     }
+  },
+  {
+    "id": "m9a1-9x19mm-15rd-magazine",
+    "name": "M9A1 9x19mm 15-Round Magazine",
+    "category": "magazine",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "1911-45acp-15rd-extended-magazine",
+    "name": "1911 .45 ACP 15-Round Extended Magazine",
+    "category": "magazine",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "colt-1911-45acp-7rd-magazine",
+    "name": "Colt 1911 .45 ACP 7-Round Magazine",
+    "category": "magazine",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "glock-17-9x19mm-17rd-magazine",
+    "name": "Glock 17 9x19mm 17-Round Magazine",
+    "category": "magazine",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
   }
 ]

@@ -1,0 +1,23 @@
+{
+  "id": "pasgt",
+  "name": "PASGT",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": null,
+  "vendor": "Turncoat",
+  "vendorRank": 2,
+  "baseStats": {
+    "weight": 1.43,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": null,
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA",
+  "material": "UHMWPE",
+  "slots": {}
+}

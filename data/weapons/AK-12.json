@@ -15,6 +15,7 @@
     "ergonomics": 0.0,
     "reloadSpeed": 0.0,
     "weight": 3.553,
+    "strippedWeight": 2.456,
     "rateOfFire": 700,
     "firingMode": "Single / Full Auto"
   },
@@ -107,7 +108,7 @@
     "pistolGrip": "ak-ratnik-grip",
     "stock": "ratnik-foldable-stock"
   },
-  "notes": "Modern Russian service rifle, part of the Ratnik equipment system. Turncoat Rank 2. Uses Ratnik-specific parts - pistol grip, handguard, dust cover not shared with older AK platforms. Has built-in optic rail. NOTE: 'ak-ratnik-dust-cover' ID does not yet exist in attachments data and needs to be added.",
+  "notes": "Modern Russian service rifle, part of the Ratnik equipment system. Turncoat Rank 2. Uses Ratnik-specific parts - pistol grip, handguard, dust cover not shared with older AK platforms. Has built-in optic rail.",
   "verified": true,
   "verifiedSource": "fandom wiki infobox",
   "patchVersion": "0.4",

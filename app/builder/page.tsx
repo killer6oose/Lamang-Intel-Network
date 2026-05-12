@@ -52,13 +52,86 @@ async function getAllData() {
     gadgets.push(...loaded);
   } catch { /* no gadgets dir yet */ }
 
-  return { weapons, allAttachments, gadgets };
+  // Load all headwear
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const headwear: any[] = [];
+  try {
+    const headwearFiles = await fs.readdir(path.join(dataDir, "headwear"));
+    const loaded = await Promise.all(
+      headwearFiles
+        .filter((f) => f.endsWith(".json") && f !== "index.json")
+        .map(async (f) => {
+          const raw = await fs.readFile(path.join(dataDir, "headwear", f), "utf-8");
+          return JSON.parse(raw);
+        })
+    );
+    headwear.push(...loaded);
+  } catch { /* no headwear dir yet */ }
+
+  // Load armor items
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const armorItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "armor", "index.json"), "utf-8");
+    armorItems.push(...JSON.parse(raw));
+  } catch { /* no armor data yet */ }
+
+  // Load tactical rigs
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const rigs: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "rigs", "index.json"), "utf-8");
+    rigs.push(...JSON.parse(raw));
+  } catch { /* no rigs data yet */ }
+
+  // Load consumables
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const consumables: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "consumables", "index.json"), "utf-8");
+    consumables.push(...JSON.parse(raw));
+  } catch { /* no consumables data yet */ }
+
+  // Load medical items
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const medicalItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "medical", "index.json"), "utf-8");
+    medicalItems.push(...JSON.parse(raw));
+  } catch { /* no medical data yet */ }
+
+  // Load containers
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const containerItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "containers", "index.json"), "utf-8");
+    containerItems.push(...JSON.parse(raw));
+  } catch { /* no containers data yet */ }
+
+  // Load keys
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const keyItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "keys", "index.json"), "utf-8");
+    keyItems.push(...JSON.parse(raw));
+  } catch { /* no keys data yet */ }
+
+  // Load belts
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const beltItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "belts", "index.json"), "utf-8");
+    beltItems.push(...JSON.parse(raw));
+  } catch { /* no belts data yet */ }
+
+  return { weapons, allAttachments, gadgets, headwear, armorItems, rigs, consumables, medicalItems, containerItems, keyItems, beltItems };
 }
 
 export default async function BuilderPage() {
-  const { weapons, allAttachments, gadgets } = await getAllData();
+  const { weapons, allAttachments, gadgets, headwear, armorItems, rigs, consumables, medicalItems, containerItems, keyItems, beltItems } = await getAllData();
   const sortedWeapons = weapons.sort((a, b) => a.name.localeCompare(b.name));
   const sortedGadgets = gadgets.sort((a, b) => a.name.localeCompare(b.name));
+  const sortedHeadwear = headwear.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -78,10 +151,10 @@ export default async function BuilderPage() {
         </div>
       </nav>
 
-      <div className="flex-1 px-6 py-8 max-w-6xl mx-auto w-full">
-        {/* Vendor data disclaimer */}
+          <div className="flex-1 px-6 py-6 max-w-7xl mx-auto w-full">
+              {/* Vendor data disclaimer */}
         <div className="mb-6 flex items-start gap-3 bg-amber-950/40 border border-amber-800/50 rounded-lg px-4 py-3 text-sm text-amber-300/80">
-          <span className="text-amber-500 mt-0.5 shrink-0">⚠</span>
+          <span className="text-amber-500 mt-0.5 shrink-0">&#x26A0;</span>
           <span>
             <strong className="text-amber-400">Vendor &amp; rank data may be outdated.</strong>{" "}
             Attachment availability and vendor levels were overhauled in patch 0.4. Stats shown are best-effort — help us verify by{" "}
@@ -89,9 +162,19 @@ export default async function BuilderPage() {
           </span>
         </div>
 
-        <WeaponBuilderShell weapons={sortedWeapons} allAttachments={allAttachments} gadgets={sortedGadgets} />
-
-
+        <WeaponBuilderShell
+          weapons={sortedWeapons}
+          allAttachments={allAttachments}
+          gadgets={sortedGadgets}
+          headwear={sortedHeadwear}
+          armorItems={armorItems}
+          rigs={rigs}
+          consumables={consumables}
+          medicalItems={medicalItems}
+          containerItems={containerItems}
+          keyItems={keyItems}
+          beltItems={beltItems}
+        />
       </div>
 
       <footer className="border-t border-gray-800 px-6 py-6 text-center text-xs text-gray-600">

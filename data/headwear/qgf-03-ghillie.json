@@ -1,0 +1,23 @@
+{
+  "id": "qgf-03-ghillie",
+  "name": "QGF-03 (Ghillie)",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "Chinese Military",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 1.25,
+    "rainProtection": 20
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c1/QGF-03_%28Ghillie%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA",
+  "material": "Aramid",
+  "slots": {}
+}

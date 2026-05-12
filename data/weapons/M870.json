@@ -1,0 +1,95 @@
+{
+  "id": "m870",
+  "name": "M870",
+  "type": "Shotgun",
+  "slot": "Primary",
+  "caliber": "12 Gauge",
+  "manufacturer": "Remington",
+  "vendor": "Gunny",
+  "vendorRank": 1,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 24.5,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 4.502,
+    "rateOfFire": 60,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "12 Gauge 00 Buck",
+    "12 Gauge Slug",
+    "12 Gauge Flechette",
+    "12 Gauge Magnum"
+  ],
+  "slots": {
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "m870-barrel-18-5",
+        "m870-barrel-23",
+        "m870-barrel-26"
+      ]
+    },
+    "handguard": {
+      "label": "Forend / Handguard",
+      "required": false,
+      "compatible": [
+        "m870-forend-od-green",
+        "m870-moe-handguard",
+        "m870-moe-handguard-fde",
+        "m870-voa-handguard",
+        "m870-walnut-forend"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "m870-express-stock",
+        "m870-stock-od-green",
+        "m870-sga-stock",
+        "m870-sga-stock-fde"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "remington-salvo-12-choke-adapter",
+        "x-factor-choke",
+        "salvo-12-suppressor"
+      ]
+    },
+    "optic": {
+      "label": "Optic / Sight",
+      "required": false,
+      "compatible": [
+        "m870-bead"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine / Tube",
+      "required": true,
+      "compatible": [
+        "m870-12ga-4-round-cap",
+        "m870-12ga-6-round-magazine",
+        "m870-12ga-10-round-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "barrel": "m870-barrel-18-5",
+    "stock": "m870-express-stock",
+    "magazine": "m870-12ga-6-round-magazine"
+  },
+  "notes": "Gunny Rank 1. Pump-action shotgun. ROF reflects manual pump cycle rate.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/db/M870_inspect.png"
+}

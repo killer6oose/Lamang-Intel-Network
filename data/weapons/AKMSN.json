@@ -1,0 +1,88 @@
+{
+  "id": "akmsn",
+  "name": "AKMSN",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x39mm",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 3.0,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 3.2,
+    "rateOfFire": 600,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "7.62x39mm BP (7N23)",
+    "7.62x39mm PS (57-N-231C)",
+    "7.62x39mm SP",
+    "7.62x39mm Tracer (57-N-231P)",
+    "7.62x39mm US"
+  ],
+  "slots": {
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-polymer-pistol-grip",
+        "ak-bakelite-pistol-grip",
+        "moe-ak-pistol-grip",
+        "moe-ak-pistol-grip-fde"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "kobra-ekp-8-18-red-dot-sight",
+        "kobra-ekp-1s-03-red-dot-sight",
+        "pk-01-vs-red-dot-sight",
+        "okp7-red-dot-sight",
+        "pilad-p1x42-red-dot-sight",
+        "pso-1-4x24",
+        "npz-pso-3-9x24"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "akm-muzzle-brake",
+        "akm-slant-brake",
+        "ak-adapter-14-1lh-to-24-1-5",
+        "ak-bulgarian-flash-hider",
+        "pbs-04-suppressor"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "akmsn-foldable-stock"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak-7-62x39mm-30-round-stamped-magazine",
+        "ak-7-62x39mm-30-round-bakelite-magazine",
+        "ak-7-62x39mm-10-round-steel-magazine",
+        "schmeisser-ak-7-62x39-60-round-magazine",
+        "ak-7-62x39mm-30-round-pmag-magazine"
+      ]
+    }
+  },
+  "notes": "AKM with folding stock and night-optic side rail. Loot only. Stats estimated - wiki has no data. Side rail accepts standard AK optic mounts.",
+  "verified": false,
+  "verifiedSource": "fandom wiki (stats estimated)",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/51/AKMSN_inspect.png"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "lshz-1-black",
+  "name": "LSHZ 1+ (Black)",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "Armokom",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 1.3,
+    "rainProtection": 10
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/08/LShZ%28Black%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA",
+  "material": "Aramid",
+  "slots": {
+    "nvgMount": {
+      "label": "NVG Mount",
+      "required": false,
+      "compatible": [
+        "l4-g24-helmet-nvg-mount",
+        "rhino-helmet-nvg-mount"
+      ]
+    }
+  }
+}

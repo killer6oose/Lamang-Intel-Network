@@ -1,0 +1,114 @@
+{
+  "id": "mp7a2",
+  "name": "MP7A2",
+  "type": "SMG",
+  "slot": "Primary",
+  "caliber": "4.6x30mm",
+  "manufacturer": "Heckler & Koch",
+  "vendor": "Vulture",
+  "vendorRank": 2,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 8.0,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 1.9,
+    "rateOfFire": 950,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "4.6x30mm AP SX",
+    "4.6x30mm Action SX",
+    "4.6x30mm FMJ SX",
+    "4.6x30mm Subsonic SX"
+  ],
+  "slots": {
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "503cu-micro-sight",
+        "510c-reflex-sight",
+        "aimpoint-acro-p-2",
+        "back-up-3-front-iron-sight",
+        "back-up-3-rear-iron-sight",
+        "folding-micro-front-iron-sight",
+        "folding-micro-rear-iron-sight",
+        "hws-exps2-holographic-sight-1-dot",
+        "hws-exps2-holographic-sight-circle-1-dot",
+        "hws-exps2-holographic-sight-circle-2-dot-fde",
+        "hws-exps3-holographic-sight-circle-1-dot",
+        "hws-exps3-holographic-sight-circle-2-dot",
+        "micro-t-1-red-dot-sight",
+        "micro-t-2-red-dot-sight",
+        "okp7-red-dot-sight",
+        "sig-sauer-flip-up-front-iron-sights",
+        "sig-sauer-flip-up-rear-iron-sights",
+        "vortex-spitfire-hd-gen-ii-5x"
+      ]
+    },
+    "foregrip": {
+      "label": "Foregrip",
+      "required": false,
+      "compatible": [
+        "dd-vertical-foregrip",
+        "dd-vertical-foregrip-black",
+        "rk-1",
+        "rk-5",
+        "rk-6",
+        "shift-vertical-foregrip"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "mp7-flash-hider",
+        "mp7-rotex-suppressor"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "mp7a1-retractable-stock",
+        "mp7a2-retractable-stock"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "mp7-30-round-magazine",
+        "mp7-40-round-magazine"
+      ]
+    },
+    "rail": {
+      "label": "Tactical Device",
+      "required": false,
+      "compatible": [
+        "ncstar-led-flashlight",
+        "ncstar-compact-green-laser",
+        "steiner-an-peq-15a-dbal-a2",
+        "steiner-cqbl-1",
+        "surefire-m600-scout-light",
+        "surefire-x400v-b-irc",
+        "zenitco-klesch-1",
+        "zenitco-klesch-2",
+        "zenitco-perst-4"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "stock": "mp7a2-retractable-stock",
+    "magazine": "mp7-30-round-magazine"
+  },
+  "notes": "Vulture Rank 2. MP7A2 variant adds foregrip rail. Shares image with MP7A1. Stats estimated - wiki has no infobox data.",
+  "verified": false,
+  "verifiedSource": "fandom wiki (stats estimated)",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f9/MP7_inspect.png"
+}

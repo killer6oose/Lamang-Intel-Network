@@ -1,0 +1,140 @@
+{
+  "id": "sig-mcx",
+  "name": "SIG MCX",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": ".300 AAC Blackout",
+  "manufacturer": "SIG Sauer",
+  "vendor": "Banshee",
+  "vendorRank": 3,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 3.28,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 4.31,
+    "rateOfFire": 800,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    ".300 AAC Blackout AP",
+    ".300 AAC Blackout CQ",
+    ".300 AAC Blackout FMJ",
+    ".300 AAC Blackout Subsonic",
+    ".300 AAC Blackout V-MAX"
+  ],
+  "slots": {
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "sig-mcx-barrel-9",
+        "sig-mcx-barrel-16",
+        "sig-mcx-barrel-6-75"
+      ]
+    },
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "sig-mcx-10-handguard",
+        "sig-mcx-16-handguard",
+        "sig-mcx-8-handguard",
+        "sig-mcx-12-sd-handguard"
+      ]
+    },
+    "receiver": {
+      "label": "Upper Receiver",
+      "required": false,
+      "compatible": [
+        "sig-mcx-upper-receiver"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "norinco-cqa1-pistol-grip",
+        "miad-pistol-grip",
+        "torque-pistol-grip",
+        "moe-pistol-grip",
+        "moe-pistol-grip-fde",
+        "dd-enhanced-ar-pistol-grip-milspec",
+        "dd-enhanced-ar-pistol-grip",
+        "dd-enhanced-ar-pistol-grip-black"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "mcx-mpx-standard-folding-stock",
+        "mcx-mpx-minimalist-folding-stock",
+        "mcx-mpx-skel-folding-stock",
+        "mcx-mpx-folding-visor-stock",
+        "mcx-mpx-telescoping-stock"
+      ]
+    },
+    "chargingHandle": {
+      "label": "Charging Handle",
+      "required": false,
+      "compatible": [
+        "sig-mcx-charging-handle"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "503cu-micro-sight",
+        "510c-reflex-sight",
+        "aimpoint-acro-p-2",
+        "aimpoint-micro-h-2",
+        "hws-exps2-holographic-sight-1-dot",
+        "hws-exps2-holographic-sight-circle-1-dot",
+        "acog-ta01nsn-4x32-assault-scope",
+        "specterdr-1-4x-assault-scope",
+        "vortex-spitfire-hd-gen-ii-5x",
+        "razor-1-6x-rifle-scope",
+        "hs507c-x2-reflex-sight"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "mcx-3-prong-flash-hider",
+        "slh300ti-qd-suppressor",
+        "socom556-rc1-suppressor",
+        "socom556-rc1-suppressor-fde",
+        "qdss-nt4-suppressor",
+        "qdss-nt4-suppressor-fde"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "stanag-5-56x45mm-300-blk-20-round-magazine",
+        "stanag-5-56x45mm-300-blk-30-round-magazine",
+        "pmag-5-56x45mm-300-blk-30-round-magazine",
+        "pmag-5-56x45mm-300-blk-30-round-magazine-fde",
+        "dd-5-56x45mm-300-blk-32-round-magazine",
+        "ati-s60-5-56x45mm-300-blk-60-round-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "pistolGrip": "dd-enhanced-ar-pistol-grip-milspec",
+    "stock": "mcx-mpx-standard-folding-stock",
+    "magazine": "pmag-5-56x45mm-300-blk-30-round-magazine"
+  },
+  "notes": "Banshee Rank 3. Fires .300 AAC Blackout. Compatible with STANAG/PMAG magazines shared with 5.56 AR-15 platform.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2d/SIG_MCX_inspect.png"
+}

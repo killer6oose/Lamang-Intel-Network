@@ -1,0 +1,156 @@
+[
+  {
+    "id": "rgd-5",
+    "name": "RGD-5",
+    "category": "Grenade",
+    "weight": 0.31,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "rgo",
+    "name": "RGO",
+    "category": "Grenade",
+    "weight": 0.53,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "m67",
+    "name": "M67",
+    "category": "Grenade",
+    "weight": 0.4,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "smoke-grenade-green",
+    "name": "Smoke Grenade (Green)",
+    "category": "Grenade",
+    "weight": 0.32,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "smoke-grenade-red",
+    "name": "Smoke Grenade (Red)",
+    "category": "Grenade",
+    "weight": 0.32,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "flash-grenade",
+    "name": "Flash Grenade",
+    "category": "Grenade",
+    "weight": 0.2,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ai-2-medkit",
+    "name": "AI-2 Medkit",
+    "category": "Medical",
+    "weight": 0.1,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "car-kit",
+    "name": "CAR Kit",
+    "category": "Medical",
+    "weight": 0.2,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "bandage",
+    "name": "Bandage",
+    "category": "Medical",
+    "weight": 0.05,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "army-bandage",
+    "name": "Army Bandage",
+    "category": "Medical",
+    "weight": 0.08,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "tourniquet",
+    "name": "Tourniquet (CAT)",
+    "category": "Medical",
+    "weight": 0.07,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "trauma-kit",
+    "name": "Trauma Kit",
+    "category": "Medical",
+    "weight": 0.3,
+    "gridSize": "1x2"
+  },
+  {
+    "id": "field-surgery-kit",
+    "name": "Field Surgery Kit",
+    "category": "Medical",
+    "weight": 0.6,
+    "gridSize": "1x2"
+  },
+  {
+    "id": "painkillers",
+    "name": "Painkillers",
+    "category": "Medical",
+    "weight": 0.05,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "syringe-epinephrine",
+    "name": "Epinephrine Syringe",
+    "category": "Medical",
+    "weight": 0.05,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-545x39",
+    "name": "5.45x39mm (20 rds)",
+    "category": "Ammo",
+    "weight": 0.24,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-762x39",
+    "name": "7.62x39mm (20 rds)",
+    "category": "Ammo",
+    "weight": 0.3,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-556x45",
+    "name": "5.56x45mm (20 rds)",
+    "category": "Ammo",
+    "weight": 0.26,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-9x19",
+    "name": "9x19mm (50 rds)",
+    "category": "Ammo",
+    "weight": 0.35,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-762x51",
+    "name": "7.62x51mm (20 rds)",
+    "category": "Ammo",
+    "weight": 0.44,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-12ga",
+    "name": "12 Gauge (10 rds)",
+    "category": "Ammo",
+    "weight": 0.3,
+    "gridSize": "1x1"
+  },
+  {
+    "id": "ammo-300blk",
+    "name": ".300 Blackout (20 rds)",
+    "category": "Ammo",
+    "weight": 0.28,
+    "gridSize": "1x1"
+  }
+]

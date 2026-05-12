@@ -1,0 +1,113 @@
+{
+  "id": "mp5",
+  "name": "MP5",
+  "type": "SMG",
+  "slot": "Primary",
+  "caliber": "9x19mm",
+  "manufacturer": "Heckler & Koch",
+  "vendor": "Gunny",
+  "vendorRank": 1,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 6.88,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 2.507,
+    "rateOfFire": 800,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "9x19mm FMJ",
+    "9x19mm HP",
+    "9x19mm Libra Snail",
+    "9x19mm Tracer",
+    "9x19mm Xtreme Penetrator P+"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "b-t-hk-mp5-tl-99a1-3-rail-handguard",
+        "ema-x5-aluminum-5-rail-mp5",
+        "b-t-bt-21343-hk-mp5sd-tri-rail-handguard",
+        "mp5sd-forearm",
+        "mp5-wide-forearm"
+      ]
+    },
+    "chargingHandle": {
+      "label": "Charging Handle",
+      "required": false,
+      "compatible": [
+        "hk-mp5-cocking-handle"
+      ]
+    },
+    "receiver": {
+      "label": "Upper Receiver",
+      "required": false,
+      "compatible": [
+        "mp5-upper-receiver",
+        "mp5sd-upper-receiver"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "hk-mp5-front-sight",
+        "hk-mp5-rear-sight",
+        "503cu-micro-sight",
+        "510c-reflex-sight",
+        "acog-ta01nsn-4x32-assault-scope",
+        "aimpoint-acro-p-2",
+        "aimpoint-micro-h-2",
+        "okp7-red-dot-sight",
+        "pilad-p1x42-red-dot-sight",
+        "pilad-2-5-24l-brevis-assault-scope",
+        "specterdr-1-4x-assault-scope",
+        "vortex-spitfire-hd-gen-ii-5x"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "b-t-mp5-flash-hider",
+        "mp5-3-lug-adapter",
+        "mp5-threaded-3-lug-adapter",
+        "mp5-muzzle-cap",
+        "banish-45-suppressor",
+        "ultima-suppressor",
+        "hk-mp5sd-9mm-suppressor"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "mp5-a2-stock",
+        "mp5-a3-stock",
+        "mp5-hk33-53-stock"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "mp5-standard-30-round-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "stock": "mp5-a3-stock",
+    "magazine": "mp5-standard-30-round-magazine"
+  },
+  "notes": "Gunny Rank 1. Classic 9mm SMG. SD variant upper accepts integrated suppressor.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/52/MP5_inspect.png"
+}

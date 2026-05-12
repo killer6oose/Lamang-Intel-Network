@@ -1,0 +1,76 @@
+{
+  "id": "mossberg-590",
+  "name": "Mossberg 590",
+  "type": "Shotgun",
+  "slot": "Primary",
+  "caliber": "12 Gauge",
+  "manufacturer": "Mossberg",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 42.1,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 3.412,
+    "rateOfFire": 60,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "12 Gauge 00 Buck",
+    "12 Gauge Slug",
+    "12 Gauge Flechette",
+    "12 Gauge Magnum"
+  ],
+  "slots": {
+    "handguard": {
+      "label": "Forend / Handguard",
+      "required": false,
+      "compatible": [
+        "m590-forend",
+        "m590-moe-forend",
+        "m590-tri-rail-forend"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "m590-stock",
+        "m590-sga-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "mossberg-salvo-12-choke-adapter",
+        "salvo-12-suppressor"
+      ]
+    },
+    "optic": {
+      "label": "Optic / Sight",
+      "required": false,
+      "compatible": [
+        "m590-front-ghost-ring-sight",
+        "m590-rear-ghost-ring-sight"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine / Tube",
+      "required": true,
+      "compatible": [
+        "m590-12ga-6-round-cap",
+        "m590-12ga-10-round-magazine"
+      ]
+    }
+  },
+  "notes": "Loot only. Pump-action shotgun. Higher MOA (42.1) than M870.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/96/M590_inspect.png"
+}

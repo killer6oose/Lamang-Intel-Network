@@ -1,0 +1,21 @@
+{
+  "id": "headscarf-black",
+  "name": "Headscarf (Black)",
+  "type": "Headwear",
+  "subtype": "Vanity",
+  "slot": "Headwear",
+  "manufacturer": null,
+  "vendor": null,
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 0.06,
+    "rainProtection": 0
+  },
+  "gridSize": "1x1",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/06/HScarf%28Black%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "slots": {}
+}

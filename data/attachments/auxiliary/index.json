@@ -1,0 +1,26 @@
+[
+  {
+    "id": "m9a1-hammer",
+    "name": "M9A1 Hammer",
+    "category": "auxiliary",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "colt-1911-commander-hammer",
+    "name": "Colt 1911 Commander Hammer",
+    "category": "auxiliary",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  }
+]

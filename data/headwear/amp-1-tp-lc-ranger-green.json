@@ -1,0 +1,32 @@
+{
+  "id": "amp-1-tp-lc-ranger-green",
+  "name": "AMP-1 TP LC (Ranger Green)",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "Busch Protective",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 1.4,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8c/AMP-1_TP_LC%28Ranger_Green%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA+",
+  "material": "Aramid",
+  "slots": {
+    "nvgMount": {
+      "label": "NVG Mount",
+      "required": false,
+      "compatible": [
+        "l4-g24-helmet-nvg-mount",
+        "rhino-helmet-nvg-mount"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "fast-mt-tan",
+  "name": "FAST MT (Tan)",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "Ops-Core",
+  "vendor": "Handshake",
+  "vendorRank": 3,
+  "baseStats": {
+    "weight": 0.693,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c9/FAST_MT%28Tan%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA+",
+  "material": "Aramid",
+  "slots": {
+    "nvgMount": {
+      "label": "NVG Mount",
+      "required": false,
+      "compatible": [
+        "l4-g24-helmet-nvg-mount",
+        "rhino-helmet-nvg-mount"
+      ]
+    }
+  }
+}

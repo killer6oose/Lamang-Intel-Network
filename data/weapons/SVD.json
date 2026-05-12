@@ -1,0 +1,89 @@
+{
+  "id": "svd",
+  "name": "SVD",
+  "type": "Sniper Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x54mm R",
+  "manufacturer": "Dragunov / Izhmash",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 0.95,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 4.542,
+    "rateOfFire": 600,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "7.62x54R AP (7N13)",
+    "7.62x54R LPS (57-N-323S)",
+    "7.62x54R Sniper Round (7N1)",
+    "7.62x54R Tracer (T-46M)"
+  ],
+  "slots": {
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "svd-barrel-620mm"
+      ]
+    },
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "svd-wooden-handguard",
+        "svd-polymer-handguard",
+        "svd-chassis-mk1-handguard",
+        "vfr-svd-f-a-b-handguard"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "svd-wooden-stock-with-grip",
+        "svd-polymer-stock-with-grip"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "pso-1-4x24",
+        "npz-pso-3-9x24",
+        "svd-front-sight",
+        "svd-rear-sight",
+        "viper-pst-gen-ii-5-25x50-rifle-scope",
+        "vudu-3-5-18x50-ffp-rifle-scope"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "svd-rotor-43-suppressor-7-62-54-r",
+        "762-sd-suppressor",
+        "slh762-qd-suppressor"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "svd-dragunov-10-round-magazine",
+        "svd-dragunov-20-round-magazine"
+      ]
+    }
+  },
+  "notes": "Loot only. Semi-auto DMR. Best base accuracy of all 7.62x54R weapons (0.95 MOA). SVD stock includes integral pistol grip.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/85/SVD_inspect.png"
+}

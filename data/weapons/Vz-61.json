@@ -1,0 +1,69 @@
+{
+  "id": "vz-61",
+  "name": "Vz. 61",
+  "type": "SMG",
+  "slot": "Primary",
+  "caliber": "7.65mm Browning",
+  "manufacturer": "CZ",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 7.52,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 1.375,
+    "rateOfFire": 800,
+    "firingMode": "Full Auto"
+  },
+  "compatibleAmmo": [
+    "7.65mm Browning"
+  ],
+  "slots": {
+    "chargingHandle": {
+      "label": "Charging Handle",
+      "required": false,
+      "compatible": [
+        "vz-61-charging-knobs"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "vz-61-polymer-pistol-grip",
+        "vz-61-wooden-pistol-grip"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "vz-61-wire-stock"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "vz-61-tos-suppressor"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "vz-61-7-65-browning-10-round-magazine",
+        "vz-61-7-65-browning-20-round-magazine"
+      ]
+    }
+  },
+  "notes": "Loot only. Lightest SMG in game at 1.375kg. No full weapon inspect image on wiki - uses null image.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": null
+}

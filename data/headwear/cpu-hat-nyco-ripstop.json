@@ -1,0 +1,21 @@
+{
+  "id": "cpu-hat-nyco-ripstop",
+  "name": "CPU Hat Nyco Ripstop",
+  "type": "Headwear",
+  "subtype": "Vanity",
+  "slot": "Headwear",
+  "manufacturer": "Helikon-Tex",
+  "vendor": "Handshake",
+  "vendorRank": 3,
+  "baseStats": {
+    "weight": 0.113,
+    "rainProtection": 50
+  },
+  "gridSize": "1x1",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a8/CPUHat_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "slots": {}
+}

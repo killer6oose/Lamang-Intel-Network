@@ -1,0 +1,32 @@
+{
+  "id": "6b47-ratnik",
+  "name": "6B47 Ratnik",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "Armokom",
+  "vendor": null,
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 1.2,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/aa/6B47_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIA",
+  "material": "Aramid",
+  "slots": {
+    "nvgMount": {
+      "label": "NVG Mount",
+      "required": false,
+      "compatible": [
+        "l4-g24-helmet-nvg-mount",
+        "rhino-helmet-nvg-mount"
+      ]
+    }
+  }
+}

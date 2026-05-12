@@ -1019,5 +1019,55 @@
     "magnification": "1x",
     "sightRange": 25.0,
     "nvgCompatible": false
+  },
+  {
+    "id": "aimpoint-acro-p2",
+    "name": "Aimpoint ACRO P-2",
+    "category": "optic",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "glock-17-front-tritium-sight",
+    "name": "Glock 17 OEM Front Tritium Sight",
+    "category": "optic",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "glock-17-rear-tritium-sight",
+    "name": "Glock 17 OEM Rear Tritium Sight",
+    "category": "optic",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "mosin-nagant-tri-rail-scope-mount",
+    "name": "Mosin-Nagant Tri-Rail Scope Mount",
+    "category": "optic",
+    "statModifiers": {
+      "accuracy": -0.2
+    },
+    "weight": 0.05,
+    "vendor": "Artisan",
+    "vendorRank": 1,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
   }
 ]

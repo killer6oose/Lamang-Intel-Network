@@ -1,0 +1,77 @@
+{
+  "id": "glock-17",
+  "name": "Glock 17",
+  "type": "Pistol",
+  "slot": "Secondary",
+  "caliber": "9x19mm",
+  "manufacturer": "Glock",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 0.81,
+    "accuracy": 11.7,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 3.4,
+    "rateOfFire": 600,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "9x19mm FMJ",
+    "9x19mm HP",
+    "9x19mm Libra Snail",
+    "9x19mm Tracer",
+    "9x19mm Xtreme Penetrator P+"
+  ],
+  "slots": {
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "glock-17-standard-barrel",
+        "glock-17-match-grade-barrel",
+        "glock-17-match-grade-threaded-barrel",
+        "glock-17-match-grade-threaded-barrel-gold"
+      ]
+    },
+    "slide": {
+      "label": "Slide",
+      "required": false,
+      "compatible": [
+        "glock-17-slide",
+        "glock-17-zps6-slide",
+        "n17-reptile-edc-slide",
+        "p40-warhawk-slide",
+        "tyton-glock-17-slide",
+        "z17-citadel-slide"
+      ]
+    },
+    "optic": {
+      "label": "Sights / Optic",
+      "required": false,
+      "compatible": [
+        "aimpoint-acro-p2",
+        "hs507c-x2-reflex-sight",
+        "viper-red-dot-sight",
+        "glock-17-front-iron-sight",
+        "glock-17-rear-iron-sight",
+        "glock-17-front-tritium-sight",
+        "glock-17-rear-tritium-sight"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "glock-17-9x19mm-17rd-magazine"
+      ]
+    }
+  },
+  "notes": "Vendor not confirmed - marked loot only pending verification.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/85/G17_inspect.png"
+}

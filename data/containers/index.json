@@ -1,0 +1,110 @@
+[
+  {
+    "id": "wallet",
+    "name": "Wallet",
+    "gridSize": "1x1",
+    "rigSlots": 1,
+    "internalSlots": 4,
+    "vendor": "Artisan",
+    "vendorRank": 2,
+    "holds": "valuables",
+    "weight": 0.05,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a9/Wallet_icon.png"
+  },
+  {
+    "id": "leather-key-holder",
+    "name": "Leather Key Holder",
+    "gridSize": "1x1",
+    "rigSlots": 1,
+    "internalSlots": 6,
+    "vendor": "Artisan",
+    "vendorRank": 2,
+    "holds": "keys",
+    "weight": 0.05,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/83/Leather_Key_Holder_icon.png"
+  },
+  {
+    "id": "key-case",
+    "name": "Key Case",
+    "gridSize": "1x2",
+    "rigSlots": 2,
+    "internalSlots": 15,
+    "vendor": "Artisan",
+    "vendorRank": 3,
+    "holds": "keys",
+    "weight": 0.05,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ea/Key_C_icon.png"
+  },
+  {
+    "id": "mini-first-aid-kit",
+    "name": "Mini First Aid Kit",
+    "gridSize": "1x1",
+    "rigSlots": 1,
+    "internalSlots": 3,
+    "vendor": "Lab Rat",
+    "vendorRank": 2,
+    "holds": "medical",
+    "weight": 0.1,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/98/M-FAK_icon.png"
+  },
+  {
+    "id": "hard-case-first-aid-kit",
+    "name": "Hard Case First Aid Kit",
+    "gridSize": "1x1",
+    "rigSlots": 1,
+    "internalSlots": 2,
+    "vendor": "Lab Rat",
+    "vendorRank": 1,
+    "holds": "medical",
+    "weight": 0.08,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/89/HCKit_icon.png"
+  },
+  {
+    "id": "quick-release-first-aid-kit",
+    "name": "Quick Release First Aid Kit",
+    "gridSize": "1x2",
+    "rigSlots": 2,
+    "internalSlots": 6,
+    "vendor": "Lab Rat",
+    "vendorRank": 3,
+    "holds": "medical",
+    "weight": 0.15,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8e/QRKit_icon.png"
+  },
+  {
+    "id": "rip-away-emt-pouch",
+    "name": "Rip-Away EMT Pouch",
+    "gridSize": "1x2",
+    "rigSlots": 2,
+    "internalSlots": 9,
+    "vendor": "Lab Rat",
+    "vendorRank": 4,
+    "holds": "medical",
+    "weight": 0.2,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/42/EMT_icon.png"
+  },
+  {
+    "id": "admin-pouch",
+    "name": "Admin Pouch",
+    "gridSize": "1x2",
+    "rigSlots": 2,
+    "internalSlots": 6,
+    "vendor": "Artisan",
+    "vendorRank": 2,
+    "holds": "keys",
+    "weight": 0.1,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/3d/Admin_Pouch_icon.png"
+  },
+  {
+    "id": "kombat-folder",
+    "name": "Kombat Folder",
+    "gridSize": "2x2",
+    "rigSlots": 4,
+    "internalSlots": 16,
+    "vendor": "Artisan",
+    "vendorRank": 3,
+    "holds": "keys",
+    "weight": 0.15,
+    "image": null
+  }
+]

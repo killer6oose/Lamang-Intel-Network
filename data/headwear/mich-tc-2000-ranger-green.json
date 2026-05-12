@@ -1,0 +1,23 @@
+{
+  "id": "mich-tc-2000-ranger-green",
+  "name": "Mich TC-2000 (Ranger Green)",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "MSA",
+  "vendor": "Handshake",
+  "vendorRank": 1,
+  "baseStats": {
+    "weight": 1.25,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/26/TC-2000%28Green%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA",
+  "material": "Aramid",
+  "slots": {}
+}

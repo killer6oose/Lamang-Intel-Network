@@ -1,0 +1,32 @@
+{
+  "id": "mich-tc-2002-tan",
+  "name": "MICH TC-2002 (Tan)",
+  "type": "Headwear",
+  "subtype": "Helmet",
+  "slot": "Headwear",
+  "manufacturer": "MSA",
+  "vendor": "Handshake",
+  "vendorRank": 2,
+  "baseStats": {
+    "weight": 1.23,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/51/TC-2002%28Tan%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "armorLevel": "IIIA",
+  "material": "Aramid",
+  "slots": {
+    "nvgMount": {
+      "label": "NVG Mount",
+      "required": false,
+      "compatible": [
+        "l4-g24-helmet-nvg-mount",
+        "rhino-helmet-nvg-mount"
+      ]
+    }
+  }
+}

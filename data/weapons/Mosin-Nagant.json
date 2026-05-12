@@ -1,0 +1,76 @@
+{
+  "id": "mosin-nagant",
+  "name": "Mosin-Nagant",
+  "type": "Bolt-Action Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x54mm R",
+  "manufacturer": "Various",
+  "vendor": "Artisan",
+  "vendorRank": 1,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 3.0,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 3.525,
+    "rateOfFire": 20,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "7.62x54R AP (7N13)",
+    "7.62x54R LPS (57-N-323S)",
+    "7.62x54R Sniper Round (7N1)",
+    "7.62x54R Tracer (T-46M)"
+  ],
+  "slots": {
+    "optic": {
+      "label": "Optic / Sight",
+      "required": false,
+      "compatible": [
+        "mosin-nagant-tri-rail-scope-mount",
+        "mosin-nagant-pu-3-5x22-scope",
+        "mosin-nagant-front-iron-sight",
+        "mosin-nagant-rear-iron-sight"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "mosin-nagant-tanker-muzzle-brake",
+        "mosin-nagant-howling-raven-muzzle-brake",
+        "mosin-nagant-bramit-suppressor"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "mosin-nagant-wooden-stock-rifle",
+        "mosin-nagant-wooden-stock-carbine",
+        "mosin-nagant-folding-stock",
+        "mosin-nagant-archangel-stock"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "mosin-nagant-7-62x54r-5-round-internal-magazine",
+        "mosin-nagant-7-62x54r-10-round-archangel-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "stock": "mosin-nagant-wooden-stock-rifle",
+    "magazine": "mosin-nagant-7-62x54r-5-round-internal-magazine"
+  },
+  "notes": "Artisan Rank 1. Bolt-action, 7.62x54mm R. Archangel magazine requires Archangel stock.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8f/Mosin_inspect.png"
+}

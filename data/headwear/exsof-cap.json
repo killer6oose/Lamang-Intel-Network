@@ -1,0 +1,21 @@
+{
+  "id": "exsof-cap",
+  "name": "ExSOF Cap",
+  "type": "Headwear",
+  "subtype": "Vanity",
+  "slot": "Headwear",
+  "manufacturer": "ExSOF Sec",
+  "vendor": "Banshee",
+  "vendorRank": 1,
+  "baseStats": {
+    "weight": 0.08,
+    "rainProtection": 50
+  },
+  "gridSize": "1x1",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/65/ExCap_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "slots": {}
+}

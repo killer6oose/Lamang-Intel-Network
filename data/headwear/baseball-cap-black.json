@@ -1,0 +1,21 @@
+{
+  "id": "baseball-cap-black",
+  "name": "Baseball Cap (Black)",
+  "type": "Headwear",
+  "subtype": "Vanity",
+  "slot": "Headwear",
+  "manufacturer": null,
+  "vendor": "Handshake",
+  "vendorRank": 1,
+  "baseStats": {
+    "weight": 0.08,
+    "rainProtection": 30
+  },
+  "gridSize": "1x1",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c9/BCap%28Black%29_inspect.png",
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "slots": {}
+}

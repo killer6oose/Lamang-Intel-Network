@@ -8,7 +8,7 @@ Forked from the open-source GZW Armory by DarkTidings20 (https://github.com/Dark
 **Stack:** Next.js 16.2.4 (App Router), React 19, TypeScript, Tailwind CSS.
 **Run dev server:** `npm run dev` from project root.
 **Type check:** `npx tsc --noEmit` (should return no output if clean).
-
+Always use the MediaWiki API method to pull data from the GZW wiki
 ---
 
 ## Project structure
@@ -115,46 +115,94 @@ https://gray-zone-warfare.fandom.com/api.php?action=query&titles=File:WEAPONNAME
 
 ## Current weapon files (all in data/weapons/)
 
+32 total files. All pass JSON validation with no broken attachment references (435 attachment IDs).
+
+### Assault Rifles (13)
+
 | File | Caliber | Vendor | Rank | Verified | Notes |
 |------|---------|--------|------|----------|-------|
 | AK-12.json | 5.45x39mm | Turncoat | 2 | YES | Ratnik platform |
+| AK-15.json | 7.62x39mm | Artisan | 3 | YES | Ratnik platform, 7.62x39mm variant of AK-12 |
 | AK-19.json | 5.56x45mm | Loot only | - | YES | Ratnik + STANAG mags NOT compatible, uses ak19-specific mag |
 | AK-308.json | 7.62x51mm | Vulture | 4 | NO | Rate of fire estimated at 600 RPM |
 | AK-74M.json | 5.45x39mm | Artisan | 2 | NO | Weight/accuracy/ROF all estimated (wiki blank) |
 | AK-74N.json | 5.45x39mm | Turncoat | 1 | YES | AK-74M + side rail optic slot |
 | AKM.json | 7.62x39mm | Artisan | 1 | YES | |
 | AKMN.json | 7.62x39mm | Turncoat | 2 | YES | AKM + side rail. Uses AKM inspect image (no AKMN-specific image on wiki) |
+| AKMSN.json | 7.62x39mm | Loot only | - | NO | AKM folding stock + night rail. Stats estimated (wiki blank) |
 | AKS-74U.json | 5.45x39mm | Artisan | 1 | YES | Lightest AR at 2.757kg. Uses AKS-74U-specific parts |
 | CQA1.json | 5.56x45mm | Gunny | 1 | YES | |
 | DDM4.json | 5.56x45mm | Gunny | 3 | NO | |
 | L403A1.json | 5.56x45mm | Gunny | 4 | YES | Best base accuracy of all 5.56 rifles (0.80 MOA) |
 | M16A1.json | 5.56x45mm | Gunny | 1 | YES | Uses M16A1 Upper inspect image (no full weapon image on wiki) |
 | M4A1.json | 5.56x45mm | Gunny | 2 | YES | |
+| SIG-MCX.json | .300 AAC Blackout | Banshee | 3 | YES | STANAG/PMAG magazine compatible |
+| SKS.json | 7.62x39mm | Loot only | - | NO | Semi-auto only. Stats estimated (wiki blank) |
 
-All 13 files pass JSON validation with no broken attachment references.
+### Bolt-Action Rifles / DMRs (5)
+
+| File | Caliber | Vendor | Rank | Verified | Notes |
+|------|---------|--------|------|----------|-------|
+| M700.json | 7.62x51mm | Gunny | 2 | NO | Weight/accuracy estimated (wiki blank) |
+| Mosin-Nagant.json | 7.62x54mm R | Artisan | 1 | YES | 20 RPM bolt-action |
+| Mosin-Nagant-Sniper.json | 7.62x54mm R | Artisan | 2 | NO | Sniper variant. Stats estimated |
+| SVD.json | 7.62x54mm R | Loot only | - | YES | Best accuracy of 7.62x54R (0.95 MOA). Semi-auto |
+
+### SMGs (5)
+
+| File | Caliber | Vendor | Rank | Verified | Notes |
+|------|---------|--------|------|----------|-------|
+| MP5.json | 9x19mm | Gunny | 1 | YES | Rich mod ecosystem |
+| MP7A1.json | 4.6x30mm | Banshee | 2 | NO | Stats estimated. Uses MP7_inspect.png (shared with MP7A2) |
+| MP7A2.json | 4.6x30mm | Vulture | 2 | NO | Adds foregrip slot over MP7A1. Stats estimated |
+| Vz-61.json | 7.65mm Browning | Loot only | - | YES | Lightest SMG at 1.375kg. No full inspect image on wiki |
+
+### Handguns (5)
+
+| File | Caliber | Vendor | Rank | Verified | Notes |
+|------|---------|--------|------|----------|-------|
+| beretta-m9a1.json | 9x19mm | Gunny | 1 | YES | |
+| colt-1911.json | .45 ACP | Loot only | - | YES | |
+| colt-combat-commander.json | .45 ACP | Vulture | quest | YES | Quest reward |
+| glock-17.json | 9x19mm | Loot only | - | YES | |
+| type-51.json | 7.62x25mm | Loot only | - | YES | |
+
+### Shotguns (2)
+
+| File | Caliber | Vendor | Rank | Verified | Notes |
+|------|---------|--------|------|----------|-------|
+| M870.json | 12 Gauge | Gunny | 1 | YES | |
+| Mossberg-590.json | 12 Gauge | Loot only | - | YES | Higher MOA (42.1) than M870 |
 
 ---
 
 ## Attachment index IDs - known gaps / recently added
 
-These were added to the repo during this work session and are marked `"verified": false`:
+These were added and are marked `"verified": false`:
 
-- `data/attachments/receiver/index.json` - added `ak-ratnik-dust-cover` (used by AK-12, AK-19) and `ak-308-dust-cover` (used by AK-308)
-- `data/attachments/bufferTube/index.json` - added `m16a1-buffer-tube` (rifle-length fixed tube for M16A1)
+- `data/attachments/receiver/index.json` - added `ak-ratnik-dust-cover`, `ak-308-dust-cover`, `mp5-upper-receiver`, `mp5sd-upper-receiver`, `sig-mcx-upper-receiver`
+- `data/attachments/bufferTube/index.json` - added `m16a1-buffer-tube`
+- `data/attachments/gasBlock/index.json` - added `ratnik-gas-tube` (AK-15)
+- `data/attachments/optic/index.json` - added `mosin-nagant-tri-rail-scope-mount`
+- `data/attachments/stock/index.json` - added `aks-74u-buffer-tube-adapter`
+- `data/attachments/rail/index.json` - added 8 MP7 tactical devices (NcStar laser, Steiner, Surefire, Zenitco items)
 
-Stats on those three are estimated and need in-game verification.
+Stats on unverified stubs are estimated and need in-game verification.
 
 ---
 
 ## Pending / known TODOs
 
-1. **Verify unverified weapon stats in-game:** AK-74M, AK-308 (rate of fire), DDM4
+1. **Verify unverified weapon stats in-game:** AK-74M, AK-308 (rate of fire), DDM4, AKMSN, SKS, M700, Mosin-Nagant (Sniper), MP7A1, MP7A2
 2. **Save Build functionality** - the 'Save Build' button does nothing yet. Needs localStorage or a backend
 3. **Gear slots** - Headwear, Eyewear, Face Cover, Armor/Rig, Melee, Earpiece, Binoculars all show 'coming soon'. No gear JSON data exists yet
-4. **Holster slot** - currently filters for `type === "Pistol"` but no pistol weapon files exist in data/weapons/ yet. The slot works but the dropdown will be empty
-5. **More weapon types** - only assault rifles are done. DMRs, snipers, shotguns, SMGs, pistols all missing
+4. **Holster slot** - filters for `type === "Pistol"` - 5 handgun files exist but the type field is set differently. Verify the type string used in WeaponBuilderShell.tsx matches these files
+5. **Weapon type filtering** - builder currently only shows Assault Rifles in the Primary slot dropdown. Needs updating to include SMG, Shotgun, Bolt-Action Rifle, Sniper Rifle types
 6. **Attachment stat data** - many attachment index.json files have zero or incomplete statModifiers. The wiki has this data but it requires scraping or manual entry
 7. **AKMN image** - reuses AKM inspect image. If wiki ever adds an AKMN-specific image, update `data/weapons/AKMN.json` `"image"` field
+8. **Vz. 61 image** - no full weapon inspect image exists on the wiki yet. `image` field is null in Vz-61.json
+9. **MP7A1/MP7A2 image** - both use shared `MP7_inspect.png`. If wiki adds variant-specific images, update the JSON files
+10. **strippedWeight for all weapons** - `baseStats.strippedWeight` is the bare receiver weight used for accurate attachment-based weight math. Currently only AK-12 has this value (2.456 kg). All other weapons need in-game measurement. The builder falls back to `baseStats.weight` (full default config) for any weapon missing `strippedWeight`.
 
 ---
 

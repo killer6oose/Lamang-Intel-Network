@@ -1,0 +1,122 @@
+[
+  {
+    "id": "civilian-sport-fanny-pack",
+    "name": "Civilian Sport Fanny Pack",
+    "category": "Civilian",
+    "gridSize": "1x1",
+    "slots": 1,
+    "weight": 0.200,
+    "vendor": "Artisan",
+    "vendorRank": 1,
+    "lootOnly": true,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/60/SFPack_icon.png"
+  },
+  {
+    "id": "civilian-leather-fanny-pack",
+    "name": "Civilian Leather Fanny Pack",
+    "category": "Civilian",
+    "gridSize": "1x2",
+    "slots": 2,
+    "weight": 0.345,
+    "vendor": null,
+    "vendorRank": null,
+    "lootOnly": true,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/8a/LFPack_icon.png"
+  },
+  {
+    "id": "leather-belt",
+    "name": "Leather Belt",
+    "category": "Civilian",
+    "gridSize": "1x1",
+    "slots": 1,
+    "weight": 0.305,
+    "vendor": null,
+    "vendorRank": null,
+    "lootOnly": true,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/4a/Belt_icon.png"
+  },
+  {
+    "id": "tactical-belt",
+    "name": "Tactical Belt",
+    "category": "Military",
+    "gridSize": "1x2",
+    "slots": 2,
+    "weight": 0.450,
+    "vendor": "Handshake",
+    "vendorRank": 2,
+    "lootOnly": false,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/74/Tactical_icon.png"
+  },
+  {
+    "id": "mc50-laser-edition",
+    "name": "MC50 Laser Edition",
+    "category": "Military",
+    "gridSize": "1x3",
+    "slots": 3,
+    "weight": 0.721,
+    "vendor": "Handshake",
+    "vendorRank": 3,
+    "lootOnly": false,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f3/MC50_icon.png"
+  },
+  {
+    "id": "belt-bag",
+    "name": "Belt Bag",
+    "category": "Military",
+    "gridSize": "1x4",
+    "slots": 4,
+    "weight": 0.300,
+    "vendor": null,
+    "vendorRank": null,
+    "lootOnly": true,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c4/BeltB_icon.png"
+  },
+  {
+    "id": "lightweight-combat-belt",
+    "name": "Lightweight Combat Belt",
+    "category": "Military",
+    "gridSize": "1x4",
+    "slots": 4,
+    "weight": 0.950,
+    "vendor": "Turncoat",
+    "vendorRank": 3,
+    "lootOnly": false,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/81/LCB_icon.png"
+  },
+  {
+    "id": "custom-gear-lowpro-belt",
+    "name": "Custom Gear Lowpro Belt",
+    "category": "Military",
+    "gridSize": "1x2",
+    "slots": 2,
+    "weight": 0.250,
+    "vendor": "Turncoat",
+    "vendorRank": 2,
+    "lootOnly": false,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0a/Custom_Gear_Lowpro_Belt_icon.png"
+  },
+  {
+    "id": "light-anatomical-belt-type-2-olive",
+    "name": "Light Anatomical Belt Type 2 (Olive)",
+    "category": "Military",
+    "gridSize": "1x4",
+    "slots": 4,
+    "weight": 0.950,
+    "vendor": "Turncoat",
+    "vendorRank": 4,
+    "lootOnly": false,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/bb/Type2%28Olive%29_icon.png"
+  },
+  {
+    "id": "burans-light-anatomical-belt-type-2",
+    "name": "Buran's Light Anatomical Belt Type 2",
+    "category": "Military",
+    "gridSize": "1x4",
+    "slots": 4,
+    "weight": 0.950,
+    "vendor": null,
+    "vendorRank": null,
+    "lootOnly": true,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a4/Type2_Buran_icon.png"
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "id": "ak-15",
+  "name": "AK-15",
+  "type": "Assault Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x39mm",
+  "manufacturer": "Kalashnikov Concern",
+  "vendor": "Artisan",
+  "vendorRank": 3,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 2.5,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 3.81,
+    "rateOfFire": 700,
+    "firingMode": "Single / Full Auto"
+  },
+  "compatibleAmmo": [
+    "7.62x39mm BP (7N23)",
+    "7.62x39mm PS (57-N-231C)",
+    "7.62x39mm SP",
+    "7.62x39mm Tracer (57-N-231P)",
+    "7.62x39mm US"
+  ],
+  "slots": {
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "ak-ratnik-grip"
+      ]
+    },
+    "gasBlock": {
+      "label": "Gas Block",
+      "required": false,
+      "compatible": [
+        "ratnik-gas-tube"
+      ]
+    },
+    "chargingHandle": {
+      "label": "Charging Handle",
+      "required": false,
+      "compatible": [
+        "ak-rp-1-charging-handle"
+      ]
+    },
+    "receiver": {
+      "label": "Dust Cover / Receiver",
+      "required": false,
+      "compatible": [
+        "ak-ratnik-dust-cover"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "ak-12-rear-sight",
+        "kobra-ekp-8-18-red-dot-sight",
+        "kobra-ekp-1s-03-red-dot-sight",
+        "pk-01-vs-red-dot-sight",
+        "okp7-red-dot-sight",
+        "pilad-p1x42-red-dot-sight",
+        "pso-1-4x24",
+        "npz-pso-3-9x24"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "ak-15-suppressor",
+        "dtk-1-muzzle-brake",
+        "dtk-2-muzzle-brake",
+        "ak-100-series-muzzle-brake",
+        "ak-adapter-14-1lh-to-24-1-5",
+        "ak-bulgarian-flash-hider"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "ratnik-foldable-stock",
+        "aks-74u-buffer-tube-adapter",
+        "aks-74u-foldable-stock"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "ak15-7-62x39mm-30-round-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "pistolGrip": "ak-ratnik-grip",
+    "stock": "ratnik-foldable-stock",
+    "magazine": "ak15-7-62x39mm-30-round-magazine"
+  },
+  "notes": "7.62x39mm variant of the AK-12 Ratnik platform. Artisan Rank 3. Shares Ratnik parts with AK-12.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e3/AK-15_inspect.png"
+}

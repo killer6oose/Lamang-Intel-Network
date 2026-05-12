@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ncstar-led-flashlight",
+    "name": "NcStar LED Flashlight",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "ncstar-compact-green-laser",
+    "name": "NcStar Compact Green Laser",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.04,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "steiner-an-peq-15a-dbal-a2",
+    "name": "Steiner AN/PEQ-15A DBAL-A2",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.18,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "steiner-cqbl-1",
+    "name": "Steiner CQBL-1",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.1,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "surefire-m600-scout-light",
+    "name": "Surefire M600 Scout light",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.085,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "surefire-x400v-b-irc",
+    "name": "Surefire X400V-B-IRC",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.11,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "zenitco-klesch-1",
+    "name": "Zenitco Klesch-1",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.06,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "zenitco-klesch-2",
+    "name": "Zenitco Klesch-2",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.07,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "zenitco-perst-4",
+    "name": "Zenitco PERST-4",
+    "category": "rail",
+    "statModifiers": {},
+    "weight": 0.09,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  }
+]

@@ -1,0 +1,723 @@
+[
+  {
+    "id": "nam-thaven-doctor-s-office-key",
+    "name": "Nam Thaven Doctor's Office Key",
+    "location": "Nam Thaven",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "nam-thaven-restaurant-storage-key",
+    "name": "Nam Thaven Restaurant Storage Key",
+    "location": "Nam Thaven",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "nam-thaven-marketplace-office-key",
+    "name": "Nam Thaven Marketplace Office Key",
+    "location": "Nam Thaven",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "nam-thaven-occupied-villa-bedroom-key",
+    "name": "Nam Thaven Occupied Villa Bedroom Key",
+    "location": "Nam Thaven",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "nam-thaven-lumberyard-maintenance-room-key",
+    "name": "Nam Thaven Lumberyard Maintenance Room Key",
+    "location": "Nam Thaven",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "nam-thaven-town-hall-finance-department-key-card",
+    "name": "Nam Thaven Town Hall Finance Department Key Card",
+    "location": "Nam Thaven",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "kiu-vongsa-doctor-s-office-key",
+    "name": "Kiu Vongsa Doctor's Office Key",
+    "location": "Kiu Vongsa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "kiu-vongsa-restaurant-storage-key",
+    "name": "Kiu Vongsa Restaurant Storage Key",
+    "location": "Kiu Vongsa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "kiu-vongsa-marketplace-office-key",
+    "name": "Kiu Vongsa Marketplace Office Key",
+    "location": "Kiu Vongsa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "kiu-vongsa-occupied-villa-bedroom-key",
+    "name": "Kiu Vongsa Occupied Villa Bedroom Key",
+    "location": "Kiu Vongsa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "kiu-vongsa-lumberyard-maintenance-room-key",
+    "name": "Kiu Vongsa Lumberyard Maintenance Room Key",
+    "location": "Kiu Vongsa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "kiu-vongsa-town-hall-finance-department-key-card",
+    "name": "Kiu Vongsa Town Hall Finance Department Key Card",
+    "location": "Kiu Vongsa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-doctor-s-office-key",
+    "name": "Pha Lang Doctor's Office Key",
+    "location": "Pha Lang",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-restaurant-storage-key",
+    "name": "Pha Lang Restaurant Storage Key",
+    "location": "Pha Lang",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-marketplace-office-key",
+    "name": "Pha Lang Marketplace Office Key",
+    "location": "Pha Lang",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-occupied-villa-bedroom-key",
+    "name": "Pha Lang Occupied Villa Bedroom Key",
+    "location": "Pha Lang",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-lumberyard-maintenance-room-key",
+    "name": "Pha Lang Lumberyard Maintenance Room Key",
+    "location": "Pha Lang",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-town-hall-finance-department-key-card",
+    "name": "Pha Lang Town Hall Finance Department Key Card",
+    "location": "Pha Lang",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hunter-s-paradise-weapon-storage-key",
+    "name": "Hunter's Paradise Weapon Storage Key",
+    "location": "Hunter's Paradise",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hunter-s-paradise-motel-room-102-key",
+    "name": "Hunter's Paradise Motel Room 102 Key",
+    "location": "Hunter's Paradise",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hunter-s-paradise-motel-room-101-key",
+    "name": "Hunter's Paradise Motel Room 101 Key",
+    "location": "Hunter's Paradise",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hunter-s-paradise-improvised-motel-armory-key",
+    "name": "Hunter's Paradise Improvised Motel Armory Key",
+    "location": "Hunter's Paradise",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hunter-s-paradise-shooting-lines-storage-key",
+    "name": "Hunter's Paradise Shooting Lines Storage Key",
+    "location": "Hunter's Paradise",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hunter-s-paradise-bunker-key",
+    "name": "Hunter's Paradise Bunker Key",
+    "location": "Hunter's Paradise",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "sawmill-office-key",
+    "name": "Sawmill Office Key",
+    "location": "Sawmill",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "sawmill-office-storage-room-key",
+    "name": "Sawmill Office Storage Room Key",
+    "location": "Sawmill",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "sawmill-storage-shed-key",
+    "name": "Sawmill Storage Shed Key",
+    "location": "Sawmill",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "sawmill-toilet-key",
+    "name": "Sawmill Toilet Key",
+    "location": "Sawmill",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ban-pa-fishing-hut-key",
+    "name": "Ban Pa Fishing Hut Key",
+    "location": "Ban Pa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ban-pa-elder-s-house-key",
+    "name": "Ban Pa Elder's House Key",
+    "location": "Ban Pa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ban-pa-elder-s-room-key",
+    "name": "Ban Pa Elder's Room Key",
+    "location": "Ban Pa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ban-pa-warehouse-key",
+    "name": "Ban Pa Warehouse Key",
+    "location": "Ban Pa",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "inthavong-farm-shed-key",
+    "name": "Inthavong Farm Shed Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "school-room-key",
+    "name": "School Room Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-bedroom-key",
+    "name": "YBL-1 Bedroom Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-generator-room-key",
+    "name": "YBL-1 Generator Room Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-maintenance-door-key",
+    "name": "YBL-1 Maintenance Door Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-office-key-01",
+    "name": "YBL-1 Office Key 01",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-office-02-key",
+    "name": "YBL-1 Office 02 Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-corridor-d-storage-room-key",
+    "name": "YBL-1 Corridor D Storage Room Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ybl-1-weapon-storage-key",
+    "name": "YBL-1 Weapon Storage Key",
+    "location": "YBL-1",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hangar-03-key",
+    "name": "Hangar 03 Key",
+    "location": "Pha Lang Airfield",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-airfield-storage-office-key",
+    "name": "Pha Lang Airfield Storage Office Key",
+    "location": "Pha Lang Airfield",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pha-lang-airfield-meeting-room-key",
+    "name": "Pha Lang Airfield Meeting Room Key",
+    "location": "Pha Lang Airfield",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "airport-storage-shed-key",
+    "name": "Airport Storage Shed Key",
+    "location": "Pha Lang Airfield",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ban-khamphet-house-key",
+    "name": "Ban Khamphet House Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "blue-lagoon-office-storage-key",
+    "name": "Blue Lagoon Office Storage Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "blue-lagoon-shack-key",
+    "name": "Blue Lagoon Shack Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "blue-lagoon-restaurant-storage-key",
+    "name": "Blue Lagoon Restaurant Storage Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fanny-paradise-office-key",
+    "name": "Fanny Paradise Office Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hidden-fields-03-hut-key",
+    "name": "Hidden Fields 03 Hut Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "khonwan-village-house-key",
+    "name": "Khonwan Village House Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "phouarun-restaurant-attic-room-key",
+    "name": "Phouarun Restaurant Attic Room Key",
+    "location": "Blue Lagoon",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-operations-room-key-card",
+    "name": "Fort Narith Operations Room Key Card",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-hq-reception-storage-key-card",
+    "name": "Fort Narith HQ Reception Storage Key Card",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-air-traffic-control-tower-key",
+    "name": "Fort Narith Air Traffic Control Tower Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-hq-archive-key",
+    "name": "Fort Narith HQ Archive Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "a102-key",
+    "name": "A102 Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "a103-key",
+    "name": "A103 Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "a208-key",
+    "name": "A208 Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "a210-key",
+    "name": "A210 Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "c101-key",
+    "name": "C101 Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "c108-key",
+    "name": "C108 Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-dumping-ground-storage-shed-key",
+    "name": "Fort Narith Dumping Ground Storage Shed Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-garage-office-key",
+    "name": "Fort Narith Garage Office Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-hq-comms-room-key",
+    "name": "Fort Narith HQ Comms Room Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-hq-storage-room-key",
+    "name": "Fort Narith HQ Storage Room Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-infirmary-icu-key",
+    "name": "Fort Narith Infirmary ICU Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-outskirts-improvised-armory-key",
+    "name": "Fort Narith Outskirts Improvised Armory Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-motel-improvised-armory-key",
+    "name": "Fort Narith Motel Improvised Armory Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "fort-narith-shooting-range-office-key",
+    "name": "Fort Narith Shooting Range Office Key",
+    "location": "Fort Narith",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "turncoat-s-house-key",
+    "name": "Turncoat's House Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "golf-club-storage-key",
+    "name": "Golf Club Storage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "villa-marta-monica-garage-key",
+    "name": "Villa Marta Monica Garage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "midnight-sapphire-hotel-office-key",
+    "name": "Midnight Sapphire Hotel Office Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hotel-supply-closet-key-card",
+    "name": "Hotel Supply Closet Key Card",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "villa-katherine-key",
+    "name": "Villa Katherine Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "villa-anna-jana-key",
+    "name": "Villa Anna Jana Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "villa-luisa-key",
+    "name": "Villa Luisa Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "villa-elena-garage-key",
+    "name": "Villa Elena Garage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "midnight-sapphire-hotel-party-room-key",
+    "name": "Midnight Sapphire Hotel 'Party Room' Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "cement-factory-storage-key",
+    "name": "Cement Factory Storage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "tiger-bay-central-armory-key",
+    "name": "Tiger Bay Central Armory Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "improvised-bandit-lookout-key",
+    "name": "Improvised Bandit Lookout Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "toto-hardware-storage-key",
+    "name": "Toto Hardware Storage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "tiger-bay-trade-depot-office-key",
+    "name": "Tiger Bay Trade Depot Office Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "pier-storage-key",
+    "name": "Pier Storage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "tiger-bay-outskirts-garage-key",
+    "name": "Tiger Bay Outskirts Garage Key",
+    "location": "Tiger Bay",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "unlra-equipment-container-key",
+    "name": "UNLRA Equipment Container Key",
+    "location": "UNLRA",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "unlra-quarantine-key",
+    "name": "UNLRA Quarantine Key",
+    "location": "UNLRA",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "unlra-medical-container-key",
+    "name": "UNLRA Medical Container Key",
+    "location": "UNLRA",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "house-by-the-pond-key",
+    "name": "House by the Pond Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "villa-vongphet-room-key",
+    "name": "Villa Vongphet Room Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "sunset-chalet-firearms-case-key",
+    "name": "Sunset Chalet Firearms Case Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "small-marketplace-house-key",
+    "name": "Small Marketplace House Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "hidden-fields-02-hut-key",
+    "name": "Hidden Fields 02 Hut Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "phousai-village-house-key",
+    "name": "Phousai Village House Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "laf-radio-tower-room-key",
+    "name": "LAF Radio Tower Room Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "khamhao-rice-depot-room-key",
+    "name": "Khamhao Rice Depot Room Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "dongphou-hiking-camp-cottage-key",
+    "name": "Dongphou Hiking Camp Cottage Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "construction-site-storage-key",
+    "name": "Construction Site Storage Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "ban-phouphienge-room-key",
+    "name": "Ban Phouphienge Room Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  },
+  {
+    "id": "siang-radio-station-room-key",
+    "name": "Siang Radio Station Room Key",
+    "location": "Other",
+    "image": null,
+    "weight": 0.01
+  }
+]

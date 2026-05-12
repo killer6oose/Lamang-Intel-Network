@@ -1,0 +1,110 @@
+[
+  {
+    "id": "m9a1-slide",
+    "name": "M9A1 Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "1911-commander-slide",
+    "name": "1911 Commander Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "glock-17-slide",
+    "name": "Glock 17 Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "glock-17-zps6-slide",
+    "name": "Glock 17 ZPS.6 Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "n17-reptile-edc-slide",
+    "name": "N17 Reptile EDC Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "p40-warhawk-slide",
+    "name": "P40 Warhawk Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "tyton-glock-17-slide",
+    "name": "Tyton Glock 17 Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "z17-citadel-slide",
+    "name": "Z17 Citadel Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  },
+  {
+    "id": "tt-33-slide",
+    "name": "TT-33 Slide",
+    "category": "slide",
+    "statModifiers": {},
+    "weight": 0.0,
+    "vendor": null,
+    "vendorRank": null,
+    "verified": false,
+    "patchVersion": "0.4",
+    "lastUpdated": "2026-05-11"
+  }
+]

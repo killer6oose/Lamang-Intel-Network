@@ -13,7 +13,8 @@ All modifier stats follow 0.4 rule: positive = good, negative = bad.
 - `muzzleVelocity` — fps/mps of projectile
 - `loudnessReduction` — suppression effectiveness
 - `muzzleDeviceEfficiency` — compensator/brake effectiveness
-- `weight` — kg, contributes to PMC total carry weight
+- `weight` — kg, full default vendor-config weight (base + all standard attachments)
+- `strippedWeight` — kg, bare receiver only (no attachments). **Optional.** When present, the builder uses this as the base and adds equipped attachment weights for an accurate total. Without it, `weight` is used as a fallback (less accurate when mixing attachments).
 
 ### Slots
 Each weapon defines its own slot list. Not all weapons have all slots.

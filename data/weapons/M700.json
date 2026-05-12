@@ -1,0 +1,104 @@
+{
+  "id": "m700",
+  "name": "M700",
+  "type": "Bolt-Action Rifle",
+  "slot": "Primary",
+  "caliber": "7.62x51mm",
+  "manufacturer": "Remington",
+  "vendor": "Gunny",
+  "vendorRank": 2,
+  "baseStats": {
+    "durability": 100.0,
+    "accuracy": 1.2,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "weight": 4.5,
+    "rateOfFire": 20,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "7.62x51mm AP (M61)",
+    "7.62x51mm FMJ (M80)",
+    "7.62x51mm FMJ (M80A1)",
+    "7.62x51mm HPBT",
+    "7.62x51mm Tracer (M62)"
+  ],
+  "slots": {
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "m700-heavy-barrel-26",
+        "m700-threaded-barrel-18",
+        "m700-suppressed-barrel-20",
+        "m700-barrel-22",
+        "m700-vtr-barrel-22"
+      ]
+    },
+    "handguard": {
+      "label": "Handguard / Rail",
+      "required": false,
+      "compatible": [
+        "m700-mod-x-handguard"
+      ]
+    },
+    "stock": {
+      "label": "Stock",
+      "required": false,
+      "compatible": [
+        "m700-stock",
+        "m700-mod-x-stock",
+        "m700-hunter-stock",
+        "m700-hunter-stock-fde",
+        "h-s-precision-pro-series-2000"
+      ]
+    },
+    "muzzleDevice": {
+      "label": "Muzzle Device",
+      "required": false,
+      "compatible": [
+        "m700-thread-cap",
+        "srd762-qd-muzzle-brake",
+        "srd762-qd-flash-hider",
+        "srd762-qd-taper-lok-muzzle-brake",
+        "hypertap-muzzle-brake-7-62x51",
+        "slh762-qd-suppressor"
+      ]
+    },
+    "optic": {
+      "label": "Optic",
+      "required": false,
+      "compatible": [
+        "viper-pst-gen-ii-5-25x50-rifle-scope",
+        "vudu-3-5-18x50-ffp-rifle-scope",
+        "vudu-1-6x24-ffp-rifle-scope",
+        "acog-ta01nsn-4x32-assault-scope",
+        "specterdr-1-4x-assault-scope",
+        "razor-1-6x-rifle-scope",
+        "kaps-classic-4x36-oc"
+      ]
+    },
+    "magazine": {
+      "label": "Magazine",
+      "required": true,
+      "compatible": [
+        "m700-7-62x51mm-5-round-magazine",
+        "m700-7-62x51mm-10-round-magazine",
+        "m700-7-62x51mm-10-round-pmag-ac-magazine"
+      ]
+    }
+  },
+  "vendorConfig": {
+    "barrel": "m700-heavy-barrel-26",
+    "stock": "m700-stock",
+    "magazine": "m700-7-62x51mm-5-round-magazine"
+  },
+  "notes": "Gunny Rank 2. Bolt-action precision rifle. Weight and accuracy estimated - wiki has no infobox data.",
+  "verified": false,
+  "verifiedSource": "fandom wiki (stats estimated)",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a8/M700_inspect.png"
+}

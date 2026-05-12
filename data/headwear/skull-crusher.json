@@ -1,0 +1,30 @@
+{
+  "id": "skull-crusher",
+  "name": "Skull Crusher",
+  "type": "Headwear",
+  "subtype": "Vanity",
+  "slot": "Headwear",
+  "manufacturer": null,
+  "vendor": "Handshake",
+  "vendorRank": 1,
+  "baseStats": {
+    "weight": 0.28,
+    "rainProtection": 0
+  },
+  "gridSize": "2x2",
+  "image": null,
+  "verified": false,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "slots": {
+    "nvgMount": {
+      "label": "NVG Mount",
+      "required": false,
+      "compatible": [
+        "l4-g24-helmet-nvg-mount",
+        "rhino-helmet-nvg-mount"
+      ]
+    }
+  }
+}

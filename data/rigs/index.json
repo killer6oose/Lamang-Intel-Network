@@ -1,0 +1,178 @@
+[
+  {
+    "id": "improvized-rig",
+    "name": "Improvized Rig",
+    "type": "Tactical Rig",
+    "slots": 2,
+    "gridSize": "1x2",
+    "weight": 0.3,
+    "vendor": "Loot only",
+    "vendorRank": null,
+    "image": null
+  },
+  {
+    "id": "universal-chest-bag",
+    "name": "Universal Chest Bag",
+    "type": "Tactical Rig",
+    "slots": 4,
+    "gridSize": "4x1",
+    "weight": 0.3,
+    "vendor": "Artisan",
+    "vendorRank": 1,
+    "image": null
+  },
+  {
+    "id": "small-rig",
+    "name": "Small Rig",
+    "type": "Tactical Rig",
+    "slots": 4,
+    "gridSize": "2x2",
+    "weight": 0.3,
+    "vendor": "Loot only",
+    "vendorRank": null,
+    "image": null
+  },
+  {
+    "id": "biker-chest-rig",
+    "name": "Biker Chest Rig",
+    "type": "Tactical Rig",
+    "slots": 4,
+    "gridSize": "2x3",
+    "weight": 0.35,
+    "vendor": "Artisan",
+    "vendorRank": 1,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e8/Biker_icon.png"
+  },
+  {
+    "id": "type-56-ak",
+    "name": "Type 56 AK",
+    "type": "Tactical Rig",
+    "slots": 6,
+    "gridSize": "3x2",
+    "weight": 0.4,
+    "vendor": "Turncoat",
+    "vendorRank": 1,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/0/06/Type_56_icon.png"
+  },
+  {
+    "id": "type-56-sks",
+    "name": "Type 56 SKS",
+    "type": "Tactical Rig",
+    "slots": 6,
+    "gridSize": "6x1",
+    "weight": 0.35,
+    "vendor": "Turncoat",
+    "vendorRank": 1,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/97/Type_56_SKS_icon.png"
+  },
+  {
+    "id": "training-mini-rig-6",
+    "name": "Training Mini Rig (6-slot)",
+    "type": "Tactical Rig",
+    "slots": 6,
+    "gridSize": "3x2",
+    "weight": 0.6,
+    "vendor": "Handshake",
+    "vendorRank": 1,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/27/TMR_6Slot_icon.png"
+  },
+  {
+    "id": "alice",
+    "name": "ALICE",
+    "type": "Tactical Rig",
+    "slots": 8,
+    "gridSize": "4x2",
+    "weight": 0.5,
+    "vendor": "Handshake",
+    "vendorRank": 2,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/66/ALICE_icon.png"
+  },
+  {
+    "id": "training-mini-rig-9",
+    "name": "Training Mini Rig (9-slot)",
+    "type": "Tactical Rig",
+    "slots": 9,
+    "gridSize": "3x3",
+    "weight": 0.7,
+    "vendor": "Handshake",
+    "vendorRank": 2,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/6a/TMR_icon.png"
+  },
+  {
+    "id": "tactec-chest-rig",
+    "name": "TacTec Chest Rig",
+    "type": "Tactical Rig",
+    "slots": 10,
+    "gridSize": "5x2",
+    "weight": 0.5,
+    "vendor": "Handshake",
+    "vendorRank": 2,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d4/TacTec_icon.png"
+  },
+  {
+    "id": "kangaroo-9",
+    "name": "Kangaroo Tactical Rig (9-slot)",
+    "type": "Tactical Rig",
+    "slots": 9,
+    "gridSize": "3x3",
+    "weight": 0.5,
+    "vendor": "Turncoat",
+    "vendorRank": 2,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/2b/Kangaroo_9Slot_icon.png"
+  },
+  {
+    "id": "recon-chest-rig",
+    "name": "Recon Chest Rig",
+    "type": "Tactical Rig",
+    "slots": 12,
+    "gridSize": "4x3",
+    "weight": 0.78,
+    "vendor": "Handshake",
+    "vendorRank": 3,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/db/Recon_icon.png"
+  },
+  {
+    "id": "kangaroo-12",
+    "name": "Kangaroo Tactical Rig (12-slot)",
+    "type": "Tactical Rig",
+    "slots": 12,
+    "gridSize": "6x2",
+    "weight": 0.68,
+    "vendor": "Turncoat",
+    "vendorRank": 3,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/6d/Kangaroo_12Slot_icon.png"
+  },
+  {
+    "id": "6sh104",
+    "name": "6Sh104",
+    "type": "Tactical Rig",
+    "slots": 16,
+    "gridSize": "4x4",
+    "weight": 2.1,
+    "vendor": "Turncoat",
+    "vendorRank": 4,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7a/6Sh104_icon.png"
+  },
+  {
+    "id": "6sh104-coyote",
+    "name": "6Sh104 (Coyote)",
+    "type": "Tactical Rig",
+    "slots": 16,
+    "gridSize": "4x4",
+    "weight": 2.1,
+    "vendor": "Turncoat",
+    "vendorRank": 4,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/ae/6Sh104_Coyote_icon.png"
+  },
+  {
+    "id": "mayflower-uw-gen-iv",
+    "name": "Mayflower UW Chest Rig Gen IV",
+    "type": "Tactical Rig",
+    "slots": 15,
+    "gridSize": "5x3",
+    "weight": 0.57,
+    "vendor": "Handshake",
+    "vendorRank": 4,
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/e8/Mayflower_icon.png"
+  }
+]

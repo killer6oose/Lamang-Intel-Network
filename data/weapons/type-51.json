@@ -1,0 +1,55 @@
+{
+  "id": "type-51",
+  "name": "Type 51",
+  "type": "Pistol",
+  "slot": "Secondary",
+  "caliber": "7.62x25mm",
+  "manufacturer": "Norinco",
+  "vendor": "Loot only",
+  "vendorRank": null,
+  "baseStats": {
+    "weight": 0.828,
+    "accuracy": 16.11,
+    "recoilControl": 0.0,
+    "muzzleDeviceEfficiency": 0.0,
+    "ergonomics": 0.0,
+    "reloadSpeed": 0.0,
+    "rateOfFire": 600,
+    "firingMode": "Single"
+  },
+  "compatibleAmmo": [
+    "7.62x25mm FMJ",
+    "7.62x25mm PT",
+    "7.62x25mm PST"
+  ],
+  "slots": {
+    "barrel": {
+      "label": "Barrel",
+      "required": false,
+      "compatible": [
+        "type-51-barrel"
+      ]
+    },
+    "pistolGrip": {
+      "label": "Pistol Grip",
+      "required": false,
+      "compatible": [
+        "type-51-grip",
+        "type-51-wooden-grip"
+      ]
+    },
+    "slide": {
+      "label": "Slide",
+      "required": false,
+      "compatible": [
+        "tt-33-slide"
+      ]
+    }
+  },
+  "notes": "TT-33 clone. No magazine listed on wiki - no confirmed magazine variant data yet. Vendor not confirmed.",
+  "verified": true,
+  "verifiedSource": "fandom wiki infobox",
+  "patchVersion": "0.4",
+  "lastUpdated": "2026-05-11",
+  "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/fd/Type51_inspect.png"
+}
