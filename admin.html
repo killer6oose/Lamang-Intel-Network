@@ -157,18 +157,19 @@ dialog::backdrop{background:rgba(0,0,0,.75)}
 <header class="sh">
   <div class="shi">
     <a href="index.html" class="logo">
-      <img src="logo.png" width="36" height="36" alt="GZW Guides" />
-      <div><div class="lm">GZW Guides</div><div class="ls">Admin Panel</div></div>
+      <img src="logo.png" width="36" height="36" alt="Lamang Intelligence Network" />
+      <div><div class="lm">Lamang Intelligence Network</div><div class="ls">Admin Panel</div></div>
     </a>
-    <div style="display:flex;align-items:center;gap:16px">
-      <div class="abadge">&#x1F512; Restricted</div>
-      <nav class="hnav">
-        <a href="index.html">Home</a>
-        <a href="bosses.html">Bosses</a>
-        <a href="/builder">Loadout Builder</a>
-        <a href="#" id="logout-link" style="color:#e05555;display:none" onclick="logout();return false">Logout</a>
-      </nav>
-    </div>
+    <nav class="hnav" aria-label="Main navigation">
+      <a href="index.html"     class="nl">Home</a>
+      <a href="tracker.html"   class="nl">Vulture Tracking</a>
+      <a href="bosses.html"    class="nl">Bosses</a>
+      <a href="ammo.html"      class="nl">Ammo Chart</a>
+      <a href="blueprints.html" class="nl">Blueprints</a>
+      <a href="/builder" class="nl">Loadout Builder</a>
+      <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="nl">Wiki &#x2197;</a>
+      <a href="#" id="logout-link" class="nl" style="color:#e05555;display:none" onclick="logout();return false">Logout</a>
+    </nav>
   </div>
 </header>
 
@@ -1620,81 +1621,4 @@ function moveBan(idx, dir) {
 // =============================================================================
 function changePass() {
   var cur     = document.getElementById('cur-pass').value;
-  var next    = document.getElementById('new-pass').value;
-  var confirm = document.getElementById('confirm-pass').value;
-  var errEl   = document.getElementById('pass-err');
-  errEl.style.display = 'none';
-
-  if (!cur || !next || !confirm) {
-    errEl.textContent = 'All fields are required.';
-    errEl.style.display = 'block';
-    return;
-  }
-  if (next.length < 6) {
-    errEl.textContent = 'New passphrase must be at least 6 characters.';
-    errEl.style.display = 'block';
-    return;
-  }
-  if (next !== confirm) {
-    errEl.textContent = 'New passphrases do not match.';
-    errEl.style.display = 'block';
-    return;
-  }
-
-  apiCall({ action: 'change-pass', pass: cur, newPass: next }, function() {
-    adminPass = next;
-    toast('Passphrase updated.');
-    document.getElementById('cur-pass').value = '';
-    document.getElementById('new-pass').value = '';
-    document.getElementById('confirm-pass').value = '';
-  }, function(e) {
-    errEl.textContent = (e && e.message) || 'Failed to update passphrase.';
-    errEl.style.display = 'block';
-  });
-}
-
-function confirmReset() {
-  if (!confirm('Reset ALL site data to defaults?\n\nThis will wipe vulture locations, ammo data, blueprints, and banner items.\n\nThis CANNOT be undone.')) return;
-  var def = {
-    vulture: {
-      description: 'Vulture is the primary target. He rotates between 2 locations simultaneously each week.',
-      tacMapUrl: '',
-      currentLocations: [],
-      possibleLocations: [],
-      history: []
-    },
-    ammo:  [],
-    admin: { banner: [], blueprints: [] }
-  };
-  Promise.all([
-    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'vulture', pass:adminPass, data:def.vulture}) }).then(function(r){return r.json();}),
-    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'ammo',    pass:adminPass, data:def.ammo})    }).then(function(r){return r.json();}),
-    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'admin',   pass:adminPass, data:def.admin})   }).then(function(r){return r.json();})
-  ]).then(function() {
-    vultureData = def.vulture;
-    ammoData    = def.ammo;
-    adminData   = def.admin;
-    renderBossesTab();
-    renderAmmoTab();
-    renderBpTab();
-    renderBannerTab();
-    toast('All data reset to defaults.');
-  }).catch(function() {
-    toast('Reset failed - check server logs.', 'error');
-  });
-}
-
-// =============================================================================
-// INIT
-// =============================================================================
-generateCaptcha();
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    if (document.getElementById('gate-wrap').style.display !== 'none') {
-      attemptLogin();
-    }
-  }
-});
-</script>
-</body>
-</html>
+  v

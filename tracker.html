@@ -185,15 +185,15 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <div><div class="lm">Lamang Intelligence Network</div><div class="ls">Vulture Tracking</div></div>
     </a>
     <nav class="hnav" aria-label="Main navigation">
-      <a href="index.html"       class="nl">Home</a>
-      <a href="tracker.html"     class="nl active">Vulture Tracking</a>
-      <a href="bosses.html"      class="nl">Bosses</a>
-      <a href="ammo.html"        class="nl">Ammo Chart</a>
-      <a href="blueprints.html"  class="nl">Blueprints</a>
-      <a href="/builder"       class="nl">Loadout Builder</a>
+      <a href="index.html"     class="nl">Home</a>
+      <a href="tracker.html"   class="nl active">Vulture Tracking</a>
+      <a href="bosses.html"    class="nl">Bosses</a>
+      <a href="ammo.html"      class="nl">Ammo Chart</a>
+      <a href="blueprints.html" class="nl">Blueprints</a>
+      <a href="/builder" class="nl">Loadout Builder</a>
       <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="nl">Wiki &#x2197;</a>
-    </nav>
     <div class="hbadge">&#x25CF;&nbsp;Live</div>
+    </nav>
   </div>
 </header>
 
@@ -453,10 +453,4 @@ Promise.all([
     console.error('Lamang Intelligence Network: failed to load data',e);
   document.getElementById('boss-nm').textContent='Load Error';
   var uEl=document.getElementById('uinfo');
-  if(uEl)uEl.textContent='Could not fetch data from server.';
-});
-
-tick();setInterval(tick,1000);
-</script>
-</body>
-</html>
+  if(uEl)uEl.textContent='Could
