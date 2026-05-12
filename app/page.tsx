@@ -144,10 +144,10 @@ export default async function BuilderPage() {
       <header className="sh">
         <div className="shi">
           <a href="/" className="logo">
-            <Image src="/raven-sigil.png" alt="GZW Guides" width={36} height={36} className="object-contain" />
+            <Image src="/raven-sigil.png" alt="Lamang Intelligence Network" width={36} height={36} className="object-contain" />
             <div>
-              <div className="lm">GZW Guides</div>
-              <div className="ls">Gray Zone Warfare Community Hub</div>
+              <div className="lm">Lamang Intelligence Network</div>
+              <div className="ls">Gray Zone Warfare Operator Hub</div>
             </div>
           </a>
           <nav className="hnav" aria-label="Main navigation">

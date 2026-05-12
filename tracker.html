@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vulture Location This Week | Gray Zone Warfare Vulture Tracker - GZW Guides</title>
+<title>Vulture Location This Week | Lamang Intelligence Network</title>
 <meta name="description" content="Track Vulture's current weekly spawn location in Gray Zone Warfare. Updated every Monday with confirmed community intel. Live countdown to the next weekly reset on Lamang Island." />
 <meta name="keywords" content="where is Vulture GZW, Vulture location Gray Zone Warfare, GZW Vulture tracker, Vulture spawn this week, Gray Zone Warfare weekly reset, Lamang Island Vulture" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://lamangintel.net/tracker.html" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="GZW Guides" />
+<meta property="og:site_name" content="Lamang Intelligence Network" />
 <meta property="og:title" content="Vulture Location This Week | Gray Zone Warfare Tracker" />
 <meta property="og:description" content="Find Vulture's current weekly location in Gray Zone Warfare. Updated every Monday with live countdown to the next reset." />
 <meta property="og:url" content="https://lamangintel.net/tracker.html" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Where is Vulture This Week? | GZW Guides" />
+<meta name="twitter:title" content="Where is Vulture This Week? | Lamang Intelligence Network" />
 <meta name="twitter:description" content="Current weekly Vulture location in Gray Zone Warfare with live countdown to Monday reset." />
 <script type="application/ld+json">
 {
@@ -43,7 +43,7 @@
         "name": "Where is Vulture this week in Gray Zone Warfare?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vulture's current location is updated every Monday at 00:00 UTC. Check the live tracker on this page for the confirmed weekly spawn zone and tac map coordinates."
+          "text": "Vulture's current location is updated every Monday at 12:00 UTC. Check the live tracker on this page for the confirmed weekly spawn zone and tac map coordinates."
         }
       },
       {
@@ -51,7 +51,7 @@
         "name": "When does Vulture reset in Gray Zone Warfare?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vulture's location resets every Monday at 00:00 UTC. The tracker includes a live countdown to the next weekly reset."
+          "text": "Vulture's location resets every Monday at 12:00 UTC. The tracker includes a live countdown to the next weekly reset."
         }
       }
     ]
@@ -60,7 +60,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600&family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --jd:#1a2612;--jm:#2d4220;--jg:#4a6741;--jb:#6b9c5e;--jp:#8db87e;
@@ -110,6 +110,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .loc-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ug);margin-bottom:5px}
 .loc-val{font-family:var(--disp);font-size:26px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--es)}
 .loc-sub{font-family:var(--mono);font-size:11px;color:var(--ug);margin-top:3px;letter-spacing:.07em}
+.vulture-vid{width:100%;max-height:200px;object-fit:cover;display:block;margin:12px 0 16px;border:1px solid var(--jm);opacity:.82}
 .loc-img{margin-top:14px;overflow:hidden;border:1px solid var(--jm);background:var(--jd)}
 .loc-img img{width:100%;height:175px;object-fit:cover;object-position:center;display:block;opacity:.88}
 .loc-img-lbl{font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--jg);padding:5px 10px;border-top:1px solid var(--jm)}
@@ -180,8 +181,8 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 <header class="sh">
   <div class="shi">
     <a href="index.html" class="logo">
-      <img src="logo.png" width="36" height="36" alt="GZW Guides" />
-      <div><div class="lm">GZW Guides</div><div class="ls">Vulture Tracking</div></div>
+      <img src="logo.png" width="36" height="36" alt="Lamang Intelligence Network" />
+      <div><div class="lm">Lamang Intelligence Network</div><div class="ls">Vulture Tracking</div></div>
     </a>
     <nav class="hnav" aria-label="Main navigation">
       <a href="index.html"       class="nl">Home</a>
@@ -209,6 +210,12 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <div class="cb">
         <div class="where-lbl">// Where is</div>
         <div class="boss-nm" id="boss-nm">-</div>
+        <video
+              class="vulture-vid"
+              src="/assets/vulture.mp4"
+              autoplay loop muted playsinline
+              aria-hidden="true"
+            ></video>
         <div class="locs-row">
           <a class="cop-card" id="cop-a-wrap" href="#" target="_blank" rel="noopener">
             <div class="cop-lbl">// COP Alpha</div>
@@ -251,7 +258,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
           <span class="csep">:</span>
           <div class="cblk"><span class="cnum" id="cd-s">--</span><span class="cunit">Sec</span></div>
         </div>
-        <div class="nxt-rot">Resets every <strong>Monday 00:00 UTC</strong></div>
+        <div class="nxt-rot">Resets every <strong>Monday 12:00 UTC</strong></div>
       </div>
       <hr class="hdiv"/>
       <!-- History: populated from boss data -->
@@ -311,7 +318,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 
 <footer class="ft">
   <div class="ft-i">
-    <div><div class="ft-br">GZW Guides</div><div class="ft-sub">Not affiliated with MADFINGER Games.</div></div>
+    <div><div class="ft-br">Lamang Intelligence Network</div><div class="ft-sub">Not affiliated with MADFINGER Games.</div></div>
     <div class="ft-lks">
       <a href="index.html"   class="ft-lk">Home</a>
       <a href="bosses.html"  class="ft-lk">Bosses</a>
@@ -328,7 +335,7 @@ function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').
 // ---- TICKER ----
 function renderTicker(banner){
   var el=document.getElementById('tick-in');if(!el)return;
-  var items=banner&&banner.length?banner:['GZW GUIDES - LOADING...'];
+  var items=banner&&banner.length?banner:['LAMANG INTELLIGENCE NETWORK - LOADING...'];
   var html='';
   for(var p=0;p<2;p++){
     for(var i=0;i<items.length;i++){
@@ -398,7 +405,7 @@ function renderHero(v){
 
   // Update info
   var uEl=document.getElementById('uinfo');
-  if(uEl)uEl.textContent='Updated Mon 00:00 UTC';
+  if(uEl)uEl.textContent='Updated Mon 12:00 UTC';
 
   // History list
   var hl=document.getElementById('hist-list');if(!hl)return;
@@ -418,7 +425,7 @@ function renderHero(v){
 // ---- COUNTDOWN ----
 function nextMonday(){
   var d=new Date();var day=d.getUTCDay();var di=(8-day)%7||7;
-  return new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+di,0,0,0));
+  return new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+di,12,0,0));
 }
 function pad(n){return n<10?'0'+n:''+n}
 var NM=nextMonday();
@@ -443,7 +450,7 @@ Promise.all([
   renderTicker(adminData.banner||[]);
   renderHero(vulture);
 }).catch(function(e){
-  console.error('GZW Guides: failed to load data',e);
+    console.error('Lamang Intelligence Network: failed to load data',e);
   document.getElementById('boss-nm').textContent='Load Error';
   var uEl=document.getElementById('uinfo');
   if(uEl)uEl.textContent='Could not fetch data from server.';

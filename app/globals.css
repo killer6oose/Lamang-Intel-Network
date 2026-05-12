@@ -1,5 +1,5 @@
 /* Google Fonts - must precede all other imports */
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
 @import "tailwindcss";
 
@@ -38,7 +38,7 @@
   /* Font families */
   --mono: 'Share Tech Mono', monospace;
   --disp: 'Oswald', sans-serif;
-  --body: 'Barlow Condensed', sans-serif;
+  --body: 'Roboto', sans-serif;
 }
 
 *, *::before, *::after {
