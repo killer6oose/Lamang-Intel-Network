@@ -1,0 +1,56 @@
+name: "Data Correction - SMGs & Handguns"
+description: "Report incorrect data for submachine guns or sidearms."
+title: "[SMG/Handgun] "
+labels: ["data-correction", "SMGs", "Handguns"]
+body:
+  - type: input
+    id: weapon-name
+    attributes:
+      label: Weapon Name
+      placeholder: e.g. MP5, Glock 17, Beretta M9A1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: What is wrong?
+      options:
+        - Base stats (accuracy/recoil/ergonomics/weight)
+        - Rate of fire
+        - Vendor / vendor rank
+        - Compatible attachments (missing or incorrect)
+        - Caliber / compatible ammo
+        - Inspect image (wrong or missing)
+        - Item is missing from the builder entirely
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Current (incorrect) value
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Correct value
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+      description: In-game screenshot, patch notes, wiki URL.
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this value in-game or from an official source.
+          required: true

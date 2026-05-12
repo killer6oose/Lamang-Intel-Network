@@ -165,6 +165,7 @@ dialog::backdrop{background:rgba(0,0,0,.75)}
       <nav class="hnav">
         <a href="index.html">Home</a>
         <a href="bosses.html">Bosses</a>
+        <a href="/builder">Loadout Builder</a>
         <a href="#" id="logout-link" style="color:#e05555;display:none" onclick="logout();return false">Logout</a>
       </nav>
     </div>
@@ -189,6 +190,19 @@ dialog::backdrop{background:rgba(0,0,0,.75)}
     <label class="gate-lbl" for="gate-pass">Passphrase</label>
     <input class="gate-input" type="password" id="gate-pass" placeholder="Enter passphrase..." autocomplete="current-password" onkeydown="if(event.key==='Enter')attemptLogin()" />
     <button class="gate-btn" onclick="attemptLogin()">&#x25B6; Authenticate</button>
+  </div>
+
+  <!-- FIRST-TIME SETUP CARD (shown when data/.adminpass does not exist on server) -->
+  <div class="gate-card" id="setup-card" style="display:none;margin-top:16px;border-color:#4a6741">
+    <div class="gate-ey" style="color:#6b9c5e">// First-Time Setup</div>
+    <div class="gate-title">Set Admin Passphrase</div>
+    <div class="gate-desc">No passphrase is configured on this server yet. Set one now to activate the admin panel.</div>
+    <div class="gate-err" id="setup-err"></div>
+    <label class="gate-lbl" for="setup-pass">New Passphrase (min 8 characters)</label>
+    <input class="gate-input" type="password" id="setup-pass" placeholder="Enter new passphrase..." autocomplete="new-password" />
+    <label class="gate-lbl" for="setup-confirm" style="margin-top:10px">Confirm Passphrase</label>
+    <input class="gate-input" type="password" id="setup-confirm" placeholder="Confirm passphrase..." autocomplete="new-password" onkeydown="if(event.key==='Enter')doFirstSetup()" />
+    <button class="gate-btn" style="background:#4a6741" onclick="doFirstSetup()">&#x2713; Set Passphrase</button>
   </div>
 </div>
 
@@ -755,12 +769,63 @@ function attemptLogin() {
     loadAllData();
   })
   .catch(function(e) {
-    errEl.textContent = (e && e.message) || 'Incorrect passphrase. Access denied.';
+    var msg = (e && e.message) || 'Incorrect passphrase. Access denied.';
+    // 503 = server not yet configured - show the first-time setup card
+    if (msg && msg.indexOf('not yet configured') !== -1) {
+      document.getElementById('setup-card').style.display = 'block';
+      errEl.textContent = 'Admin passphrase not set. Use the setup form below.';
+    } else {
+      errEl.textContent = msg;
+    }
     errEl.style.display = 'block';
     document.getElementById('gate-pass').value = '';
     document.getElementById('gate-captcha').value = '';
     generateCaptcha();
     document.getElementById('gate-captcha').focus();
+  });
+}
+
+// First-time setup - only works before data/.adminpass exists on the server
+function doFirstSetup() {
+  var pass    = document.getElementById('setup-pass').value;
+  var confirm = document.getElementById('setup-confirm').value;
+  var errEl   = document.getElementById('setup-err');
+  errEl.style.display = 'none';
+
+  if (pass.length < 8) {
+    errEl.textContent = 'Passphrase must be at least 8 characters.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (pass !== confirm) {
+    errEl.textContent = 'Passphrases do not match.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  fetch('api.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'first-setup', newPass: pass })
+  })
+  .then(function(r) {
+    return r.json().then(function(d) {
+      if (!r.ok) throw new Error(d.error || 'Setup failed');
+      return d;
+    });
+  })
+  .then(function() {
+    document.getElementById('setup-card').style.display = 'none';
+    document.getElementById('gate-err').textContent = 'Passphrase set. You can now log in.';
+    document.getElementById('gate-err').style.color = '#6b9c5e';
+    document.getElementById('gate-err').style.display = 'block';
+    document.getElementById('setup-pass').value = '';
+    document.getElementById('setup-confirm').value = '';
+    document.getElementById('gate-pass').focus();
+  })
+  .catch(function(e) {
+    errEl.textContent = (e && e.message) || 'Setup failed.';
+    errEl.style.display = 'block';
   });
 }
 

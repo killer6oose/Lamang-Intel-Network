@@ -1,0 +1,75 @@
+name: "Data Correction - Attachments"
+description: "Report wrong stat modifiers, missing attachments, incorrect compatibility, wrong vendor/rank, or missing images for any attachment."
+title: "[Attachment] "
+labels: ["data-correction", "Attachments"]
+body:
+  - type: input
+    id: attachment-name
+    attributes:
+      label: Attachment Name
+      placeholder: e.g. Daniel Defense 14.5in Barrel, Aimpoint T2 Optic
+    validations:
+      required: true
+
+  - type: dropdown
+    id: attachment-category
+    attributes:
+      label: Attachment Category
+      options:
+        - Barrel
+        - Muzzle Device
+        - Handguard
+        - Stock
+        - Pistol Grip
+        - Optic
+        - Foregrip
+        - Magazine
+        - Gas Block
+        - Charging Handle
+        - Buffer Tube
+        - Receiver
+        - Rail / Tactical Device
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: What is wrong?
+      options:
+        - Stat modifiers (recoil/accuracy/ergonomics/weight)
+        - Vendor / vendor rank
+        - Weapon compatibility (which guns it fits)
+        - Item is missing entirely
+        - Image wrong or missing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Current (incorrect) value
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Correct value
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this value in-game or from an official source.
+          required: true

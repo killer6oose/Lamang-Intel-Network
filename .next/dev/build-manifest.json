@@ -1,50 +1,13 @@
 {
   "pages": {
-    "/_app": [
-      "static/chunks/0euj_next_dist_compiled_0u6~csz._.js",
-      "static/chunks/0euj_next_dist_shared_lib_022jro.._.js",
-      "static/chunks/0euj_next_dist_client_0df3vbf._.js",
-      "static/chunks/0euj_next_dist_0jb6xay._.js",
-      "static/chunks/0euj_next_app_0aerh6b.js",
-      "static/chunks/[next]_entry_page-loader_ts_0~khzhn._.js",
-      "static/chunks/0euj_react-dom_0o9atlt._.js",
-      "static/chunks/0euj_0bbhhuw._.js",
-      "static/chunks/[root-of-the-server]__0e-75ka._.js",
-      "static/chunks/killer6oose_GZW-Guides_pages__app_07xvfw~._.js",
-      "static/chunks/turbopack-killer6oose_GZW-Guides_pages__app_1320-o1._.js"
-    ],
-    "/_error": [
-      "static/chunks/0euj_next_dist_compiled_0u6~csz._.js",
-      "static/chunks/0euj_next_dist_shared_lib_04~4bsq._.js",
-      "static/chunks/0euj_next_dist_client_0df3vbf._.js",
-      "static/chunks/0euj_next_dist_0ol.fga._.js",
-      "static/chunks/[next]_entry_page-loader_ts_013go7b._.js",
-      "static/chunks/0euj_react-dom_0o9atlt._.js",
-      "static/chunks/0euj_0bbhhuw._.js",
-      "static/chunks/[root-of-the-server]__00h526z._.js",
-      "static/chunks/killer6oose_GZW-Guides_pages__error_07xvfw~._.js",
-      "static/chunks/turbopack-killer6oose_GZW-Guides_pages__error_0u76yd1._.js"
-    ]
+    "/_app": []
   },
   "devFiles": [],
-  "polyfillFiles": [
-    "static/chunks/0euj_next_dist_build_polyfills_polyfill-nomodule.js"
-  ],
+  "polyfillFiles": [],
   "lowPriorityFiles": [
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js",
     "static/development/_clientMiddlewareManifest.js"
   ],
-  "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_0~e8034._.js",
-    "static/chunks/0euj_next_dist_compiled_next-devtools_index_0ovma04.js",
-    "static/chunks/0euj_next_dist_compiled_react-dom_0qr.5l4._.js",
-    "static/chunks/0euj_next_dist_compiled_react-server-dom-turbopack_0._1-zl._.js",
-    "static/chunks/0euj_next_dist_compiled_0lj.kpz._.js",
-    "static/chunks/0euj_next_dist_client_0dgycjd._.js",
-    "static/chunks/0euj_next_dist_0dsy14p._.js",
-    "static/chunks/0euj_@swc_helpers_cjs_0~asntt._.js",
-    "static/chunks/killer6oose_GZW-Guides_0rqeker._.js",
-    "static/chunks/turbopack-killer6oose_GZW-Guides_0e.nh9p._.js"
-  ]
+  "rootMainFiles": []
 }

@@ -361,3 +361,23 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# ============================================================
+# GZW Guides - Project specific
+# ============================================================
+
+# Next.js build output
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Admin secrets - NEVER commit these
+data/.adminpass
+data/images/
+
+# OS junk
+.DS_Store
+Thumbs.db

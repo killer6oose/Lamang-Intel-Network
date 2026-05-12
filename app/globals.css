@@ -1,11 +1,185 @@
+/* Google Fonts - must precede all other imports */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600&display=swap");
+
 @import "tailwindcss";
 
+/* ============================================================
+   LAMANG INTELLIGENCE NETWORK - Design System
+   Mirrors the CSS variables and utility classes used across
+   the static HTML pages (index.html, tracker.html, etc.)
+   so the Next.js builder pages blend seamlessly.
+   ============================================================ */
+
 :root {
-  --background: #030712;
-  --foreground: #f1f5f9;
+  /* Jungle greens */
+  --jd: #1a2612;
+  --jm: #2d4220;
+  --jg: #4a6741;
+  --jb: #6b9c5e;
+  --jp: #8db87e;
+
+  /* Earth / tan (used for warnings, ammo, update strips) */
+  --ed: #2e1c0c;
+  --eb: #5c3d1e;
+  --em: #7a5230;
+  --et: #a07040;
+  --es: #c4a066;
+
+  /* Greyscale */
+  --uk: #0e0e0e;
+  --ud: #1c1c1c;
+  --uc: #2a2a2a;
+  --um: #3e3e3e;
+  --ug: #5a5a5a;
+  --ul: #8a8a8a;
+  --up: #b8b8b8;
+  --uw: #e2e2e2;
+
+  /* Font families */
+  --mono: 'Share Tech Mono', monospace;
+  --disp: 'Oswald', sans-serif;
+  --body: 'Barlow Condensed', sans-serif;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--uk);
+  color: var(--up);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle scanline overlay - matches static site body::before */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, .025) 3px,
+    rgba(0, 0, 0, .025) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ---- HEADER ---- */
+.sh {
+  background: var(--jd);
+  border-bottom: 2px solid var(--jg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.shi {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.logo img { width: 36px; height: 36px; flex-shrink: 0; }
+.lm {
+  font-family: var(--disp);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--jb);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ls {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ul);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.hnav { display: flex; align-items: center; gap: 4px; }
+.nl {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ul);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  transition: all .18s;
+}
+.nl:hover { color: var(--jb); border-color: var(--jm); background: rgba(74, 103, 65, .12); }
+.nl.active { color: var(--jp); border-color: var(--jg); background: rgba(74, 103, 65, .2); }
+
+/* ---- FOOTER ---- */
+.ft {
+  background: var(--jd);
+  border-top: 1px solid var(--jm);
+  padding: 32px;
+}
+.ft-i {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ft-br {
+  font-family: var(--disp);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--jg);
+}
+.ft-disc {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ug);
+  line-height: 1.6;
+  text-align: right;
+}
+
+/* ---- UPDATE STRIP (vendor data disclaimer) ---- */
+.us {
+  background: var(--ed);
+  border: 1px solid var(--eb);
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.us-icon { color: var(--et); flex-shrink: 0; margin-top: 2px; font-size: 14px; }
+.us-body { font-family: var(--body); font-size: 13px; color: var(--ug); line-height: 1.55; }
+.us-body strong { color: var(--es); font-weight: 500; }
+.us-body a { color: var(--es); text-decoration: underline; transition: color .15s; }
+.us-body a:hover { color: var(--et); }
+
+@media (max-width: 800px) {
+  .hnav { display: none; }
+  .shi { padding: 0 16px; }
+  .ft-disc { text-align: left; }
 }

@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Lamang Intelligence Network",
+  title: "Loadout Builder | Lamang Intelligence Network",
   description:
-    "Unofficial Gray Zone Warfare weapon builder and PMC loadout calculator. Build your kit, optimize your loadout.",
+    "Interactive Gray Zone Warfare weapon builder and PMC loadout calculator. Slot attachments, track carry weight, and share builds.",
 };
 
 export default function RootLayout({
@@ -24,8 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-gray-950 text-gray-100 antialiased">
+    <html lang="en" className="h-full">
+      <head>
+        <link rel="icon" href="/assets/favicon.ico" />
+      </head>
+      <body className="min-h-full flex flex-col">
         {children}
       </body>
     </html>

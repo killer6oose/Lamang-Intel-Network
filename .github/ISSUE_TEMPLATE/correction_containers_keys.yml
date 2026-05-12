@@ -1,0 +1,65 @@
+name: "Data Correction - Containers & Keys"
+description: "Report incorrect data for backpacks, containers, or keys."
+title: "[Container/Key] "
+labels: ["data-correction", "Containers", "Keys"]
+body:
+  - type: input
+    id: item-name
+    attributes:
+      label: Item Name
+      placeholder: e.g. SPOSN Tortoise Backpack, Alpha Key
+    validations:
+      required: true
+
+  - type: dropdown
+    id: item-type
+    attributes:
+      label: Item Type
+      options:
+        - Backpack
+        - Container / Case
+        - Key
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: What is wrong?
+      options:
+        - Weight
+        - Grid / slot size
+        - Vendor / vendor rank
+        - Key location (which door it opens)
+        - Image wrong or missing
+        - Item missing entirely
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Current (incorrect) value
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Correct value
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this value in-game or from an official source.
+          required: true

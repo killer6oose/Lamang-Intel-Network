@@ -4613,7 +4613,7 @@ function BeltSlotEditor({ belts, selectedBeltId, onSelectBelt, slotItems, onSlot
                             medical: medical,
                             containers: containers,
                             keys: keyItems,
-                            onSelect: (id)=>onSlotChange(i, id ?? null, containers, medical),
+                            onSelect: (id)=>onSlotChange(i, id ?? null),
                             contents: containerContents[`belt:${i}`] ?? [],
                             onContentsChange: (si, id)=>onContainerContentsChange(`belt:${i}`, si, id)
                         }, i, false, {

@@ -5,19 +5,17 @@
  * Handles all authenticated data writes. Reads are served directly
  * as static files (data/vulture.json, data/ammo.json, data/admin.json).
  *
- * Setup notes:
- *   1. Make data/ writable by the web server: chmod 755 data/
- *   2. Make each .json file writable:          chmod 644 data/*.json
- *   3. Make data/images/ writable:             mkdir -p data/images && chmod 755 data/images
- *   4. On first run the default pass 'vulture2026' is used.
- *      Change it via the admin panel Settings tab.
- *   5. Using HTTPS is strongly recommended - the password is sent
- *      in the POST body and would be visible over plain HTTP.
+ * SETUP (required before the admin panel will work):
+ *   SSH into your server and run:
+ *     echo "your-passphrase-here" > data/.adminpass
+ *     chmod 600 data/.adminpass
+ *   The passphrase file is gitignored and never enters source control.
  *
  * POST body (JSON): { "action": "...", "pass": "...", "data": {...} }
  * POST body (multipart): action=upload-image, pass=..., image=<file>
  *
  * Actions:
+ *   first-setup   - set the initial passphrase (only works before data/.adminpass exists)
  *   verify        - check password, returns {ok:true} or 401
  *   save          - save a data file. Requires "file" (vulture|ammo|admin) + "data"
  *   change-pass   - change admin password. Requires "newPass"
@@ -27,6 +25,8 @@
 
 header('Content-Type: application/json');
 header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('X-XSS-Protection: 1; mode=block');
 
 // Only allow POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -39,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 define('DATA_DIR',   __DIR__ . '/data/');
 define('IMAGES_DIR', __DIR__ . '/data/images/');
 define('PASS_FILE',  DATA_DIR . '.adminpass');
-define('DEFAULT_PASS', 'vulture2026');
 
 // Allowed data files
 $ALLOWED_FILES = ['vulture', 'ammo', 'admin', 'bosses'];
@@ -47,15 +46,27 @@ $ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
 // --- Helpers ---
 
+/**
+ * Returns the stored passphrase, or false if not yet configured.
+ */
 function getPass() {
     if (file_exists(PASS_FILE)) {
-        return trim(file_get_contents(PASS_FILE));
+        $p = trim(file_get_contents(PASS_FILE));
+        if ($p !== '') return $p;
     }
-    return DEFAULT_PASS;
+    return false;
+}
+
+/**
+ * Returns true if the admin passphrase has been configured.
+ */
+function isConfigured() {
+    return getPass() !== false;
 }
 
 function checkPass($p) {
-    return is_string($p) && $p === getPass();
+    $stored = getPass();
+    return $stored !== false && is_string($p) && $p === $stored;
 }
 
 function respond($data, $code = 200) {
@@ -124,8 +135,40 @@ $pass   = isset($body['pass'])   ? $body['pass']   : '';
 
 switch ($action) {
 
+    // ---- FIRST-TIME SETUP ----
+    // Only works before data/.adminpass exists. Once configured, use change-pass.
+    case 'first-setup':
+        if (isConfigured()) {
+            err('Already configured. Use change-pass to update your passphrase.', 403);
+        }
+
+        $newPass = isset($body['newPass']) ? $body['newPass'] : '';
+
+        if (!is_string($newPass) || strlen($newPass) < 8) {
+            err('Passphrase must be at least 8 characters');
+        }
+
+        if (!is_dir(DATA_DIR)) {
+            mkdir(DATA_DIR, 0755, true);
+        }
+
+        $written = file_put_contents(PASS_FILE, $newPass, LOCK_EX);
+
+        if ($written === false) {
+            err('Could not save passphrase. Check that data/ is writable (chmod 755 data/)', 500);
+        }
+
+        // Restrict file permissions - only web server user can read it
+        chmod(PASS_FILE, 0600);
+
+        respond(['ok' => true, 'message' => 'Passphrase configured. You can now log in.']);
+        break;
+
     // ---- VERIFY ----
     case 'verify':
+        if (!isConfigured()) {
+            err('Admin not yet configured. Use the first-time setup form to set a passphrase.', 503);
+        }
         if (checkPass($pass)) {
             respond(['ok' => true]);
         } else {
@@ -135,6 +178,7 @@ switch ($action) {
 
     // ---- SAVE FILE ----
     case 'save':
+        if (!isConfigured()) { err('Not configured', 503); }
         if (!checkPass($pass)) {
             err('Unauthorized', 401);
         }
@@ -143,7 +187,7 @@ switch ($action) {
         $file = isset($body['file']) ? $body['file'] : '';
 
         if (!in_array($file, $ALLOWED_FILES, true)) {
-            err('Invalid file identifier. Must be: vulture, ammo, or admin.');
+            err('Invalid file identifier. Must be: vulture, ammo, admin, or bosses.');
         }
 
         if (!isset($body['data'])) {
@@ -168,14 +212,15 @@ switch ($action) {
 
     // ---- CHANGE PASSWORD ----
     case 'change-pass':
+        if (!isConfigured()) { err('Not configured', 503); }
         if (!checkPass($pass)) {
             err('Incorrect current passphrase', 401);
         }
 
         $newPass = isset($body['newPass']) ? $body['newPass'] : '';
 
-        if (!is_string($newPass) || strlen($newPass) < 6) {
-            err('New passphrase must be at least 6 characters');
+        if (!is_string($newPass) || strlen($newPass) < 8) {
+            err('New passphrase must be at least 8 characters');
         }
 
         $written = file_put_contents(PASS_FILE, $newPass, LOCK_EX);

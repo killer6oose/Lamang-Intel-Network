@@ -1,0 +1,66 @@
+name: "Data Correction - Gear (Armor / Headwear / Rigs / Belts)"
+description: "Report incorrect data for body armor, plate carriers, helmets, tactical rigs, or belts."
+title: "[Gear] "
+labels: ["data-correction", "Armor", "Headwear", "TacticalRigs", "Belts"]
+body:
+  - type: input
+    id: item-name
+    attributes:
+      label: Item Name
+      placeholder: e.g. FAST MT Helmet, 6B43 Plate Carrier
+    validations:
+      required: true
+
+  - type: dropdown
+    id: item-type
+    attributes:
+      label: Item Type
+      options:
+        - Body Armor / Plate Carrier
+        - Helmet / Headwear
+        - Tactical Rig
+        - Belt
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: What is wrong?
+      options:
+        - Weight
+        - Armor class / protection level
+        - Number of slots / grid size
+        - Vendor / vendor rank
+        - Image wrong or missing
+        - Item missing entirely
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Current (incorrect) value
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Correct value
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this value in-game or from an official source.
+          required: true

@@ -1,0 +1,59 @@
+name: "Data Correction - Primary Weapons"
+description: "Report incorrect stats, missing attachments, wrong vendor/rank, or bad images for assault rifles, DMRs, sniper rifles, or shotguns."
+title: "[Primary Weapon] "
+labels: ["data-correction", "PrimaryWeapons"]
+body:
+  - type: input
+    id: weapon-name
+    attributes:
+      label: Weapon Name
+      placeholder: e.g. M4A1, AK-74N, L403A1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: What is wrong?
+      options:
+        - Base stats (accuracy/recoil/ergonomics/weight)
+        - Rate of fire
+        - Vendor / vendor rank
+        - Compatible attachments (missing or incorrect)
+        - Caliber / compatible ammo
+        - Inspect image (wrong or missing)
+        - Item is missing from the builder entirely
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Current (incorrect) value shown in the builder
+      placeholder: e.g. "Weight shown: 3.5 kg"
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Correct value
+      placeholder: e.g. "Actual weight in-game: 3.299 kg"
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / evidence
+      description: In-game screenshot, patch notes link, wiki URL, or video timestamp.
+      placeholder: Attach screenshot or paste link
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified this value in-game or from an official source.
+          required: true

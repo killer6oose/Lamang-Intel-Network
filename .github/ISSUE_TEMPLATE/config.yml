@@ -1,0 +1,7 @@
+# Disable blank issues - all submissions must use a template.
+# This ensures corrections are properly categorized and labeled.
+blank_issues_enabled: false
+contact_links:
+  - name: GZW Community Wiki
+    url: https://gray-zone-warfare.fandom.com/wiki/Gray_Zone_Warfare_Wiki
+    about: Check the wiki first - it may already have up-to-date info.
