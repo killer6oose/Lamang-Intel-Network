@@ -1,0 +1,42 @@
+[
+  {
+    "id": "half-mask-woodland",
+    "name": "Half Mask (Woodland)",
+    "weight": 0.06,
+    "rainProtection": 0,
+    "vendor": "Handshake",
+    "vendorRank": 3,
+    "source": "Handshake R.3",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/72/Mask%28Woodland%29_icon.png"
+  },
+  {
+    "id": "pandatac-sun-mask",
+    "name": "Pandatac Sun Mask",
+    "weight": 0.06,
+    "rainProtection": 0,
+    "vendor": "Handshake",
+    "vendorRank": 2,
+    "source": "Handshake R.2",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/8/84/PMask_icon.png"
+  },
+  {
+    "id": "half-mask-black",
+    "name": "Half Mask (Black)",
+    "weight": 0.06,
+    "rainProtection": 0,
+    "vendor": "Banshee",
+    "vendorRank": 3,
+    "source": "Banshee R.3",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/66/Mask%28Black%29_icon.png"
+  },
+  {
+    "id": "half-mask-skull",
+    "name": "Half Mask (Skull)",
+    "weight": 0.03,
+    "rainProtection": 0,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Looting",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/e/ef/Mask%28Skull%29_icon.png"
+  }
+]

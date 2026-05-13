@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { assetPath } from "./lib/assetPath";
 
 export const metadata: Metadata = {
   title: "Loadout Builder | Lamang Intelligence Network",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
-        <link rel="icon" href="/assets/favicon.ico" />
+        <link rel="icon" href={assetPath("/assets/favicon.ico")} />
       </head>
       <body className="min-h-full flex flex-col">
         {children}

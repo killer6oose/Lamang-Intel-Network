@@ -24,8 +24,22 @@
       "label": "NVG Mount",
       "required": false,
       "compatible": [
+        "rhino-helmet-nvg-mount",
         "l4-g24-helmet-nvg-mount",
-        "rhino-helmet-nvg-mount"
+        "pvs-14-arm"
+      ]
+    },
+    "nvg": {
+      "label": "NVG Device",
+      "required": false,
+      "requiresSlot": "nvgMount",
+      "compatible": [
+        "anpvs-7",
+        "anpvs-14",
+        "anpvs-31a",
+        "ngs-pvs-14",
+        "dt2-multicam",
+        "dt2-multicam-black"
       ]
     }
   }

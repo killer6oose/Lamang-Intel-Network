@@ -2,6 +2,7 @@ import Image from "next/image";
 import { promises as fs } from "fs";
 import path from "path";
 import LoadoutBuilder from "./components/LoadoutBuilder";
+import { assetPath } from "./lib/assetPath";
 
 async function getAllData() {
   const dataDir = path.join(process.cwd(), "data");
@@ -123,9 +124,50 @@ async function getAllData() {
     beltItems.push(...JSON.parse(raw));
   } catch { /* no belts data yet */ }
 
+  // Load eyewear
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const eyewearItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "eyewear", "index.json"), "utf-8");
+    eyewearItems.push(...JSON.parse(raw));
+  } catch { /* no eyewear data yet */ }
+
+  // Load face covers
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const faceCoverItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "facecover", "index.json"), "utf-8");
+    faceCoverItems.push(...JSON.parse(raw));
+  } catch { /* no facecover data yet */ }
+
+  // Load backpacks
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const backpackItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "backpacks", "index.json"), "utf-8");
+    backpackItems.push(...JSON.parse(raw));
+  } catch { /* no backpacks data yet */ }
+
+  // Load lockboxes
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const lockboxItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "lockboxes", "index.json"), "utf-8");
+    lockboxItems.push(...JSON.parse(raw));
+  } catch { /* no lockboxes data yet */ }
+
+  // Load headsets
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const headsetItems: any[] = [];
+  try {
+    const raw = await fs.readFile(path.join(dataDir, "headsets", "index.json"), "utf-8");
+    headsetItems.push(...JSON.parse(raw));
+  } catch { /* no headsets data yet */ }
+
   return {
     weapons, allAttachments, gadgets, headwear, armorItems,
     rigs, consumables, medicalItems, containerItems, keyItems, beltItems,
+    eyewearItems, faceCoverItems, backpackItems, lockboxItems, headsetItems,
   };
 }
 
@@ -133,6 +175,7 @@ export default async function BuilderPage() {
   const {
     weapons, allAttachments, gadgets, headwear, armorItems,
     rigs, consumables, medicalItems, containerItems, keyItems, beltItems,
+    eyewearItems, faceCoverItems, backpackItems, lockboxItems, headsetItems,
   } = await getAllData();
 
   const sortedWeapons = weapons.sort((a: {name: string}, b: {name: string}) => a.name.localeCompare(b.name));
@@ -144,7 +187,7 @@ export default async function BuilderPage() {
       <header className="sh">
         <div className="shi">
           <a href="/" className="logo">
-            <Image src="/raven-sigil.png" alt="Lamang Intelligence Network" width={36} height={36} className="object-contain" />
+            <img src="/logo.png" alt="Lamang Intelligence Network" width={36} height={36} style={{ objectFit: "contain" }} />
             <div>
               <div className="lm">Lamang Intelligence Network</div>
               <div className="ls">Gray Zone Warfare Operator Hub</div>
@@ -187,6 +230,11 @@ export default async function BuilderPage() {
           containerItems={containerItems}
           keyItems={keyItems}
           beltItems={beltItems}
+          eyewearItems={eyewearItems}
+          faceCoverItems={faceCoverItems}
+          backpackItems={backpackItems}
+          lockboxItems={lockboxItems}
+          headsetItems={headsetItems}
         />
       </div>
 

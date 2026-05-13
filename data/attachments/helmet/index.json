@@ -1,0 +1,92 @@
+[
+  {
+    "id": "rhino-helmet-nvg-mount",
+    "name": "Rhino Helmet NVG Mount",
+    "category": "mount",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/9/9c/Rhino_icon.png"
+  },
+  {
+    "id": "l4-g24-helmet-nvg-mount",
+    "name": "L4 G24 Helmet NVG Mount",
+    "category": "mount",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/2/28/G24_icon.png"
+  },
+  {
+    "id": "pvs-14-arm",
+    "name": "PVS-14 Arm",
+    "category": "mount",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/bb/Arm_icon.png"
+  },
+  {
+    "id": "anpvs-7",
+    "name": "AN/PVS-7 Night Vision Device",
+    "category": "nvg",
+    "weight": 0.68,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/f/f9/PVS7_icon.png"
+  },
+  {
+    "id": "anpvs-14",
+    "name": "AN/PVS-14 Night Vision Device",
+    "category": "nvg",
+    "weight": 0.338,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/b/b7/PVS14_icon.png"
+  },
+  {
+    "id": "anpvs-31a",
+    "name": "AN/PVS-31A Night Vision Device",
+    "category": "nvg",
+    "weight": 0.45,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/4c/PVS31A_icon.png"
+  },
+  {
+    "id": "ngs-pvs-14",
+    "name": "NGS PVS-14 Night Vision Monocular",
+    "category": "nvg",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "dt2-multicam",
+    "name": "DT-2 NGS Edition Night Vision Device (Multicam)",
+    "category": "nvg",
+    "weight": 0.56,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/40/DT-2_NGS_Edition_Night_Vision_Device_%28Multicam%29_icon.png"
+  },
+  {
+    "id": "dt2-multicam-black",
+    "name": "DT-2 NGS Edition Night Vision Device (Multicam Black)",
+    "category": "nvg",
+    "weight": 0.56,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/4e/DT-2_NGS_Edition_Night_Vision_Device_%28Multicam_Black%29_icon.png"
+  }
+]

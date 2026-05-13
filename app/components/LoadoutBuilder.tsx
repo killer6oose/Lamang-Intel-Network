@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect, useRef } from "react";
+import { assetPath } from "../lib/assetPath";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -75,6 +76,30 @@ interface BeltItem {
   weight: number; vendor: string | null; vendorRank: number | null;
   lootOnly: boolean; image?: string | null;
 }
+interface EyewearItem {
+  id: string; name: string;
+  weight: number | null; flashProtection: number | null; rainProtection: number | null;
+  vendor: string | null; vendorRank: number | null; source: string; image: string | null;
+}
+interface FaceCoverItem {
+  id: string; name: string;
+  weight: number | null; rainProtection: number | null;
+  vendor: string | null; vendorRank: number | null; source: string; image: string | null;
+}
+interface BackpackItem {
+  id: string; name: string;
+  gridSize: string | null; slots: number | null; hasSling: boolean;
+  weight: number | null; vendor: string | null; vendorRank: number | null; source: string; image: string | null;
+}
+interface LockboxItem {
+  id: string; name: string;
+  gridSize: string | null; slots: number | null;
+  weight: number | null; source: string; image: string | null;
+}
+interface HeadsetItem {
+  id: string; name: string;
+  weight: number | null; vendor: string | null; vendorRank: number | null; source: string; image: string | null;
+}
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -109,13 +134,13 @@ const DOLL_GRID_SLOTS: Array<{
   placeholder?: string;
 }> = [
   // Head row
-  { id: "headset",     label: "Headset",      type: "gear",     width: SW,  height: SH,  left: 8,          top: 12,  placeholder: "/HeadsetWeaponPlaceholder.png"  },
+  { id: "headset",     label: "Headset",      type: "headset",     width: SW,  height: SH,  left: 8,          top: 12,  placeholder: "/HeadsetWeaponPlaceholder.png"  },
   { id: "headwear",    label: "Headwear",     type: "headwear", width: SW,  height: SH,  left: CX,         top: 12,  placeholder: "/HeadgearWeaponPlaceholder.png" },
-  { id: "facewear",    label: "Face Cover",   type: "gear",     width: SW,  height: SH,  left: RX,         top: 12,  placeholder: undefined                        },
+  { id: "facewear",    label: "Face Cover",   type: "facecover",     width: SW,  height: SH,  left: RX,         top: 12,  placeholder: undefined                        },
   // Upper body (eyewear/backpack at eye-level, armor lower over chest)
-  { id: "eyewear",     label: "Eyewear",      type: "gear",     width: SW,  height: SH,  left: 8,          top: 120, placeholder: "/EyewearPlaceholder.png"        },
+  { id: "eyewear",     label: "Eyewear",      type: "eyewear",     width: SW,  height: SH,  left: 8,          top: 120, placeholder: "/EyewearPlaceholder.png"        },
   { id: "armor",       label: "Body Armor",   type: "armor",     width: SW,  height: SH,  left: CX,         top: 162, placeholder: "/BodyArmorPlaceholder.png"      },
-  { id: "backpack",    label: "Backpack",     type: "gear",     width: SW,  height: SH,  left: RX,         top: 120, placeholder: "/BackpackPlaceholder.png"       },
+  { id: "backpack",    label: "Backpack",     type: "backpack",     width: SW,  height: SH,  left: RX,         top: 120, placeholder: "/BackpackPlaceholder.png"       },
   // Weapons
   { id: "primary",     label: "Primary",      type: "weapon",   width: SWW, height: SH,  left: 8,          top: 288, placeholder: "/PrimaryWeaponPlaceholder.png"  },
   { id: "sidearm",     label: "Sidearm",      type: "weapon",   width: SW,  height: SH,  left: RX,         top: 288, placeholder: "/SidearmWeaponPlaceholder.png"  },
@@ -124,7 +149,7 @@ const DOLL_GRID_SLOTS: Array<{
   { id: "belt",        label: "Belt",         type: "belt",     width: SW,  height: SH,  left: CX,         top: 394, placeholder: "/BeltPlaceholder.png"           },
   // Lower gear
   { id: "binos",       label: "Gadgets",      type: "gadget",   width: SW,  height: SH,  left: 8,          top: 500, placeholder: undefined                        },
-  { id: "secureCase",  label: "Secure Case",  type: "gear",     width: SW,  height: SH,  left: RX,         top: 500, placeholder: "/SafePlaceholder.png"           },
+  { id: "secureCase",  label: "Secure Case",  type: "lockbox",     width: SW,  height: SH,  left: RX,         top: 500, placeholder: "/SafePlaceholder.png"           },
   // Pockets row (smaller, evenly spaced)
   { id: "pocket1",     label: "Pocket 1",     type: "pocket",     width: SP,  height: SPH, left: 8,                top: 602, placeholder: undefined },
   { id: "pocket2",     label: "Pocket 2",     type: "pocket",     width: SP,  height: SPH, left: 8 + SP + PG,      top: 602, placeholder: undefined },
@@ -267,7 +292,7 @@ function SlotBox({
             ) : slot.placeholder ? (
               <div className="w-full flex-1 flex items-center justify-center min-h-0 px-2 py-1" style={{ opacity: 0.35 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={slot.placeholder} alt="" className="w-full h-full object-contain" />
+                <img src={assetPath(slot.placeholder)} alt="" className="w-full h-full object-contain" />
               </div>
             ) : null}
             <div className="w-full text-center shrink-0">
@@ -289,7 +314,7 @@ function SlotBox({
             <div className="w-full flex-1 flex items-center justify-center min-h-0 px-3 py-1">
               {slot.placeholder ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={slot.placeholder} alt="" className="w-full h-full object-contain" style={{ opacity: 0.2 }} />
+                <img src={assetPath(slot.placeholder)} alt="" className="w-full h-full object-contain" style={{ opacity: 0.2 }} />
               ) : null}
             </div>
             <span className={`font-medium leading-tight text-center shrink-0 ${isLocked ? "text-gray-700" : "text-gray-600"}`}
@@ -639,7 +664,7 @@ function WeaponSlotEditor({ slotLabel, weapons, selectedWeaponId, onSelectWeapon
   return (
     <div className="flex flex-col flex-1 min-h-0">
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-xs text-gray-500 uppercase tracking-widest font-semibold">{slotLabel}</span>
+        <span className="text-sm text-gray-400 uppercase tracking-widest font-semibold">{slotLabel}</span>
         <div className="flex-1 h-px bg-gray-800"/>
       </div>
 
@@ -756,8 +781,8 @@ function WeaponSlotEditor({ slotLabel, weapons, selectedWeaponId, onSelectWeapon
           <div className="w-32 h-16 mx-auto mb-4 opacity-20">
             {slotLabel === "Sidearm" ? <PistolOutlineSVG /> : <WeaponOutlineSVG />}
           </div>
-          <p className="text-gray-500 text-sm">Select a weapon to begin</p>
-          <p className="text-gray-700 text-xs mt-1">
+          <p className="text-gray-500 text-base">Select a weapon to begin</p>
+          <p className="text-gray-700 text-sm mt-1">
             {slotLabel === "Primary" ? "Assault rifles, DMRs, snipers, shotguns" : "Pistols"}
           </p>
         </div>
@@ -1124,22 +1149,22 @@ function WeightBreakdown({ rows }: {
   const total = PMC_BASE_WEIGHT + gearTotal;
   return (
     <div className="border border-gray-800 rounded-lg overflow-hidden">
-      <div className="px-4 py-2.5 bg-gray-900/60 border-b border-gray-800">
-        <span className="text-xs text-gray-400 font-medium uppercase tracking-widest">Weight</span>
+      <div className="px-4 py-3 bg-gray-900/60 border-b border-gray-800">
+        <span className="text-sm text-gray-400 font-medium uppercase tracking-widest">Weight</span>
       </div>
       <div className="divide-y divide-gray-900">
         {rows.map(r => (
-          <div key={r.id} className="flex items-center justify-between px-4 py-2">
-            <span className="text-xs text-gray-500">{r.label}</span>
-            <span className={"text-xs font-mono tabular-nums " + (r.weight != null ? "text-gray-300" : "text-gray-700")}>
+          <div key={r.id} className="flex items-center justify-between px-4 py-2.5">
+            <span className="text-sm text-gray-400">{r.label}</span>
+            <span className={"text-sm font-mono tabular-nums " + (r.weight != null ? "text-gray-200" : "text-gray-700")}>
               {r.weight != null ? r.weight.toFixed(2) + " kg" : "- -"}
             </span>
           </div>
         ))}
       </div>
-      <div className="px-4 py-2.5 border-t border-gray-700 bg-gray-900/40 flex items-center justify-between">
-        <span className="text-xs text-gray-400 font-medium">Total PMC Weight</span>
-        <span className="text-sm font-bold font-mono tabular-nums text-[#8db87e]">
+      <div className="px-4 py-3 border-t border-gray-700 bg-gray-900/40 flex items-center justify-between">
+        <span className="text-sm text-gray-300 font-medium">Total PMC Weight</span>
+        <span className="text-base font-bold font-mono tabular-nums text-[#8db87e]">
           {total.toFixed(2)} kg
         </span>
       </div>
@@ -2062,11 +2087,82 @@ function BeltSlotEditor({ belts, selectedBeltId, onSelectBelt, slotItems, onSlot
   );
 }
 
+// ─── SimpleGearEditor ─────────────────────────────────────────────────────────
+// Generic single-select dropdown for simple gear slots (eyewear, headset, etc.)
+function SimpleGearEditor<T extends { id: string; name: string; vendor?: string | null; vendorRank?: number | null; weight?: number | null; source?: string; image?: string | null }>({
+  label, items, selectedId, onSelect, vendorRanks, subLabel,
+}: {
+  label: string;
+  items: T[];
+  selectedId: string | null;
+  onSelect: (id: string | null) => void;
+  vendorRanks?: Record<string, number>;
+  subLabel?: (item: T) => string | undefined;
+}) {
+  const filtered = vendorRanks
+    ? items.filter(item => {
+        if (!item.vendor || item.vendorRank == null) return true;
+        const rank = vendorRanks[item.vendor] ?? 0;
+        return rank >= (item.vendorRank ?? 0);
+      })
+    : items;
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-3 mb-2">
+        <span className="text-xs text-gray-500 uppercase tracking-widest font-semibold">{label}</span>
+        <div className="flex-1 h-px bg-gray-800"/>
+        {selectedId && (
+          <button
+            onClick={() => onSelect(null)}
+            className="text-xs text-gray-600 hover:text-red-400 transition-colors"
+          >✕ Clear</button>
+        )}
+      </div>
+      <div className="flex flex-col gap-1">
+        {filtered.map(item => (
+          <button
+            key={item.id}
+            onClick={() => onSelect(item.id === selectedId ? null : item.id)}
+            className={`w-full text-left px-3 py-2 rounded flex items-center gap-3 transition-colors text-sm border ${
+              item.id === selectedId
+                ? "border-[#6b9c5e] bg-[#6b9c5e]/10 text-gray-100"
+                : "border-transparent bg-gray-900/50 text-gray-300 hover:bg-gray-800 hover:border-gray-700"
+            }`}
+          >
+            {item.image && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={item.image} alt="" className="w-10 h-10 object-contain flex-shrink-0 rounded bg-black/30" />
+            )}
+            <div className="flex flex-col min-w-0 flex-1">
+              <span className="font-medium truncate">{item.name}</span>
+              <div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-0.5 text-xs text-gray-500">
+                {item.weight != null && <span>{item.weight.toFixed(3)} kg</span>}
+                {subLabel && subLabel(item) && <span>{subLabel(item)}</span>}
+                {item.vendor && item.vendorRank != null && (
+                  <span className="text-[#6b9c5e]">{item.vendor} R.{item.vendorRank}</span>
+                )}
+                {item.source && !item.vendor && (
+                  <span className="text-gray-600">{item.source}</span>
+                )}
+              </div>
+            </div>
+          </button>
+        ))}
+        {filtered.length === 0 && (
+          <p className="text-xs text-gray-600 italic px-3 py-2">No items match your current vendor ranks.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ─── Root Component ────────────────────────────────────────────────────────────
 
 export default function LoadoutBuilder({
   weapons, allAttachments, gadgets, headwear,
   armorItems, rigs, consumables, medicalItems, containerItems, keyItems, beltItems,
+  eyewearItems, faceCoverItems, backpackItems, lockboxItems, headsetItems,
 }: {
   weapons: Weapon[];
   allAttachments: Record<string, Attachment>;
@@ -2079,6 +2175,11 @@ export default function LoadoutBuilder({
   containerItems: ContainerItem[];
   keyItems: KeyItem[];
   beltItems: BeltItem[];
+  eyewearItems: EyewearItem[];
+  faceCoverItems: FaceCoverItem[];
+  backpackItems: BackpackItem[];
+  lockboxItems: LockboxItem[];
+  headsetItems: HeadsetItem[];
 }) {
   const [activePMCSlot, setActivePMCSlot] = useState<string | null>("primary");
   const [buildName, setBuildName] = useState("");
@@ -2136,6 +2237,11 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
   };
   // Belt
   const [selectedBeltId, setSelectedBeltId] = useState<string | null>(null);
+  const [selectedEyewearId, setSelectedEyewearId] = useState<string | null>(null);
+  const [selectedFaceCoverId, setSelectedFaceCoverId] = useState<string | null>(null);
+  const [selectedBackpackId, setSelectedBackpackId] = useState<string | null>(null);
+  const [selectedLockboxId, setSelectedLockboxId] = useState<string | null>(null);
+  const [selectedHeadsetId, setSelectedHeadsetId] = useState<string | null>(null);
   const [beltSlotItems, setBeltSlotItems] = useState<(string | null)[]>([]);
   const handleBeltSlotChange = (slotIndex: number, itemId: string | null) => {
     setBeltSlotItems(prev => {
@@ -2234,7 +2340,12 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
   const isHeadwearSlot = activeSlot?.type === "headwear";
   const isArmorOrRigSlot = activeSlot?.type === "armor" || activeSlot?.type === "rig";
   const isPocketSlot = activeSlot?.type === "pocket";
-  const isBeltSlot   = activeSlot?.type === "belt";
+  const isBeltSlot        = activeSlot?.type === "belt";
+  const isEyewearSlot     = activeSlot?.type === "eyewear";
+  const isFaceCoverSlot   = activeSlot?.type === "facecover";
+  const isBackpackSlot    = activeSlot?.type === "backpack";
+  const isLockboxSlot     = activeSlot?.type === "lockbox";
+  const isHeadsetSlot     = activeSlot?.type === "headset";
   const primaryWeapons = weapons.filter(w => w.type !== "Pistol");
   const sidearmWeapons = weapons.filter(w => w.type === "Pistol");
   const slotWeapons = activePMCSlot === "sidearm" ? sidearmWeapons : primaryWeapons;
@@ -2263,7 +2374,10 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
       for (const entry of entries) {
         const colW = entry.contentRect.width;
         if (colW > 0) {
-          setDollScale(Math.min(1, colW / DOLL_W));
+          // Scale up to fill the column - removes the 1.0 cap so the doll
+          // grows on wide viewports instead of leaving big empty margins.
+          // Cap at 1.5 so it doesn't look comically large on ultra-wide screens.
+          setDollScale(Math.min(1.5, colW / DOLL_W));
         }
       }
     });
@@ -2299,7 +2413,11 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
           }, 0);
         return rigData.weight + contentsWeight;
       })() },
-    { id: "backpack",    label: "Backpack",    weight: null },
+    { id: "backpack",    label: "Backpack",    weight: backpackItems.find(b => b.id === selectedBackpackId)?.weight ?? null },
+    { id: "eyewear",     label: "Eyewear",     weight: eyewearItems.find(e => e.id === selectedEyewearId)?.weight ?? null },
+    { id: "facecover",   label: "Face Cover",  weight: faceCoverItems.find(f => f.id === selectedFaceCoverId)?.weight ?? null },
+    { id: "headset",     label: "Headset",     weight: headsetItems.find(h => h.id === selectedHeadsetId)?.weight ?? null },
+    { id: "lockbox",     label: "Secure Case", weight: lockboxItems.find(l => l.id === selectedLockboxId)?.weight ?? null },
     { id: "belt", label: "Belt", weight: (() => {
         const beltData = beltItems.find(b => b.id === selectedBeltId);
         if (!beltData) return null;
@@ -2351,11 +2469,16 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
         </button>
       </div>
 
-      {/* Main 3-column layout: doll | editor | weight */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1px 1fr 1px 1fr", gap: 0 }} className="items-start">
+      {/* Main 3-column layout: doll | editor | weight - each column is exactly 1/3 of viewport.
+          Using flex with explicit 33.333% widths because CSS grid 1fr was being affected by
+          the doll's fixed-pixel inner clip wrapper, causing column auto-sizing. */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1px 1fr 1px 1fr", alignItems: "start" }}>
 
-        {/* PMC Doll - scales to fill its grid column */}
-        <div ref={dollColumnRef} className="flex flex-col items-center overflow-hidden px-3 py-2">
+        {/* PMC Doll - left 1/3, doll scales to fit column width */}
+        <div
+          ref={dollColumnRef}
+          className="flex flex-col items-start overflow-hidden px-3 py-2"
+        >
           {/* Clip wrapper compensates for scale() not affecting layout flow */}
           <div style={{ width: dollW * dollScale, height: dollH * dollScale, overflow: "hidden", flexShrink: 0 }}>
           <div
@@ -2369,7 +2492,7 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/PMCSILHOUETTE.png"
+                src={assetPath("/PMCSILHOUETTE.png")}
                 alt=""
                 className="w-full h-full"
                 style={{ objectFit: "contain", objectPosition: "center", opacity: 0.28 }}
@@ -2394,7 +2517,12 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
                 containerItems.find(c => c.id === pocketItems[pocketIdx]) ??
                 null
               ) : null;
-              const beltDoll = slot.type === "belt" ? beltItems.find(b => b.id === selectedBeltId) ?? null : null;
+              const beltDoll      = slot.type === "belt"       ? beltItems.find(b => b.id === selectedBeltId)         ?? null : null;
+              const eyewearDoll   = slot.type === "eyewear"    ? eyewearItems.find(e => e.id === selectedEyewearId)     ?? null : null;
+              const faceCoverDoll = slot.type === "facecover"  ? faceCoverItems.find(f => f.id === selectedFaceCoverId) ?? null : null;
+              const backpackDoll  = slot.type === "backpack"   ? backpackItems.find(b => b.id === selectedBackpackId)   ?? null : null;
+              const lockboxDoll   = slot.type === "lockbox"    ? lockboxItems.find(l => l.id === selectedLockboxId)     ?? null : null;
+              const headsetDoll   = slot.type === "headset"    ? headsetItems.find(h => h.id === selectedHeadsetId)     ?? null : null;
               return (
                 <div
                   key={slot.id}
@@ -2408,10 +2536,10 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
                   <SlotBox
                     slot={slot}
                     isActive={activePMCSlot === slot.id}
-                    hasContent={!!(w || hw || g || armorDoll || rigDoll || pocketItem || beltDoll)}
-                    contentLabel={w?.name ?? hw?.name ?? g?.name ?? armorDoll?.name ?? rigDoll?.name ?? pocketItem?.name ?? beltDoll?.name}
-                    contentSubLabel={w?.caliber ?? hw?.armorLevel ?? hw?.subtype ?? g?.type ?? armorDoll?.nijRating ?? beltDoll?.gridSize ?? undefined}
-                    contentImage={w?.image ?? hw?.image ?? g?.image ?? armorDoll?.image ?? rigDoll?.image ?? beltDoll?.image ??
+                    hasContent={!!(w || hw || g || armorDoll || rigDoll || pocketItem || beltDoll || eyewearDoll || faceCoverDoll || backpackDoll || lockboxDoll || headsetDoll)}
+                    contentLabel={w?.name ?? hw?.name ?? g?.name ?? armorDoll?.name ?? rigDoll?.name ?? pocketItem?.name ?? beltDoll?.name ?? eyewearDoll?.name ?? faceCoverDoll?.name ?? backpackDoll?.name ?? lockboxDoll?.name ?? headsetDoll?.name}
+                    contentSubLabel={w?.caliber ?? hw?.armorLevel ?? hw?.subtype ?? g?.type ?? armorDoll?.nijRating ?? beltDoll?.gridSize ?? backpackDoll?.gridSize ?? undefined}
+                    contentImage={w?.image ?? hw?.image ?? g?.image ?? armorDoll?.image ?? rigDoll?.image ?? beltDoll?.image ?? eyewearDoll?.image ?? faceCoverDoll?.image ?? backpackDoll?.image ?? lockboxDoll?.image ?? headsetDoll?.image ??
                       (pocketItem && "image" in pocketItem ? (pocketItem as { image?: string | null }).image ?? undefined : undefined)}
                     onClick={() => handleSlotClick(slot.id, slot.type)}
                   />
@@ -2435,10 +2563,13 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
         </div>
 
         {/* Divider */}
-        <div className="bg-gray-800" style={{ gridRow: "1", width: "1px" }}/>
+        <div className="bg-gray-800 self-stretch" style={{ width: "1px", flexShrink: 0 }}/>
 
-        {/* Editor panel */}
-        <div className="flex flex-col min-w-0 px-3" style={{ minHeight: dollH * dollScale }}>
+        {/* Editor panel - middle 1/3 */}
+        <div
+          className="flex flex-col min-w-0 px-3"
+          style={{ minHeight: dollH * dollScale }}
+        >
           {isWeaponSlot && activePMCSlot ? (
             <>
               <VendorRanks ranks={vendorRanks} setRanks={setVendorRanks}/>
@@ -2563,24 +2694,79 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
                 />
               </div>
             </>
+          ) : isEyewearSlot ? (
+            <>
+              <VendorRanks ranks={vendorRanks} setRanks={setVendorRanks}/>
+              <div className="mt-3 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                <SimpleGearEditor
+                  label="Eyewear" items={eyewearItems}
+                  selectedId={selectedEyewearId} onSelect={setSelectedEyewearId}
+                  vendorRanks={vendorRanks}
+                  subLabel={item => item.rainProtection != null ? `Rain +${item.rainProtection}%` : undefined}
+                />
+              </div>
+            </>
+          ) : isFaceCoverSlot ? (
+            <>
+              <VendorRanks ranks={vendorRanks} setRanks={setVendorRanks}/>
+              <div className="mt-3 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                <SimpleGearEditor
+                  label="Face Cover" items={faceCoverItems}
+                  selectedId={selectedFaceCoverId} onSelect={setSelectedFaceCoverId}
+                  vendorRanks={vendorRanks}
+                  subLabel={item => item.rainProtection != null ? `Rain +${item.rainProtection}%` : undefined}
+                />
+              </div>
+            </>
+          ) : isBackpackSlot ? (
+            <>
+              <VendorRanks ranks={vendorRanks} setRanks={setVendorRanks}/>
+              <div className="mt-3 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                <SimpleGearEditor
+                  label="Backpack" items={backpackItems}
+                  selectedId={selectedBackpackId} onSelect={setSelectedBackpackId}
+                  vendorRanks={vendorRanks}
+                  subLabel={item => item.gridSize ? `${item.gridSize} · ${item.slots ?? "?"} slots${item.hasSling ? " · sling" : ""}` : undefined}
+                />
+              </div>
+            </>
+          ) : isLockboxSlot ? (
+            <div className="mt-3 flex flex-col flex-1 min-h-0 overflow-y-auto">
+              <SimpleGearEditor
+                label="Secure Case" items={lockboxItems}
+                selectedId={selectedLockboxId} onSelect={setSelectedLockboxId}
+                subLabel={item => item.gridSize ? `${item.gridSize} · ${item.slots ?? "?"} slots` : undefined}
+              />
+            </div>
+          ) : isHeadsetSlot ? (
+            <>
+              <VendorRanks ranks={vendorRanks} setRanks={setVendorRanks}/>
+              <div className="mt-3 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                <SimpleGearEditor
+                  label="Headset" items={headsetItems}
+                  selectedId={selectedHeadsetId} onSelect={setSelectedHeadsetId}
+                  vendorRanks={vendorRanks}
+                />
+              </div>
+            </>
           ) : activePMCSlot ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center">
-              <p className="text-gray-400 text-sm font-semibold">{activeSlot?.label}</p>
-              <p className="text-gray-700 text-xs mt-2">Gear builder coming soon for this slot</p>
+              <p className="text-gray-400 text-base font-semibold">{activeSlot?.label}</p>
+              <p className="text-gray-700 text-sm mt-2">Gear builder coming soon for this slot</p>
             </div>
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center text-center">
-              <p className="text-gray-500 text-sm font-medium">Select a slot to get started</p>
-              <p className="text-gray-700 text-xs mt-1">Click any slot on the doll to begin</p>
+              <p className="text-gray-500 text-base font-medium">Select a slot to get started</p>
+              <p className="text-gray-700 text-sm mt-1">Click any slot on the doll to begin</p>
             </div>
           )}
         </div>
 
         {/* Divider */}
-        <div className="bg-gray-800" style={{ gridRow: "1", width: "1px" }}/>
+        <div className="bg-gray-800 self-stretch" style={{ width: "1px", flexShrink: 0 }}/>
 
-        {/* Weight breakdown panel */}
-        <div className="px-3">
+        {/* Weight breakdown panel - right 1/3 */}
+        <div className="px-3 min-w-0">
           <WeightBreakdown rows={allWeightRows} />
         </div>
 

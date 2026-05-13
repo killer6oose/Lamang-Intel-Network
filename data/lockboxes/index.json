@@ -1,0 +1,38 @@
+[
+  {
+    "id": "safelock-protected-ruck-case",
+    "name": "SafeLock Protected Ruck Case",
+    "gridSize": "2x2",
+    "slots": 4,
+    "weight": null,
+    "source": "Basic / starter edition",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/5/5c/Safelock_icon.png"
+  },
+  {
+    "id": "snuck-908-portable-lockbox",
+    "name": "Snuck 908 Portable Lockbox",
+    "gridSize": "2x3",
+    "slots": 6,
+    "weight": null,
+    "source": "Elite Edition / Hazardous Treasures reward",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/c/c3/Snuck_908_icon.png"
+  },
+  {
+    "id": "tas-secure-case",
+    "name": "TAS Secure Case",
+    "gridSize": "3x3",
+    "slots": 9,
+    "weight": null,
+    "source": "Supporter Edition / Terminal Initiative reward",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/4/40/TAS_icon.png"
+  },
+  {
+    "id": "sentinel-48-safeguard",
+    "name": "Sentinel 48 Safeguard Case",
+    "gridSize": null,
+    "slots": null,
+    "weight": null,
+    "source": "Unknown",
+    "image": null
+  }
+]

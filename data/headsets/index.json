@@ -1,0 +1,119 @@
+[
+  {
+    "id": "construction-earmuffs",
+    "name": "Construction Earmuffs",
+    "weight": 0.44,
+    "vendor": "Artisan",
+    "vendorRank": 1,
+    "source": "Artisan R.1",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/3/33/Earmuffs_icon.png"
+  },
+  {
+    "id": "impact-sport",
+    "name": "Impact Sport",
+    "weight": 0.279,
+    "vendor": "Banshee",
+    "vendorRank": 2,
+    "source": "Banshee R.2",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/d4/Impact_icon.png"
+  },
+  {
+    "id": "razor-slim-electronic-muff",
+    "name": "Razor Slim Electronic Muff",
+    "weight": 0.4,
+    "vendor": "Banshee",
+    "vendorRank": 1,
+    "source": "Banshee R.1",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/6/66/Razor_icon.png"
+  },
+  {
+    "id": "active-headset-gssh01",
+    "name": "Active Headset GSSh-01",
+    "weight": 0.33,
+    "vendor": "Turncoat",
+    "vendorRank": 1,
+    "source": "Turncoat R.1",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/a/a6/GSSh-01_icon.png"
+  },
+  {
+    "id": "ultimate-power-muff-quads",
+    "name": "Ultimate Power Muff Quads",
+    "weight": 0.34,
+    "vendor": "Banshee",
+    "vendorRank": 3,
+    "source": "Banshee R.3",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/d/da/Quads_icon.png"
+  },
+  {
+    "id": "3m-comtac-ii",
+    "name": "3M Comtac II",
+    "weight": 0.68,
+    "vendor": "Banshee",
+    "vendorRank": 4,
+    "source": "Banshee R.4",
+    "image": "https://static.wikia.nocookie.net/gray-zone-warfare/images/7/7f/3M_Comtac_II_icon.png"
+  },
+  {
+    "id": "active-headset-gssh01-6m2",
+    "name": "Active Headset GSSh-01 6M2",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "earplugs",
+    "name": "Earplugs",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "surefire-sonic-defenders",
+    "name": "Surefire Sonic Defenders",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "sordin-supreme-mil-cc",
+    "name": "Sordin Supreme MIL CC",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "3m-peltor-comtac-vii",
+    "name": "3M Peltor Comtac VII",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "amp-with-nfmi-earplugs",
+    "name": "AMP with NFMI Earplugs",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  },
+  {
+    "id": "tasc-1",
+    "name": "TASC 1",
+    "weight": null,
+    "vendor": null,
+    "vendorRank": null,
+    "source": "Unknown",
+    "image": null
+  }
+]

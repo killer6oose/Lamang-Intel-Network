@@ -25,12 +25,12 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .shi{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:14px;text-decoration:none}
 .logo img{width:36px;height:36px;flex-shrink:0}
-.lm{font-family:var(--disp);font-size:22px;font-weight:700;letter-spacing:.1em;color:var(--es);text-transform:uppercase;line-height:1}
-.ls{font-family:var(--mono);font-size:9px;color:var(--ug);letter-spacing:.2em;text-transform:uppercase}
+.lm{font-family:var(--disp);font-size:16px;font-weight:700;letter-spacing:.08em;color:var(--es);text-transform:uppercase;line-height:1;white-space:nowrap}
+.ls{font-family:var(--mono);font-size:9px;color:var(--ug);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 .abadge{font-family:var(--mono);font-size:10px;background:var(--danger);color:#ffaaaa;border:1px solid var(--danger-b);padding:4px 12px;letter-spacing:.15em;text-transform:uppercase}
-.hnav{display:flex;align-items:center;gap:16px}
-.hnav a{font-family:var(--mono);font-size:11px;color:var(--ug);text-decoration:none;letter-spacing:.1em;transition:color .15s}
-.hnav a:hover{color:var(--es)}
+.hnav{display:flex;align-items:center;gap:2px;flex-wrap:nowrap}
+.nl{font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ug);text-decoration:none;padding:5px 10px;border:1px solid transparent;transition:all .18s;white-space:nowrap}
+.nl:hover{color:var(--es);border-color:rgba(200,100,100,.4)}
 
 /* GATE */
 .gate-wrap{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 64px);padding:40px 24px}
@@ -1621,4 +1621,81 @@ function moveBan(idx, dir) {
 // =============================================================================
 function changePass() {
   var cur     = document.getElementById('cur-pass').value;
-  v
+  var next    = document.getElementById('new-pass').value;
+  var confirm = document.getElementById('confirm-pass').value;
+  var errEl   = document.getElementById('pass-err');
+  errEl.style.display = 'none';
+
+  if (!cur || !next || !confirm) {
+    errEl.textContent = 'All fields are required.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (next.length < 6) {
+    errEl.textContent = 'New passphrase must be at least 6 characters.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (next !== confirm) {
+    errEl.textContent = 'New passphrases do not match.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  apiCall({ action: 'change-pass', pass: cur, newPass: next }, function() {
+    adminPass = next;
+    toast('Passphrase updated.');
+    document.getElementById('cur-pass').value = '';
+    document.getElementById('new-pass').value = '';
+    document.getElementById('confirm-pass').value = '';
+  }, function(e) {
+    errEl.textContent = (e && e.message) || 'Failed to update passphrase.';
+    errEl.style.display = 'block';
+  });
+}
+
+function confirmReset() {
+  if (!confirm('Reset ALL site data to defaults?\n\nThis will wipe vulture locations, ammo data, blueprints, and banner items.\n\nThis CANNOT be undone.')) return;
+  var def = {
+    vulture: {
+      description: 'Vulture is the primary target. He rotates between 2 locations simultaneously each week.',
+      tacMapUrl: '',
+      currentLocations: [],
+      possibleLocations: [],
+      history: []
+    },
+    ammo:  [],
+    admin: { banner: [], blueprints: [] }
+  };
+  Promise.all([
+    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'vulture', pass:adminPass, data:def.vulture}) }).then(function(r){return r.json();}),
+    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'ammo',    pass:adminPass, data:def.ammo})    }).then(function(r){return r.json();}),
+    fetch('api.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'save', file:'admin',   pass:adminPass, data:def.admin})   }).then(function(r){return r.json();})
+  ]).then(function() {
+    vultureData = def.vulture;
+    ammoData    = def.ammo;
+    adminData   = def.admin;
+    renderBossesTab();
+    renderAmmoTab();
+    renderBpTab();
+    renderBannerTab();
+    toast('All data reset to defaults.');
+  }).catch(function() {
+    toast('Reset failed - check server logs.', 'error');
+  });
+}
+
+// =============================================================================
+// INIT
+// =============================================================================
+generateCaptcha();
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    if (document.getElementById('gate-wrap').style.display !== 'none') {
+      attemptLogin();
+    }
+  }
+});
+</script>
+</body>
+</html>
