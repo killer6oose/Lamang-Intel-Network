@@ -442,6 +442,7 @@ function AttachmentRow({ slotKey, slot, allAttachments, selected, onSelect, vend
           )}
         </div>
       )}
+
     </div>
   );
 }
@@ -2267,6 +2268,8 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
     Gunny: 1, Artisan: 1, Turncoat: 1, Banshee: 1, Vulture: 1, Handshake: 1,
   });
   const [slotWeights, setSlotWeights] = useState<Record<string, number>>({});
+  const [drawerExpanded, setDrawerExpanded] = useState(false);
+  const mobileEditorRef = useRef<HTMLDivElement>(null);
 
   // ─── URL Build Sharing ─────────────────────────────────────────────────────
   const serializeBuild = () => {
@@ -2472,12 +2475,76 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
       {/* Main 3-column layout: doll | editor | weight - each column is exactly 1/3 of viewport.
           Using flex with explicit 33.333% widths because CSS grid 1fr was being affected by
           the doll's fixed-pixel inner clip wrapper, causing column auto-sizing. */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1px 1fr 1px 1fr", alignItems: "start" }}>
+      {/* ── Mobile slot list (hidden on desktop via CSS) ── */}
+      <div className="builder-mobile gap-1.5 pb-28">
+        {DOLL_GRID_SLOTS.map(slot => {
+          let selName: string | null = null;
+          if (slot.type === "weapon") {
+            const wId = slot.id === "sidearm" ? selectedWeapons.sidearm : selectedWeapons.primary;
+            selName = weapons.find(w => w.id === wId)?.name ?? null;
+          } else if (slot.type === "headwear") {
+            selName = headwear.find(h => h.id === selectedHeadwear)?.name ?? null;
+          } else if (slot.type === "gadget") {
+            selName = gadgets.find(g => g.id === selectedGadgets[slot.id])?.name ?? null;
+          } else if (slot.type === "armor") {
+            selName = armorItems.find(a => a.id === selectedArmorId)?.name ?? null;
+          } else if (slot.type === "rig") {
+            const pc = armorItems.find(a => a.id === selectedArmorId && a.type === "Plate Carrier");
+            selName = pc ? pc.name : (rigs.find(r => r.id === selectedRigId)?.name ?? null);
+          } else if (slot.type === "belt") {
+            selName = beltItems.find(b => b.id === selectedBeltId)?.name ?? null;
+          } else if (slot.type === "eyewear") {
+            selName = eyewearItems.find(e => e.id === selectedEyewearId)?.name ?? null;
+          } else if (slot.type === "facecover") {
+            selName = faceCoverItems.find(f => f.id === selectedFaceCoverId)?.name ?? null;
+          } else if (slot.type === "backpack") {
+            selName = backpackItems.find(b => b.id === selectedBackpackId)?.name ?? null;
+          } else if (slot.type === "lockbox") {
+            selName = lockboxItems.find(l => l.id === selectedLockboxId)?.name ?? null;
+          } else if (slot.type === "headset") {
+            selName = headsetItems.find(h => h.id === selectedHeadsetId)?.name ?? null;
+          } else if (slot.type === "pocket") {
+            const idx = parseInt(slot.id.replace("pocket", "")) - 1;
+            const pId = pocketItems[idx] ?? null;
+            if (pId) selName = consumables.find(c => c.id === pId)?.name
+              ?? medicalItems.find(m => m.id === pId)?.name
+              ?? containerItems.find(c => c.id === pId)?.name ?? null;
+          }
+          const isActive = activePMCSlot === slot.id;
+          return (
+            <button
+              key={slot.id}
+              onClick={() => {
+                handleSlotClick(slot.id, slot.type);
+                setTimeout(() => mobileEditorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+              }}
+              className={[
+                "w-full flex items-center justify-between px-5 py-5 border rounded-lg transition-colors text-left",
+                isActive  ? "border-[#6b9c5e] bg-[#6b9c5e]/10"
+                : selName ? "border-gray-700 bg-gray-900/80"
+                :           "border-gray-800 bg-gray-950",
+              ].join(" ")}
+            >
+              <span className={`text-sm uppercase tracking-widest font-semibold ${isActive ? "text-[#8db87e]" : "text-gray-400"}`}>
+                {slot.label}
+              </span>
+              <div className="flex items-center gap-2 min-w-0">
+                <span className={`text-base font-mono truncate max-w-[180px] ${selName ? "text-gray-100" : "text-gray-600 italic"}`}>
+                  {selName ?? "—"}
+                </span>
+                <span className="text-gray-500 text-xl leading-none shrink-0">›</span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="builder-desktop-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1px 1fr 1px 1fr", alignItems: "start" }}>
 
         {/* PMC Doll - left 1/3, doll scales to fit column width */}
         <div
           ref={dollColumnRef}
-          className="flex flex-col items-start overflow-hidden px-3 py-2"
+          className="builder-doll flex flex-col items-start overflow-hidden px-3 py-2"
         >
           {/* Clip wrapper compensates for scale() not affecting layout flow */}
           <div style={{ width: dollW * dollScale, height: dollH * dollScale, overflow: "hidden", flexShrink: 0 }}>
@@ -2563,11 +2630,12 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
         </div>
 
         {/* Divider */}
-        <div className="bg-gray-800 self-stretch" style={{ width: "1px", flexShrink: 0 }}/>
+        <div className="builder-divider bg-gray-800 self-stretch" style={{ width: "1px", flexShrink: 0 }}/>
 
         {/* Editor panel - middle 1/3 */}
         <div
-          className="flex flex-col min-w-0 px-3"
+          ref={mobileEditorRef}
+          className="builder-editor flex flex-col min-w-0 px-3"
           style={{ minHeight: dollH * dollScale }}
         >
           {isWeaponSlot && activePMCSlot ? (
@@ -2763,13 +2831,37 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
         </div>
 
         {/* Divider */}
-        <div className="bg-gray-800 self-stretch" style={{ width: "1px", flexShrink: 0 }}/>
+        <div className="builder-divider bg-gray-800 self-stretch" style={{ width: "1px", flexShrink: 0 }}/>
 
         {/* Weight breakdown panel - right 1/3 */}
-        <div className="px-3 min-w-0">
+        <div className="builder-weight px-3 min-w-0">
           <WeightBreakdown rows={allWeightRows} />
         </div>
 
+      </div>
+
+      {/* ── Mobile weight drawer (fixed to bottom, hidden on desktop) ── */}
+      <div className="builder-drawer">
+        <button
+          onClick={() => setDrawerExpanded(o => !o)}
+          className="w-full flex items-center justify-between px-4 py-3 bg-[#0d1209] border-t-2 border-[#4a6741]"
+          style={{ boxShadow: "0 -4px 20px rgba(0,0,0,.6)" }}
+        >
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Total Weight</span>
+            <span className="text-sm font-bold font-mono text-[#8db87e]">
+              {(PMC_BASE_WEIGHT + allWeightRows.reduce((s, r) => s + (r.weight ?? 0), 0)).toFixed(2)} kg
+            </span>
+          </div>
+          <span className="text-gray-500 text-[10px] uppercase tracking-wider">
+            {drawerExpanded ? "▼ hide" : "▲ breakdown"}
+          </span>
+        </button>
+        {drawerExpanded && (
+          <div className="max-h-64 overflow-y-auto bg-gray-950 border-t border-gray-800">
+            <WeightBreakdown rows={allWeightRows} />
+          </div>
+        )}
       </div>
     </div>
   );

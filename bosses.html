@@ -83,6 +83,30 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .loot-tag{background:rgba(45,66,32,.3);border:1px solid var(--jm);color:var(--jp);font-family:var(--mono);font-size:9px;letter-spacing:.08em;padding:2px 8px;display:inline-block}
 .loc-list{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
 .loc-pill{background:var(--uc);border:1px solid var(--um);color:var(--up);font-family:var(--mono);font-size:9px;letter-spacing:.06em;padding:2px 7px}
+.loc-pill.loc-link{color:var(--jb);border-color:var(--jm);text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.loc-pill.loc-link:hover{background:var(--jm);color:var(--jp)}
+.report-loc-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--jg);background:transparent;border:1px solid var(--jm);padding:4px 10px;cursor:pointer;transition:color .15s,border-color .15s}
+.report-loc-btn:hover{color:var(--jp);border-color:var(--jg)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--jd);border:1px solid var(--jm);border-top:2px solid var(--jg);width:100%;max-width:480px;padding:28px 28px 24px;position:relative}
+.modal-title{font-family:var(--disp);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--jp);margin-bottom:4px}
+.modal-sub{font-family:var(--mono);font-size:10px;color:var(--ug);margin-bottom:20px;letter-spacing:.06em}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--ug);font-size:18px;cursor:pointer;transition:color .15s}
+.modal-close:hover{color:var(--up)}
+.modal label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ug);margin-bottom:5px}
+.modal input[type=text],.modal input[type=number],.modal textarea{width:100%;background:var(--uk);border:1px solid var(--um);color:var(--up);font-family:var(--mono);font-size:12px;padding:8px 10px;margin-bottom:14px;outline:none;transition:border-color .15s}
+.modal input[type=text]:focus,.modal input[type=number]:focus,.modal textarea:focus{border-color:var(--jg)}
+.modal textarea{resize:vertical;min-height:60px}
+.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.modal-captcha{background:var(--uk);border:1px solid var(--um);padding:10px 12px;margin-bottom:14px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px}
+.modal-captcha span{color:var(--jp);font-weight:600}
+.modal-captcha input{flex:1;min-width:0;background:transparent;border:none;border-bottom:1px solid var(--um);color:var(--up);font-family:var(--mono);font-size:13px;padding:2px 4px;outline:none}
+.modal-submit{width:100%;background:var(--jg);border:none;color:#fff;font-family:var(--disp);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:10px;cursor:pointer;transition:background .15s;margin-top:4px}
+.modal-submit:hover{background:var(--jb)}
+.modal-msg{font-family:var(--mono);font-size:11px;margin-top:10px;display:none;padding:8px 10px}
+.modal-msg.ok{display:block;background:rgba(74,103,65,.15);border:1px solid var(--jm);color:var(--jp)}
+.modal-msg.err{display:block;background:rgba(90,30,30,.2);border:1px solid #5a1e1e;color:#e07070}
 .ft{background:var(--jd);border-top:1px solid var(--jm);padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
 .ft-br{font-family:var(--disp);font-size:14px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--jg)}
 .ft-sub{font-family:var(--mono);font-size:9px;color:var(--ug);letter-spacing:.08em;margin-top:2px}
@@ -90,7 +114,29 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .ft-lk{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ul);text-decoration:none;transition:color .14s}
 .ft-lk:hover{color:var(--jb)}
 @media(max-width:900px){.bp-grid{grid-template-columns:1fr}.bp-name,.bp-callsign,.bp-intel{grid-column:1}}
-@media(max-width:700px){.hnav{display:none}.hero{padding:28px 20px}.body{padding:24px 16px}.boss-panel-inner{padding:20px 16px}.boss-tab{padding:7px 12px}}
+/* ── HAMBURGER / MOBILE NAV ─────────────────────────────────────── */
+.hbtn{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;background:transparent;border:1px solid var(--um);
+  cursor:pointer;padding:9px;flex-shrink:0;transition:border-color .15s}
+.hbtn:hover{border-color:var(--jg)}
+.hbtn span{display:block;height:2px;background:var(--up);
+  transition:transform .22s,opacity .22s,background .15s}
+.hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbtn.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{display:none;flex-direction:column;background:var(--jd);
+  border-top:1px solid var(--jm);border-bottom:2px solid var(--jg)}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--body);font-size:13px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ul);
+  text-decoration:none;padding:14px 20px;border-bottom:1px solid var(--jm);
+  transition:color .15s,background .15s}
+.mnav a:last-child{border-bottom:none}
+.mnav a:hover{color:var(--jp);background:rgba(74,103,65,.12)}
+.mnav a.active{color:var(--jp);background:rgba(74,103,65,.18);
+  border-left:3px solid var(--jg);padding-left:17px}
+
+@media(max-width:700px){.hnav{display:none}.hbtn{display:flex}.hero{padding:28px 20px}.body{padding:24px 16px}.boss-panel-inner{padding:20px 16px}.boss-tab{padding:7px 12px}}
 </style>
 </head>
 <body>
@@ -109,7 +155,11 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <a href="/builder" class="nl">Loadout Builder</a>
       <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="nl">Wiki &#x2197;</a>
     </nav>
+    <button class="hbtn" id="hbtn" onclick="toggleMNav()" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile navigation"></nav>
 </header>
 
 <div class="hero">
@@ -177,8 +227,15 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       :'// '+esc(b.type)+' &mdash; '+esc(b.faction);
 
     var locPills=(b.locations||[]).map(function(l){
+      var locData=locationMap[l];
+      var url=locData&&locData.tacmap_url;
+      if(url){
+        return '<a href="'+esc(url)+'" target="_blank" rel="noopener" class="loc-pill loc-link">'+esc(l)+'&#x2197;</a>';
+      }
       return '<span class="loc-pill">'+esc(l)+'</span>';
     }).join('');
+
+    var reportBtn='<button class="report-loc-btn" onclick="openLocReport('+JSON.stringify(esc(b.name))+','+JSON.stringify(esc(b.id))+')">&#x2b; Report Location Change</button>';
 
     var videoHtml='';
     if(b.videoUrl){
@@ -201,7 +258,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
             '<div class="bp-stat"><span class="bp-stat-lbl">Notable Loot</span><span class="bp-stat-val hi"><span class="loot-tag">'+esc(b.notableLoot||'-')+'</span></span></div>'+
           '</div>'+
           '<div>'+
-            '<div class="bp-stat"><span class="bp-stat-lbl">Locations</span><span class="bp-stat-val"><div class="loc-list">'+locPills+'</div></span></div>'+
+            '<div class="bp-stat"><span class="bp-stat-lbl">Locations</span><span class="bp-stat-val"><div class="loc-list">'+locPills+'</div>'+reportBtn+'</span></div>'+
             '<div class="bp-stat"><span class="bp-stat-lbl">Respawn</span><span class="bp-stat-val">~15 min</span></div>'+
           '</div>'+
           (b.intel?'<div class="bp-intel"><div class="bp-intel-lbl">Intel</div><div class="bp-intel-txt">'+esc(b.intel)+'</div></div>':'')+
@@ -276,9 +333,13 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
     document.head.appendChild(el);
   }
 
-  fetch('data/bosses.json?t='+Date.now())
-    .then(function(r){return r.json();})
-    .then(function(bosses){
+  Promise.all([
+    fetch('data/bosses.json?t='+Date.now()).then(function(r){return r.json();}),
+    fetch('data/locations.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {};})
+  ]).then(function(results){
+    var bosses=results[0];
+    var locationMap=results[1]||{};
+    (function(bosses){
       if(!bosses||!bosses.length)return;
       injectSchema(bosses);
 
@@ -306,10 +367,156 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
         }
       });
     })
-    .catch(function(){
-      heroSub.textContent='Failed to load boss data.';
-    });
+    })(bosses);
+  }).catch(function(){
+    heroSub.textContent='Failed to load boss data.';
+  });
 
+})();
+</script>
+<!-- Location Report Modal -->
+<div class="modal-overlay" id="loc-modal" onclick="if(event.target===this)closeLocModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeLocModal()" aria-label="Close">&times;</button>
+    <div class="modal-title">Report Location Change</div>
+    <div class="modal-sub" id="modal-boss-label">BOSS NAME &middot; COMMUNITY REPORT</div>
+    <form id="loc-report-form" onsubmit="submitLocReport(event)">
+      <input type="hidden" id="rpt-boss-id" name="boss_id" value="">
+      <input type="hidden" id="rpt-boss-name" name="boss_name" value="">
+      <!-- Honeypot - bots will fill this, humans won't see it -->
+      <input type="text" name="website" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden" tabindex="-1" autocomplete="off">
+
+      <label for="rpt-loc1">New Location(s)</label>
+      <input type="text" id="rpt-loc1" name="loc1" placeholder="e.g. Fort Narith" required maxlength="80">
+
+      <label for="rpt-loc2">Additional Location (optional)</label>
+      <input type="text" id="rpt-loc2" name="loc2" placeholder="e.g. YBL-West" maxlength="80">
+
+      <label for="rpt-loc3">Additional Location (optional)</label>
+      <input type="text" id="rpt-loc3" name="loc3" placeholder="Third spawn point if applicable" maxlength="80">
+
+      <label for="rpt-notes">Notes / Evidence (optional)</label>
+      <textarea id="rpt-notes" name="notes" placeholder="e.g. witnessed 3x today, video clip link, patch 0.5.2..." maxlength="500"></textarea>
+
+      <label>Verify you're human</label>
+      <div class="modal-captcha">
+        <span id="cap-q"></span>
+        <span style="color:var(--ug)">=</span>
+        <input type="number" id="cap-ans" name="captcha_answer" placeholder="?" min="0" max="100" required style="width:56px">
+        <input type="hidden" id="cap-expected" name="captcha_expected" value="">
+      </div>
+
+      <button type="submit" class="modal-submit">Submit Report</button>
+      <div class="modal-msg" id="modal-msg"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Location report modal
+(function(){
+  function rand(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+
+  function refreshCaptcha(){
+    var a=rand(1,12),b=rand(1,12);
+    document.getElementById('cap-q').textContent=a+' + '+b;
+    document.getElementById('cap-expected').value=String(a+b);
+    document.getElementById('cap-ans').value='';
+  }
+
+  window.openLocReport=function(name,id){
+    document.getElementById('rpt-boss-name').value=name;
+    document.getElementById('rpt-boss-id').value=id;
+    document.getElementById('modal-boss-label').textContent=name.toUpperCase()+' · COMMUNITY REPORT';
+    document.getElementById('loc-report-form').reset();
+    document.getElementById('modal-msg').className='modal-msg';
+    document.getElementById('modal-msg').textContent='';
+    refreshCaptcha();
+    document.getElementById('loc-modal').classList.add('open');
+    document.getElementById('rpt-loc1').focus();
+  };
+
+  window.closeLocModal=function(){
+    document.getElementById('loc-modal').classList.remove('open');
+  };
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') window.closeLocModal();
+  });
+
+  window.submitLocReport=function(e){
+    e.preventDefault();
+    var form=document.getElementById('loc-report-form');
+    var msg=document.getElementById('modal-msg');
+    var ans=parseInt(document.getElementById('cap-ans').value,10);
+    var exp=parseInt(document.getElementById('cap-expected').value,10);
+    if(ans!==exp){
+      msg.className='modal-msg err';
+      msg.textContent='Incorrect answer - please try again.';
+      refreshCaptcha();
+      return;
+    }
+    var data=new FormData(form);
+    var btn=form.querySelector('.modal-submit');
+    btn.disabled=true;
+    btn.textContent='Sending...';
+    fetch('api/report-location.php',{method:'POST',body:data})
+      .then(function(r){return r.json();})
+      .then(function(res){
+        if(res.ok){
+          msg.className='modal-msg ok';
+          msg.textContent='Report received - thank you, operator.';
+          form.reset();
+          refreshCaptcha();
+        } else {
+          msg.className='modal-msg err';
+          msg.textContent=res.error||'Submission failed. Please try again.';
+          refreshCaptcha();
+        }
+        btn.disabled=false;
+        btn.textContent='Submit Report';
+      })
+      .catch(function(){
+        msg.className='modal-msg err';
+        msg.textContent='Network error. Please try again.';
+        btn.disabled=false;
+        btn.textContent='Submit Report';
+        refreshCaptcha();
+      });
+  };
+})();
+</script>
+
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('hbtn');
+  var nav = document.getElementById('mnav');
+  if (!btn || !nav) return;
+  var hnav = document.querySelector('.hnav');
+  if (hnav) {
+    var links = hnav.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) nav.appendChild(links[i].cloneNode(true));
+  }
+  window.toggleMNav = function() {
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.sh')) {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  nav.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
 })();
 </script>
 </body>

@@ -1,0 +1,148 @@
+<%
+  locals.activePage = 'schedule';
+%>
+<%- include('layout') %>
+
+<div class="page-header">
+  <h1 class="page-title">Scheduled Posts</h1>
+</div>
+
+<% if (locals.success) { %>
+  <div class="alert alert-success">
+    <% if (success === 'created') { %>Scheduled post created.<% } %>
+    <% if (success === 'updated') { %>Post updated.<% } %>
+    <% if (success === 'deleted') { %>Post deleted.<% } %>
+  </div>
+<% } %>
+<% if (locals.error) { %>
+  <div class="alert alert-error">
+    <% if (error === 'missing_fields') { %>Channel and schedule are required.<% } %>
+    <% if (error === 'missing_content') { %>Message content is required.<% } %>
+    <% if (error === 'invalid_cron') { %>Invalid cron expression. Example: <code>0 9 * * 1</code><% } %>
+    <% if (error === 'invalid_datetime') { %>Invalid datetime. Use ISO format, e.g. <code>2025-01-15T14:00:00Z</code><% } %>
+    <% if (error === 'invalid_embed_json') { %>Invalid embed JSON.<% } %>
+    <% if (error === 'not_found') { %>Post not found.<% } %>
+    <% if (error === 'db_error') { %>Database error. Check server logs.<% } %>
+  </div>
+<% } %>
+
+<!-- Create Form -->
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Create Scheduled Post</h2>
+  </div>
+  <form action="/schedule/create" method="POST" class="form" id="scheduleForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="channel_id">Channel</label>
+        <select class="form-select" id="channel_id" name="channel_id" required>
+          <option value="">Select channel...</option>
+          <% for (const ch of channels) { %>
+            <option value="<%= ch.id %>"><%= ch.parentName ? ch.parentName + ' / ' : '' %>#<%= ch.name %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="content_type">Content Type</label>
+        <select class="form-select" id="content_type" name="content_type" onchange="toggleContentType(this.value)">
+          <option value="text">Plain Text</option>
+          <option value="embed">Embed JSON</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group" id="textContentGroup">
+      <label class="form-label" for="content_text">Message</label>
+      <textarea class="form-textarea" id="content_text" name="content_text" rows="4" maxlength="2000" placeholder="Your message here..."></textarea>
+    </div>
+
+    <div class="form-group hidden" id="embedContentGroup">
+      <label class="form-label" for="content_embed">Embed JSON</label>
+      <textarea class="form-textarea form-textarea-mono" id="content_embed" name="content_embed" rows="8"
+        placeholder='{"title": "My Embed", "description": "Content here", "color": "#4a6741", "fields": []}'></textarea>
+      <span class="form-hint">JSON with keys: title, description, color, fields, url, image, thumbnail</span>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Schedule Type</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="is_recurring" value="on" checked onchange="toggleScheduleType('recurring')" />
+            Recurring (cron)
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="is_recurring" value="0" onchange="toggleScheduleType('once')" />
+            One-time
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="schedule" id="scheduleLabel">Cron Expression</label>
+        <input class="form-input" id="schedule" name="schedule" type="text"
+          placeholder="0 9 * * 1  (every Monday at 9am UTC)" required />
+        <span class="form-hint" id="scheduleHint">UTC timezone. Example: <code>0 9 * * 1</code> = every Monday 09:00 UTC</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Scheduled Post</button>
+  </form>
+</div>
+
+<!-- Existing Posts -->
+<div class="card mt-4">
+  <div class="card-header">
+    <h2 class="card-title">All Scheduled Posts</h2>
+  </div>
+
+  <% if (posts.length === 0) { %>
+    <p class="empty-state">No scheduled posts configured.</p>
+  <% } else { %>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Channel</th>
+          <th>Schedule</th>
+          <th>Type</th>
+          <th>Recurring</th>
+          <th>Status</th>
+          <th>Last Run</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const post of posts) { %>
+          <%
+            let contentObj = {};
+            try { contentObj = JSON.parse(post.content); } catch {}
+          %>
+          <tr>
+            <td><code><%= post.id %></code></td>
+            <td><code>#<%= post.channel_id %></code></td>
+            <td><code><%= post.schedule %></code></td>
+            <td><span class="badge badge-<%= contentObj.type === 'embed' ? 'blue' : 'gray' %>"><%= contentObj.type || 'text' %></span></td>
+            <td><%= post.is_recurring ? 'Yes' : 'No' %></td>
+            <td><span class="badge badge-<%= post.enabled ? 'green' : 'red' %>"><%= post.enabled ? 'Enabled' : 'Disabled' %></span></td>
+            <td class="muted"><%= post.last_run || 'Never' %></td>
+            <td class="actions">
+              <form action="/schedule/<%= post.id %>/toggle" method="POST" style="display:inline">
+                <button type="submit" class="btn btn-sm btn-<%= post.enabled ? 'warning' : 'secondary' %>">
+                  <%= post.enabled ? 'Disable' : 'Enable' %>
+                </button>
+              </form>
+              <form action="/schedule/<%= post.id %>/delete" method="POST" style="display:inline"
+                onsubmit="return confirm('Delete this scheduled post?')">
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+
+<%- include('layout_footer') %>

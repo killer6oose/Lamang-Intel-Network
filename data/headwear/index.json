@@ -1,32 +1,330 @@
-{
-  "id": "6b47-ratnik",
-  "name": "6B47 Ratnik",
-  "subtype": "Helmet",
-  "armorLevel": "IIA",
-  "vendor": null,
-  "vendorRank": null,
-  "slots": {
-    "nvgMount": {
-      "label": "NVG Mount",
-      "required": false,
-      "compatible": [
-        "rhino-helmet-nvg-mount",
-        "l4-g24-helmet-nvg-mount",
-        "pvs-14-arm"
-      ]
-    },
-    "nvg": {
-      "label": "NVG Device",
-      "required": false,
-      "requiresSlot": "nvgMount",
-      "compatible": [
-        "anpvs-7",
-        "anpvs-14",
-        "anpvs-31a",
-        "ngs-pvs-14",
-        "dt2-multicam",
-        "dt2-multicam-black"
-      ]
-    }
+[
+  {
+    "id": "6b47-ratnik",
+    "name": "6B47 Ratnik",
+    "subtype": "Helmet",
+    "armorLevel": "IIA",
+    "vendor": null,
+    "vendorRank": null
+  },
+  {
+    "id": "amp-1-tp-lc-ranger-green",
+    "name": "AMP-1 TP LC (Ranger Green)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA+",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "amp-1-tp-lc-unlra",
+    "name": "AMP-1 TP LC (UNLRA)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA+",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "amp-1-tp-mc-ranger-green",
+    "name": "AMP-1 TP MC (Ranger Green)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA+",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "bandana-blue",
+    "name": "Bandana (Blue)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": null,
+    "vendorRank": null
+  },
+  {
+    "id": "bandana-red",
+    "name": "Bandana (Red)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": null,
+    "vendorRank": null
+  },
+  {
+    "id": "baseball-cap-black",
+    "name": "Baseball Cap (Black)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "baseball-cap-blue",
+    "name": "Baseball Cap (Blue)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "baseball-cap-green",
+    "name": "Baseball Cap (Green)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "baseball-cap-khaki",
+    "name": "Baseball Cap (Khaki)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "baseball-cap-red",
+    "name": "Baseball Cap (Red)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "beret-black",
+    "name": "Beret (Black)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "beret-green",
+    "name": "Beret (Green)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "beret-red",
+    "name": "Beret (Red)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "cpu-hat-nyco-ripstop",
+    "name": "CPU Hat Nyco Ripstop",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 3
+  },
+  {
+    "id": "exfil-coyote-brown",
+    "name": "EXFIL (Coyote Brown)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Handshake",
+    "vendorRank": 2
+  },
+  {
+    "id": "exfil-multicam",
+    "name": "EXFIL (Multicam)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Handshake",
+    "vendorRank": 3
+  },
+  {
+    "id": "exsof-cap",
+    "name": "ExSOF Cap",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Banshee",
+    "vendorRank": 1
+  },
+  {
+    "id": "fast-mt-multicam",
+    "name": "FAST MT (Multicam)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA+",
+    "vendor": "Handshake",
+    "vendorRank": 4
+  },
+  {
+    "id": "fast-mt-tan",
+    "name": "FAST MT (Tan)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA+",
+    "vendor": "Handshake",
+    "vendorRank": 3
+  },
+  {
+    "id": "fast-xp-hc-multicam",
+    "name": "FAST XP HC (Multicam)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA+",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "headscarf-black",
+    "name": "Headscarf (Black)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": null,
+    "vendorRank": null
+  },
+  {
+    "id": "lshz-1-black",
+    "name": "LSHZ 1+ (Black)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "lshz-1-multicam",
+    "name": "LSHZ 1+ (Multicam)",
+    "subtype": "Helmet",
+    "armorLevel": "IIA+",
+    "vendor": null,
+    "vendorRank": null
+  },
+  {
+    "id": "leafy-boonie-camo",
+    "name": "Leafy Boonie (Camo)",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 4
+  },
+  {
+    "id": "mich-lc",
+    "name": "MICH LC",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "mich-tc-2002-black",
+    "name": "MICH TC-2002 (Black)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "mich-tc-2002-green",
+    "name": "MICH TC-2002 (Green)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "mich-tc-2002-tan",
+    "name": "MICH TC-2002 (Tan)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Handshake",
+    "vendorRank": 2
+  },
+  {
+    "id": "mich-tc-2000-black",
+    "name": "Mich TC-2000 (Black)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "mich-tc-2000-ranger-green",
+    "name": "Mich TC-2000 (Ranger Green)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "mich-tc-2000-unlra",
+    "name": "Mich TC-2000 (UNLRA)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "military-cap",
+    "name": "Military Cap",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "pasgt",
+    "name": "PASGT",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Turncoat",
+    "vendorRank": 2
+  },
+  {
+    "id": "pandatac-trucker-cap",
+    "name": "Pandatac Trucker Cap",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 2
+  },
+  {
+    "id": "qgf-03-ghillie",
+    "name": "QGF-03 (Ghillie)",
+    "subtype": "Helmet",
+    "armorLevel": "IIIA",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "regiment-cap",
+    "name": "Regiment Cap",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Banshee",
+    "vendorRank": 4
+  },
+  {
+    "id": "ssh-60",
+    "name": "SSh-60",
+    "subtype": "Helmet",
+    "armorLevel": "I",
+    "vendor": "Artisan",
+    "vendorRank": 1
+  },
+  {
+    "id": "ssh-68n",
+    "name": "SSh-68N",
+    "subtype": "Helmet",
+    "armorLevel": "I",
+    "vendor": "Loot only",
+    "vendorRank": null
+  },
+  {
+    "id": "skull-crusher",
+    "name": "Skull Crusher",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Handshake",
+    "vendorRank": 1
+  },
+  {
+    "id": "stack-up-cap",
+    "name": "Stack Up Cap",
+    "subtype": "Vanity",
+    "armorLevel": null,
+    "vendor": "Banshee",
+    "vendorRank": 4
   }
-}
+]

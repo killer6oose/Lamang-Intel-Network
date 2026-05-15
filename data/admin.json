@@ -1,16 +1,99 @@
 {
-  "banner": [
-    "WEEK 24 UPDATE ACTIVE",
-    "BLUEPRINTS - 0.4 SPEARHEAD UPDATE NOW LIVE",
-    "9 BLUEPRINT LOCATIONS CONFIRMED",
-    "COMMUNITY EVENT: FRIDAY PVP STREAMS"
-  ],
-  "blueprints": [
-    { "id": "ak308",  "name": "AK-308",  "camo": "Hunter Team",    "location": "Fort Narith - Jail",            "weaponType": "Assault Rifle", "caliber": "7.62x51mm NATO", "locateUrl": "" },
-    { "id": "akmn",   "name": "AKMN",    "camo": "Jackal Company", "location": "Campsite",                      "weaponType": "Assault Rifle", "caliber": "7.62x39mm",      "locateUrl": "" },
-    { "id": "ddm4",   "name": "DDM4",    "camo": "Phantom Lance",  "location": "Fort Narith - Barracks A, 2F", "weaponType": "Assault Rifle", "caliber": "5.56x45mm NATO", "locateUrl": "" },
-    { "id": "hk416",  "name": "HK416",   "camo": "Warden Watch",   "location": "Airfield Control Tower",        "weaponType": "Assault Rifle", "caliber": "5.56x45mm NATO", "locateUrl": "" },
-    { "id": "m14ebr", "name": "M14 EBR", "camo": "Grey Specter",   "location": "Shipwreck Bay - Bunker",        "weaponType": "Battle Rifle",  "caliber": "7.62x51mm NATO", "locateUrl": "" },
-    { "id": "g36c",   "name": "G36C",    "camo": "Jungle Reaper",  "location": "Mong Village Outpost",          "weaponType": "Carbine",       "caliber": "5.56x45mm NATO", "locateUrl": "" }
-  ]
+    "banner": [
+        "WEEK 24 UPDATE ACTIVE",
+        "BLUEPRINTS - 0.4 SPEARHEAD UPDATE NOW LIVE",
+        "9 BLUEPRINT LOCATIONS CONFIRMED"
+    ],
+    "blueprints": [
+        {
+            "id": "ak308",
+            "name": "AK-308",
+            "camo": "Hunter Team",
+            "location": "Fort Narith - Jail",
+            "weaponType": "Assault Rifle",
+            "caliber": "7.62x51mm NATO",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3460",
+            "imageUrl": "/assets/blueprints/AK-308-hunter-team.png"
+        },
+        {
+            "id": "akmn",
+            "name": "AKMN",
+            "camo": "Jackal Company",
+            "location": "Campsite",
+            "weaponType": "Assault Rifle",
+            "caliber": "7.62x39mm",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3031",
+            "imageUrl": "/assets/blueprints/AKMN-Jackal-Company.png"
+        },
+        {
+            "id": "ddm4",
+            "name": "DDM4",
+            "camo": "Phantom Lance",
+            "location": "Fort Narith - Barracks A, 2F",
+            "weaponType": "Assault Rifle",
+            "caliber": "5.56x45mm NATO",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3459",
+            "imageUrl": "/assets/blueprints/DDM4-PHANTOM-LANCE.png"
+        },
+        {
+            "id": "m14ebr",
+            "name": "M14 (HT)",
+            "camo": "Hunter Team",
+            "location": "Hunter's Paradise",
+            "weaponType": "Carbine",
+            "caliber": "7.62x51mm NATO",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3457",
+            "imageUrl": "/assets/blueprints/M14-Black-Hawk.png"
+        },
+        {
+            "id": "svd-dragonuv-sw-mp3lbgg7",
+            "name": "SVD Dragonuv (SW)",
+            "camo": "Silent Watch",
+            "location": "Tiger Bay Central - first floor",
+            "weaponType": "Sniper Rifle",
+            "caliber": "7.62x54mmR",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3464",
+            "imageUrl": "/assets/blueprints/SVD-dragunov-silent-watch.png"
+        },
+        {
+            "id": "m700-mp3m0l9o",
+            "name": "M700",
+            "camo": "Gray Company",
+            "location": "Rooftop of Midnight Sapphire hotel",
+            "weaponType": "Sniper Rifle",
+            "caliber": "7.62x51mm NATO",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3017",
+            "imageUrl": "/assets/blueprints/M700-Gray-Company.png"
+        },
+        {
+            "id": "mossberg-590-mp3m1i8t",
+            "name": "Mossberg 590",
+            "camo": "Raven Team",
+            "location": "Campsite far south from YBL-1",
+            "weaponType": "Shotgun",
+            "caliber": "12 Gauge",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3461",
+            "imageUrl": "/assets/blueprints/MOSSBERG-590-Raven-Team.png"
+        },
+        {
+            "id": "mp7a2-mp3m30n7",
+            "name": "MP7A2",
+            "camo": "Sentinel Company",
+            "location": "Campsite by Juliet 4",
+            "weaponType": "SMG",
+            "caliber": "4.6x30mm HK",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3164",
+            "imageUrl": "/assets/blueprints/MP7A2-Sentinel-Company.png"
+        },
+        {
+            "id": "sig-mcx-mp3m4cj2",
+            "name": "SIG MCX",
+            "camo": "Ghost Nomad",
+            "location": "Second floor Midnight Sapphire, next to the restaurant",
+            "weaponType": "Assault Rifle",
+            "caliber": ".300 AAC Blackout",
+            "locateUrl": "https://gzwtacmap.com/maps/lamang/place/3458",
+            "imageUrl": "/assets/blueprints/SIG-MCX-Ghost-Nomad.png"
+        }
+    ]
 }

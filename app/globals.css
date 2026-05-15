@@ -183,3 +183,51 @@ body::before {
   .shi { padding: 0 16px; }
   .ft-disc { text-align: left; }
 }
+
+/* ── Hamburger / mobile nav (builder) ────────────────────────────── */
+.hbtn {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 40px; height: 40px; background: transparent;
+  border: 1px solid var(--um); cursor: pointer; padding: 9px;
+  flex-shrink: 0; transition: border-color .15s;
+}
+.hbtn:hover { border-color: var(--jg); }
+.hbtn span {
+  display: block; height: 2px; background: var(--up);
+  transition: transform .22s, opacity .22s;
+}
+.hbtn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hbtn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hbtn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mnav {
+  display: none; flex-direction: column;
+  background: var(--jd); border-top: 1px solid var(--jm);
+  border-bottom: 2px solid var(--jg);
+}
+.mnav.open { display: flex; }
+.mnav a {
+  font-family: var(--body); font-size: 13px; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ul);
+  text-decoration: none; padding: 14px 20px;
+  border-bottom: 1px solid var(--jm); transition: color .15s, background .15s;
+}
+.mnav a:last-child { border-bottom: none; }
+.mnav a:hover { color: var(--jp); background: rgba(74,103,65,.12); }
+.mnav a.active { color: var(--jp); background: rgba(74,103,65,.18); border-left: 3px solid var(--jg); padding-left: 17px; }
+
+/* ── Mobile builder layout ────────────────────────────────────────── */
+.builder-mobile { display: none; }
+.builder-drawer { display: none; }
+
+@media (max-width: 800px) {
+  .hbtn { display: flex; }
+  /* hide doll + dividers + weight column; editor goes full-width */
+  .builder-doll    { display: none !important; }
+  .builder-divider { display: none !important; }
+  .builder-weight  { display: none !important; }
+  .builder-desktop-grid { display: flex !important; flex-direction: column; }
+  .builder-editor  { min-height: 0 !important; }
+  /* slot list + drawer */
+  .builder-mobile  { display: flex; flex-direction: column; }
+  .builder-drawer  { display: flex; flex-direction: column; position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; }
+}

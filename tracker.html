@@ -173,7 +173,29 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .cop-img img{width:100%;height:110px;object-fit:cover;object-position:center;display:block;opacity:.85}
 .cop-map-lbl{margin-top:8px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--jg);opacity:.6;transition:opacity .18s}
 .cop-card:hover .cop-map-lbl{opacity:1}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr 1fr}.bp-grid{grid-template-columns:1fr 1fr}.hnav{display:none}.boss-nm{font-size:40px}}
+/* ── HAMBURGER / MOBILE NAV ─────────────────────────────────────── */
+.hbtn{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;background:transparent;border:1px solid var(--um);
+  cursor:pointer;padding:9px;flex-shrink:0;transition:border-color .15s}
+.hbtn:hover{border-color:var(--jg)}
+.hbtn span{display:block;height:2px;background:var(--up);
+  transition:transform .22s,opacity .22s,background .15s}
+.hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbtn.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{display:none;flex-direction:column;background:var(--jd);
+  border-top:1px solid var(--jm);border-bottom:2px solid var(--jg)}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--body);font-size:13px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ul);
+  text-decoration:none;padding:14px 20px;border-bottom:1px solid var(--jm);
+  transition:color .15s,background .15s}
+.mnav a:last-child{border-bottom:none}
+.mnav a:hover{color:var(--jp);background:rgba(74,103,65,.12)}
+.mnav a.active{color:var(--jp);background:rgba(74,103,65,.18);
+  border-left:3px solid var(--jg);padding-left:17px}
+
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr 1fr}.bp-grid{grid-template-columns:1fr 1fr}.hnav{display:none}.hbtn{display:flex}.boss-nm{font-size:40px}}
 @media(max-width:600px){.tools-grid{grid-template-columns:1fr}.bp-grid{grid-template-columns:1fr}.ft-i{flex-direction:column;gap:16px}.locs-row{grid-template-columns:1fr}}
 </style>
 </head>
@@ -193,7 +215,11 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <a href="/builder" class="nl">Loadout Builder</a>
       <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="nl">Wiki &#x2197;</a>
     </nav>
+    <button class="hbtn" id="hbtn" onclick="toggleMNav()" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile navigation"></nav>
 </header>
 
 <div class="ticker" aria-hidden="true"><div class="tick-in" id="tick-in"></div></div>
@@ -445,5 +471,43 @@ Promise.all([
 }).catch(function(e){
     console.error('Lamang Intelligence Network: failed to load data',e);
   document.getElementById('boss-nm').textContent='Load Error';
-  var uEl=document.getElementById('uinfo');
-  if(uEl)uEl.textContent='Could
+  if(uEl)uEl.textContent='Could not fetch data from server.';
+});
+
+tick();setInterval(tick,1000);
+</script>
+
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('hbtn');
+  var nav = document.getElementById('mnav');
+  if (!btn || !nav) return;
+  var hnav = document.querySelector('.hnav');
+  if (hnav) {
+    var links = hnav.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) nav.appendChild(links[i].cloneNode(true));
+  }
+  window.toggleMNav = function() {
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.sh')) {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  nav.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

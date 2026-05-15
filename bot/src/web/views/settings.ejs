@@ -1,0 +1,93 @@
+<%
+  locals.activePage = 'settings';
+%>
+<%- include('layout') %>
+
+<div class="page-header">
+  <h1 class="page-title">Settings</h1>
+</div>
+
+<% if (locals.success) { %>
+  <div class="alert alert-success">Settings saved successfully.</div>
+<% } %>
+<% if (locals.error) { %>
+  <div class="alert alert-error">
+    <% if (error === 'db_error') { %>Failed to save settings. Check server logs.<% } else { %><%= error %><% } %>
+  </div>
+<% } %>
+
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Guild Configuration</h2>
+    <span class="card-subtitle">Guild ID: <code><%= process.env.DISCORD_GUILD_ID || 'Not set' %></code></span>
+  </div>
+  <form action="/settings" method="POST" class="form">
+
+    <div class="form-group">
+      <label class="form-label" for="vulture_channel_id">Vulture Update Channel</label>
+      <select class="form-select" id="vulture_channel_id" name="vulture_channel_id">
+        <option value="">None selected</option>
+        <% for (const ch of channels) { %>
+          <option value="<%= ch.id %>" <%= settings.vulture_channel_id === ch.id ? 'selected' : '' %>>
+            <%= ch.parentName ? ch.parentName + ' / ' : '' %>#<%= ch.name %>
+          </option>
+        <% } %>
+      </select>
+      <span class="form-hint">Channel where /vulture and the quick dashboard action will post updates.</span>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="announcement_channel_id">Default Announcement Channel</label>
+      <select class="form-select" id="announcement_channel_id" name="announcement_channel_id">
+        <option value="">None selected</option>
+        <% for (const ch of channels) { %>
+          <option value="<%= ch.id %>" <%= settings.announcement_channel_id === ch.id ? 'selected' : '' %>>
+            <%= ch.parentName ? ch.parentName + ' / ' : '' %>#<%= ch.name %>
+          </option>
+        <% } %>
+      </select>
+      <span class="form-hint">Default channel for general announcements and scheduled posts.</span>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="reporter_role_id">Reporter Role</label>
+      <select class="form-select" id="reporter_role_id" name="reporter_role_id">
+        <option value="">None (Manage Server only)</option>
+        <% for (const role of roles) { %>
+          <option value="<%= role.id %>" <%= settings.reporter_role_id === role.id ? 'selected' : '' %>>
+            @<%= role.name %>
+          </option>
+        <% } %>
+      </select>
+      <span class="form-hint">Members with this role can use /vulture without Manage Server permission.</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Settings</button>
+  </form>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header">
+    <h2 class="card-title">Current Settings</h2>
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Key</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <% const keys = Object.keys(settings); %>
+      <% if (keys.length === 0) { %>
+        <tr><td colspan="2" class="muted">No settings saved yet.</td></tr>
+      <% } else { %>
+        <% for (const key of keys) { %>
+          <tr>
+            <td><code><%= key %></code></td>
+            <td><code><%= settings[key] || '(empty)' %></code></td>
+          </tr>
+        <% } %>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('layout_footer') %>

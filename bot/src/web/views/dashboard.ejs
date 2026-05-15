@@ -1,0 +1,110 @@
+<%
+  locals.activePage = 'dashboard';
+%>
+<%- include('layout') %>
+
+<div class="page-header">
+  <h1 class="page-title">Dashboard</h1>
+  <span class="status-badge <%= botOnline ? 'status-online' : 'status-offline' %>">
+    <span class="status-dot"></span>
+    Bot <%= botOnline ? 'Online' : 'Offline' %>
+  </span>
+</div>
+
+<% if (locals.success) { %>
+  <div class="alert alert-success">
+    <% if (success === 'vulture_posted') { %>Vulture location update posted successfully.<% } %>
+  </div>
+<% } %>
+<% if (locals.error) { %>
+  <div class="alert alert-error">
+    <% if (error === 'no_channel') { %>No Vulture channel configured. Set one in <a href="/settings">Settings</a>.<% } %>
+    <% if (error === 'missing_locations') { %>Please select both locations.<% } %>
+    <% if (error === 'post_failed') { %>Failed to post embed. Check bot logs.<% } %>
+    <% if (error === 'channel_not_found') { %>Configured channel not found. Update in <a href="/settings">Settings</a>.<% } %>
+  </div>
+<% } %>
+
+<div class="grid grid-2">
+  <!-- Vulture Quick Action -->
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Vulture Location Update</h2>
+      <span class="card-subtitle">Post current vendor locations to Discord</span>
+    </div>
+    <form action="/vulture-quick" method="POST" class="form">
+      <div class="form-group">
+        <label class="form-label" for="location1">Location 1</label>
+        <select class="form-select" id="location1" name="location1" required>
+          <option value="">Select location...</option>
+          <% for (const loc of possibleLocations) { %>
+            <option value="<%= loc.name %>" <%= (vultureLocations[0] === loc.name) ? 'selected' : '' %>><%= loc.name %></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="location2">Location 2</label>
+        <select class="form-select" id="location2" name="location2" required>
+          <option value="">Select location...</option>
+          <% for (const loc of possibleLocations) { %>
+            <option value="<%= loc.name %>" <%= (vultureLocations[1] === loc.name) ? 'selected' : '' %>><%= loc.name %></option>
+          <% } %>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Post Vulture Update</button>
+    </form>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Quick Links</h2>
+    </div>
+    <ul class="link-list">
+      <li><a href="/schedule" class="link-item">Manage Scheduled Posts</a></li>
+      <li><a href="/settings" class="link-item">Bot Settings</a></li>
+      <li><a href="https://lamangeintel.net/bosses.html" class="link-item" target="_blank" rel="noopener">Bosses Page</a></li>
+      <li><a href="https://discord.com/developers/applications" class="link-item" target="_blank" rel="noopener">Discord Developer Portal</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Recent Scheduled Posts -->
+<div class="card mt-4">
+  <div class="card-header">
+    <h2 class="card-title">Recent Scheduled Posts</h2>
+    <a href="/schedule" class="btn btn-sm btn-secondary">Manage All</a>
+  </div>
+  <% if (recentPosts.length === 0) { %>
+    <p class="empty-state">No scheduled posts yet. <a href="/schedule">Create one</a>.</p>
+  <% } else { %>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Schedule</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Last Run</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const post of recentPosts) { %>
+          <%
+            let contentObj = {};
+            try { contentObj = JSON.parse(post.content); } catch {}
+          %>
+          <tr>
+            <td><code>#<%= post.channel_id %></code></td>
+            <td><code><%= post.schedule %></code></td>
+            <td><span class="badge badge-<%= contentObj.type === 'embed' ? 'blue' : 'gray' %>"><%= contentObj.type || 'text' %></span></td>
+            <td><span class="badge badge-<%= post.enabled ? 'green' : 'red' %>"><%= post.enabled ? 'Enabled' : 'Disabled' %></span></td>
+            <td><% if (post.last_run) { %><%= post.last_run %><% } else { %><span class="muted">Never</span><% } %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+
+<%- include('layout_footer') %>

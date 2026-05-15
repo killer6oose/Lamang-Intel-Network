@@ -1,0 +1,35 @@
+<%# Partial header - included at top of each view %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title || 'Lamang Intelligence Network' %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="https://lamangeintel.net/assets/favicon.ico" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-bracket">[</span>LIN<span class="logo-bracket">]</span>
+        <span class="logo-text">Lamang Intelligence Network</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/" class="nav-link<%= locals.activePage === 'dashboard' ? ' active' : '' %>">Dashboard</a>
+        <a href="/schedule" class="nav-link<%= locals.activePage === 'schedule' ? ' active' : '' %>">Schedule</a>
+        <a href="/settings" class="nav-link<%= locals.activePage === 'settings' ? ' active' : '' %>">Settings</a>
+        <a href="https://lamangeintel.net" class="nav-link nav-external" target="_blank" rel="noopener">Main Site</a>
+        <% if (locals.user) { %>
+          <span class="nav-user">
+            <% if (user.avatar) { %>
+              <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=32" alt="avatar" class="nav-avatar" />
+            <% } %>
+            <%= user.username %>
+          </span>
+          <a href="/auth/logout" class="nav-link nav-logout">Logout</a>
+        <% } %>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">

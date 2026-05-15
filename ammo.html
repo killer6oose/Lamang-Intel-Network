@@ -116,7 +116,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 
 /* SORTABLE HEADERS */
 .tbl th{
-  font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   color:var(--up);padding:10px 12px;background:var(--ud);
   border-bottom:2px solid var(--um);
   white-space:nowrap;user-select:none
@@ -167,8 +167,8 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .ga-IIIA  {background:rgba(120,100,0,.3); border:1px solid #c4a000;     color:#e0c030}
 .ga-IIIAp {background:rgba(140,90,0,.3);  border:1px solid #d47800;     color:#e09030}
 .ga-III   {background:rgba(150,70,10,.3); border:1px solid #d46820;     color:#e08040}
-.ga-3p    {background:rgba(160,50,20,.3); border:1px solid #d04030;     color:#e06050}
-.ga-3pp   {background:rgba(0,120,100,.25);border:1px solid #20c0b0;     color:#40d8c8}
+.ga-IIIp  {background:rgba(160,50,20,.3); border:1px solid #d04030;     color:#e06050}
+.ga-IIIpp {background:rgba(0,120,100,.25);border:1px solid #20c0b0;     color:#40d8c8}
 
 /* EMPTY / STATES */
 .no-match{padding:28px;font-family:var(--mono);font-size:11px;color:var(--ug);letter-spacing:.08em;text-align:center}
@@ -186,7 +186,60 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .ft-lk{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ul);text-decoration:none;transition:color .14s}
 .ft-lk:hover{color:var(--jb)}
 
-@media(max-width:640px){.hnav{display:none}.cal-sel{min-width:130px}}
+/* MOBILE CARD GRID */
+.card-grid{display:none}
+/* ── HAMBURGER / MOBILE NAV ─────────────────────────────────────── */
+.hbtn{display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;background:transparent;border:1px solid var(--um);
+  cursor:pointer;padding:9px;flex-shrink:0;transition:border-color .15s}
+.hbtn:hover{border-color:var(--jg)}
+.hbtn span{display:block;height:2px;background:var(--up);
+  transition:transform .22s,opacity .22s,background .15s}
+.hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbtn.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{display:none;flex-direction:column;background:var(--jd);
+  border-top:1px solid var(--jm);border-bottom:2px solid var(--jg)}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--body);font-size:13px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ul);
+  text-decoration:none;padding:14px 20px;border-bottom:1px solid var(--jm);
+  transition:color .15s,background .15s}
+.mnav a:last-child{border-bottom:none}
+.mnav a:hover{color:var(--jp);background:rgba(74,103,65,.12)}
+.mnav a.active{color:var(--jp);background:rgba(74,103,65,.18);
+  border-left:3px solid var(--jg);padding-left:17px}
+
+@media(max-width:640px){
+  .hnav{display:none}.hbtn{display:flex}
+  .cal-sel{min-width:130px}
+  .tbl-wrap{display:none}
+  .card-grid{display:flex;flex-direction:column;gap:8px;padding:8px 10px}
+}
+/* card anatomy */
+.ammo-card{background:var(--uc);border:1px solid var(--um);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.ammo-card.row-hidden{display:none}
+/* title bar across the top */
+.ac-title{font-family:var(--body);font-size:15px;font-weight:600;color:var(--uw);line-height:1.2;border-bottom:1px solid var(--um);padding-bottom:7px}
+.ac-title a{color:var(--uw);text-decoration:none;border-bottom:1px dotted var(--um)}
+/* body: image left, stats right */
+.ac-body{display:flex;align-items:flex-start;gap:12px}
+.ac-img-wrap{width:72px;height:72px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--ud);border:1px solid var(--um)}
+.ac-img-wrap img{width:72px;height:72px;object-fit:contain}
+/* stacked stats */
+.ac-stats{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
+.ac-stat{display:flex;flex-direction:column;gap:2px}
+.ac-lbl{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--jb)}
+.ac-val{font-family:var(--mono);font-size:13px;color:var(--up)}
+.ac-val.dim{color:var(--ug)}
+.ac-val.green{color:var(--es)}
+/* footer: trader + badge */
+.ac-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--um);padding-top:7px}
+.ac-ga{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.ac-trader{font-family:var(--mono);font-size:11px;color:var(--up)}
+.ac-trader .trader-name{color:var(--et)}
+.ac-trader .trader-lv{color:var(--ug);font-size:10px}
+.ac-trader.loot-only{color:var(--ug);font-style:italic;font-size:11px}
 </style>
 </head>
 <body>
@@ -205,7 +258,11 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
       <a href="/builder" class="nl">Loadout Builder</a>
       <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" class="nl">Wiki &#x2197;</a>
     </nav>
+    <button class="hbtn" id="hbtn" onclick="toggleMNav()" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile navigation"></nav>
 </header>
 
 <!-- CONTROL BAR -->
@@ -257,8 +314,8 @@ var GA_MAP = {
   'IIIA':  {cls:'ga-IIIA',  lbl:'IIIA',  ord:4},
   'IIIA+': {cls:'ga-IIIAp', lbl:'IIIA+', ord:5},
   'III':   {cls:'ga-III',   lbl:'III',   ord:6},
-  '3+':    {cls:'ga-3p',    lbl:'3+',    ord:7},
-  '3++':   {cls:'ga-3pp',   lbl:'3++',   ord:8},
+  'III+':  {cls:'ga-IIIp',  lbl:'III+',  ord:7},
+  'III++': {cls:'ga-IIIpp', lbl:'III++', ord:8},
 };
 
 // COLUMNS: key, data-attr, label, align
@@ -321,6 +378,81 @@ function renderSecs() {
   }
 }
 
+// ─── Mobile card renderer ──────────────────────────────────────────────────
+function renderRoundCard(r, calId) {
+  var imgHtml = r.imageUrl
+    ? '<img src="'+esc(r.imageUrl)+'" alt="'+esc(r.name)+'" loading="lazy"/>'
+    : '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><ellipse cx="7" cy="7" rx="3" ry="5" stroke="currentColor" stroke-width="1.2"/><line x1="7" y1="2" x2="7" y2="0" stroke="currentColor" stroke-width="1.2"/></svg>';
+
+  var nameHtml = r.wikiUrl
+    ? '<a href="'+esc(r.wikiUrl)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--um)">'+esc(r.name)+'</a>'
+    : esc(r.name);
+
+  var priceNum = (r.price !== null && r.price !== undefined && r.price !== '') ? Number(r.price) : NaN;
+  var priceSortVal = isNaN(priceNum) ? '' : String(priceNum);
+  var priceHtml = isNaN(priceNum)
+    ? '<span class="ac-val dim">-</span>'
+    : '<span class="ac-val green">$'+priceNum.toLocaleString()+'</span>';
+
+  var accVal = (r.accuracy !== undefined && r.accuracy !== null && r.accuracy !== '') ? String(r.accuracy).replace(/[^0-9+\-\.]/g,'') : '';
+  var spdVal = (r.speed !== undefined && r.speed !== null && r.speed !== '') ? String(r.speed).replace(/[^0-9]/g,'') : '';
+  var durVal = (r.durabilityMod !== undefined && r.durabilityMod !== null && r.durabilityMod !== '') ? String(r.durabilityMod).replace(/[^0-9+\-\.]/g,'') : '';
+  var traderSortVal = (r.vendor || '').toLowerCase();
+
+  var vendorRaw = r.vendor || '';
+  var traderHtml;
+  if (!vendorRaw || vendorRaw === '?') {
+    traderHtml = '<span class="ac-trader" style="color:var(--ug)">-</span>';
+  } else if (vendorRaw === 'Loot only') {
+    traderHtml = '<span class="ac-trader loot-only">loot only</span>';
+  } else {
+    var slashIdx = vendorRaw.indexOf('/');
+    if (slashIdx > -1) {
+      var tName = vendorRaw.slice(0, slashIdx);
+      var tLv   = vendorRaw.slice(slashIdx);
+      traderHtml = '<span class="ac-trader"><span class="trader-name">'+esc(tName)+'</span><span class="trader-lv">'+esc(tLv)+'</span></span>';
+    } else {
+      traderHtml = '<span class="ac-trader"><span class="trader-name">'+esc(vendorRaw)+'</span></span>';
+    }
+  }
+
+  var ga     = r.goodAgainst || 'None';
+  var gaInfo = GA_MAP[ga] || GA_MAP['None'];
+
+  function acStat(lbl, val) {
+    var hasVal = (val !== undefined && val !== null && val !== '');
+    return '<div class="ac-stat">'
+         + '<span class="ac-lbl">'+lbl+'</span>'
+         + (hasVal ? '<span class="ac-val">'+esc(String(val))+'</span>' : '<span class="ac-val dim">-</span>')
+         + '</div>';
+  }
+
+  return '<div class="ammo-card"'
+       + ' data-round="'+norm(r.name)+'"'
+       + ' data-calid="'+esc(calId)+'"'
+       + ' data-price="'+priceSortVal+'"'
+       + ' data-acc="'+esc(accVal)+'"'
+       + ' data-spd="'+esc(spdVal)+'"'
+       + ' data-dur="'+esc(durVal)+'"'
+       + ' data-trader="'+esc(traderSortVal)+'"'
+       + ' data-ga="'+gaInfo.ord+'">'
+       + '<div class="ac-title">'+nameHtml+'</div>'
+       + '<div class="ac-body">'
+       +   '<div class="ac-img-wrap">'+imgHtml+'</div>'
+       +   '<div class="ac-stats">'
+       +     acStat('Acc Mod %', r.accuracy)
+       +     acStat('Speed m/s', r.speed)
+       +     acStat('Dur Mod %', r.durabilityMod)
+       +     '<div class="ac-stat"><span class="ac-lbl">Price</span>'+priceHtml+'</div>'
+       +   '</div>'
+       + '</div>'
+       + '<div class="ac-footer">'
+       +   traderHtml
+       +   '<div class="ac-ga"><span class="ac-lbl">Strong Against</span><span class="ga-badge '+gaInfo.cls+'">'+gaInfo.lbl+'</span></div>'
+       + '</div>'
+       + '</div>';
+}
+
 function renderCaliber(cal) {
   var rounds = cal.ammo || [];
   var cid = esc(cal.id);
@@ -367,7 +499,12 @@ function renderCaliber(cal) {
     for (var i = 0; i < rounds.length; i++) h += renderRound(rounds[i], cal.id);
     h += '</tbody></table>';
   }
-  h += '</div></section>';
+  h += '</div>';
+  // Mobile card grid (shown only via CSS on narrow viewports)
+  h += '<div class="card-grid" id="cg-'+cid+'">';
+  for (var i = 0; i < rounds.length; i++) h += renderRoundCard(rounds[i], cal.id);
+  h += '</div>';
+  h += '</section>';
   return h;
 }
 
@@ -490,6 +627,25 @@ function sortCol(calId, col, dir) {
   // Re-append in sorted order
   for (var i = 0; i < rows.length; i++) tbody.appendChild(rows[i]);
 
+  // Mirror sort on mobile card grid
+  var cg = document.getElementById('cg-' + calId);
+  if (cg) {
+    var cards = Array.prototype.slice.call(cg.querySelectorAll('.ammo-card'));
+    cards.sort(function(a, b) {
+      var av = a.getAttribute(colDef.attr) || '';
+      var bv = b.getAttribute(colDef.attr) || '';
+      if (col !== 'trader') {
+        var an = parseFloat(av), bn = parseFloat(bv);
+        if (isNaN(an) && isNaN(bn)) return 0;
+        if (isNaN(an)) return 1;
+        if (isNaN(bn)) return -1;
+        return dir === 'asc' ? an - bn : bn - an;
+      }
+      return dir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+    });
+    for (var i = 0; i < cards.length; i++) cg.appendChild(cards[i]);
+  }
+
   // Update header indicators
   var ths = sec.querySelectorAll('th[data-col]');
   for (var i = 0; i < ths.length; i++) {
@@ -527,6 +683,12 @@ function doSearch(raw) {
       var match = calMatch || fzyMatch(q, rows[j].getAttribute('data-round') || '');
       rows[j].classList.toggle('row-hidden', !match);
       if (match) { vis++; total++; }
+    }
+    // mirror on mobile cards
+    var cards = sec.querySelectorAll('.ammo-card');
+    for (var j = 0; j < cards.length; j++) {
+      var match = calMatch || fzyMatch(q, cards[j].getAttribute('data-round') || '');
+      cards[j].classList.toggle('row-hidden', !match);
     }
     sec.classList.toggle('hidden', !calMatch && vis === 0);
   }
@@ -567,6 +729,38 @@ fetch('data/ammo.json?t=' + Date.now())
       + '<div class="no-data-d">Could not fetch ammo.json.<br/>Check the server is running.</div>'
       + '</div>';
   });
+</script>
+<script>
+// Mobile nav toggle
+(function(){
+  var btn = document.getElementById('hbtn');
+  var nav = document.getElementById('mnav');
+  if (!btn || !nav) return;
+  var hnav = document.querySelector('.hnav');
+  if (hnav) {
+    var links = hnav.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) nav.appendChild(links[i].cloneNode(true));
+  }
+  window.toggleMNav = function() {
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.sh')) {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  nav.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
 </script>
 </body>
 </html>

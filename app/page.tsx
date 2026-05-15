@@ -2,6 +2,7 @@ import Image from "next/image";
 import { promises as fs } from "fs";
 import path from "path";
 import LoadoutBuilder from "./components/LoadoutBuilder";
+import BuilderHeader from "./components/BuilderHeader";
 import { assetPath } from "./lib/assetPath";
 
 async function getAllData() {
@@ -184,26 +185,7 @@ export default async function BuilderPage() {
 
   return (
     <main className="flex flex-col min-h-screen">
-      <header className="sh">
-        <div className="shi">
-          <a href="/" className="logo">
-            <img src="/logo.png" alt="Lamang Intelligence Network" width={36} height={36} style={{ objectFit: "contain" }} />
-            <div>
-              <div className="lm">Lamang Intelligence Network</div>
-              <div className="ls">Gray Zone Warfare Operator Hub</div>
-            </div>
-          </a>
-          <nav className="hnav" aria-label="Main navigation">
-            <a href="/"                className="nl">Home</a>
-            <a href="/tracker.html"    className="nl">Vulture Tracking</a>
-            <a href="/bosses.html"     className="nl">Bosses</a>
-            <a href="/ammo.html"       className="nl">Ammo Chart</a>
-            <a href="/blueprints.html" className="nl">Blueprints</a>
-            <a href="/builder"         className="nl active">Loadout Builder</a>
-            <a href="https://gray-zone-warfare.fandom.com" target="_blank" rel="noopener" className="nl">Wiki &#x2197;</a>
-          </nav>
-        </div>
-      </header>
+      <BuilderHeader />
 
       <div className="flex-1 py-6 w-full" style={{ paddingLeft: "3vw", paddingRight: "3vw" }}>
         <div className="us">
