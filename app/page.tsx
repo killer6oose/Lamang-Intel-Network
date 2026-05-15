@@ -231,6 +231,9 @@ export default async function BuilderPage() {
             </a>
             {" "}and in-game verification.
           </div>
+          <div className="ft-lks" style={{ marginTop: "8px" }}>
+            <a href="https://bot.lamangintel.net" target="_blank" rel="noopener" className="ft-lk">Bot Dashboard ↗</a>
+          </div>
         </div>
       </footer>
     </main>

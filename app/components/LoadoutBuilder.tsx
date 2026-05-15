@@ -2192,6 +2192,75 @@ export default function LoadoutBuilder({
     primary: {}, sidearm: {},
   });
   const [copied, setCopied] = useState(false);
+
+  // ── Steam auth + saved builds ────────────────────────────────────────────────
+  interface SteamUser { id: number; steamId: string; username: string; avatar: string; }
+  interface SavedBuild { id: number; name: string; encoded: string; created_at: string; }
+  const [steamUser, setSteamUser] = useState<SteamUser | null>(null);
+  const [savedBuilds, setSavedBuilds] = useState<SavedBuild[]>([]);
+  const [showBuildsMenu, setShowBuildsMenu] = useState(false);
+  const [buildSaving, setBuildSaving] = useState(false);
+  const [buildSaveMsg, setBuildSaveMsg] = useState('');
+
+  // Check if user is logged in on mount
+  useEffect(() => {
+    fetch('/steam.php?action=me', { credentials: 'include' })
+      .then(r => r.json())
+      .then(u => { if (u && u.steamId) setSteamUser(u); })
+      .catch(() => {});
+  }, []);
+
+  // Load saved builds whenever user logs in
+  useEffect(() => {
+    if (!steamUser) { setSavedBuilds([]); return; }
+    fetch('/steam.php?action=builds', { credentials: 'include' })
+      .then(r => r.json())
+      .then(b => { if (Array.isArray(b)) setSavedBuilds(b); })
+      .catch(() => {});
+  }, [steamUser]);
+
+  const handleSaveToAccount = async () => {
+    if (!steamUser) { window.location.href = '/steam.php?action=login'; return; }
+    const encoded = serializeBuild();
+    const name = buildName.trim() || 'Untitled Build';
+    setBuildSaving(true);
+    try {
+      const r = await fetch('/steam.php?action=save', {
+        method: 'POST', credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, encoded }),
+      });
+      const data = await r.json();
+      if (data.ok) {
+        setSavedBuilds(prev => [{ id: data.id, name, encoded, created_at: new Date().toISOString() }, ...prev]);
+        setBuildSaveMsg('Saved!');
+      } else {
+        setBuildSaveMsg(data.error || 'Error saving');
+      }
+    } catch { setBuildSaveMsg('Error saving'); }
+    setBuildSaving(false);
+    setTimeout(() => setBuildSaveMsg(''), 3000);
+  };
+
+  const handleDeleteBuild = async (id: number) => {
+    await fetch('/steam.php?action=delete', {
+      method: 'POST', credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id }),
+    });
+    setSavedBuilds(prev => prev.filter(b => b.id !== id));
+  };
+
+  const handleLoadBuild = (encoded: string) => {
+    window.location.href = `${window.location.origin}${window.location.pathname}?b=${encoded}`;
+  };
+
+  const handleLogout = async () => {
+    await fetch('/steam.php?action=logout', { credentials: 'include' });
+    setSteamUser(null);
+    setSavedBuilds([]);
+  };
+  // ─────────────────────────────────────────────────────────────────────────────
 const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | null>>({
     binos: null,
   });
@@ -2300,11 +2369,21 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
   const handleSaveBuild = () => {
     const encoded = serializeBuild();
     const url = `${window.location.origin}${window.location.pathname}?b=${encoded}`;
-    navigator.clipboard.writeText(url).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    });
+
+    // Update the URL bar first - no permissions needed
     window.history.replaceState(null, '', `?b=${encoded}`);
+
+    // Try clipboard, fall back to a prompt so the user can always get the link
+    try {
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      }).catch(() => {
+        window.prompt('Copy this link to share your build:', url);
+      });
+    } catch {
+      window.prompt('Copy this link to share your build:', url);
+    }
   };
 
   // On mount: rehydrate state from ?b= URL param
@@ -2456,19 +2535,80 @@ const [selectedGadgets, setSelectedGadgets] = useState<Record<string, string | n
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Build name bar */}
-      <div className="flex items-center gap-3 pb-3 border-b border-gray-800">
+      {/* Steam auth bar */}
+      <div className="flex items-center justify-between pb-2 border-b border-gray-800">
+        {steamUser ? (
+          <div className="flex items-center gap-2 relative">
+            <img src={steamUser.avatar} alt="" width={24} height={24} className="rounded-full" />
+            <span className="text-xs text-gray-400">{steamUser.username}</span>
+            <button
+              onClick={() => setShowBuildsMenu(v => !v)}
+              className="text-xs border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-gray-200 px-2 py-1 rounded-lg transition-colors"
+              title="Your saved builds"
+            >
+              Builds {savedBuilds.length > 0 ? `(${savedBuilds.length})` : ''} ▾
+            </button>
+            {showBuildsMenu && (
+              <div className="absolute top-8 left-0 z-50 bg-[#1a1f1a] border border-gray-700 rounded-lg shadow-xl min-w-[280px] max-h-72 overflow-y-auto">
+                {savedBuilds.length === 0 ? (
+                  <div className="px-4 py-3 text-xs text-gray-500">No saved builds yet.</div>
+                ) : savedBuilds.map(b => (
+                  <div key={b.id} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-800 group">
+                    <button
+                      onClick={() => { handleLoadBuild(b.encoded); setShowBuildsMenu(false); }}
+                      className="flex-1 text-left text-xs text-gray-300 hover:text-white truncate"
+                      title={b.name}
+                    >
+                      {b.name}
+                      <span className="ml-2 text-gray-600 text-[10px]">{new Date(b.created_at).toLocaleDateString()}</span>
+                    </button>
+                    <button
+                      onClick={() => handleDeleteBuild(b.id)}
+                      className="text-gray-600 hover:text-red-400 text-xs px-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                      title="Delete build"
+                    >✕</button>
+                  </div>
+                ))}
+              </div>
+            )}
+            <button onClick={handleLogout} className="text-[10px] text-gray-600 hover:text-gray-400 transition-colors">Logout</button>
+          </div>
+        ) : (
+          <a
+            href="/steam.php?action=login"
+            className="flex items-center gap-2 text-xs border border-gray-700 hover:border-[#6b9c5e] text-gray-400 hover:text-gray-200 px-3 py-1.5 rounded-lg transition-colors"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width={14} height={14}><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38l3.01-6.2a3.44 3.44 0 0 1-.42-1.68 3.44 3.44 0 0 1 3.44-3.44 3.44 3.44 0 0 1 3.44 3.44 3.44 3.44 0 0 1-3.44 3.44h-.16l-6.12 3.06C9.15 23.77 10.55 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>
+            Login with Steam to save builds
+          </a>
+        )}
+        {buildSaveMsg && <span className={`text-xs ${buildSaveMsg === 'Saved!' ? 'text-green-400' : 'text-red-400'}`}>{buildSaveMsg}</span>}
+      </div>
+
+      {/* Build name + action buttons */}
+      <div className="flex items-center gap-2 pb-3 border-b border-gray-800">
         <input
           className="flex-1 bg-transparent border-b border-gray-700 focus:border-[#6b9c5e] outline-none text-gray-100 text-lg font-medium py-1 placeholder-gray-700 transition-colors"
           placeholder="Name your build..."
           value={buildName}
           onChange={e => setBuildName(e.target.value)}
         />
+        {/* Share button - always available */}
         <button
           onClick={handleSaveBuild}
           className={"shrink-0 text-xs border px-3 py-1.5 rounded-lg transition-colors " + (copied ? "text-green-400 border-green-700 bg-green-950/30" : "text-gray-500 hover:text-gray-200 border-gray-700 hover:border-gray-500")}
+          title="Copy shareable link to clipboard"
         >
-          {copied ? "Link copied!" : "Save Build"}
+          {copied ? "Copied!" : "Share"}
+        </button>
+        {/* Save to account button */}
+        <button
+          onClick={handleSaveToAccount}
+          disabled={buildSaving}
+          className="shrink-0 text-xs border border-[#4a6741] hover:border-[#6b9c5e] text-[#6b9c5e] hover:text-[#8bc47e] px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
+          title={steamUser ? 'Save to your account' : 'Login with Steam to save'}
+        >
+          {buildSaving ? 'Saving...' : (steamUser ? 'Save' : 'Save ⚡')}
         </button>
       </div>
 

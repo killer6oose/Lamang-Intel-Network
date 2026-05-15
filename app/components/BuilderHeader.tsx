@@ -11,6 +11,7 @@ export default function BuilderHeader() {
     { href: "/ammo.html",       label: "Ammo Chart" },
     { href: "/blueprints.html", label: "Blueprints" },
     { href: "/builder",         label: "Loadout Builder", active: true },
+    { href: "https://map.lamangintel.net", label: "Tac Map ↗", external: true },
     { href: "https://gray-zone-warfare.fandom.com", label: "Wiki ↗", external: true },
   ];
 
