@@ -20,13 +20,13 @@
  */
 
 // ── Configuration ─────────────────────────────────────────────────────────────
-define('STEAM_API_KEY', 'YOUR_STEAM_API_KEY_HERE');
+define('STEAM_API_KEY', '405F864BCA34988B66602FFD929E2CC9');
 define('SITE_URL',      'https://lamangintel.net');
 define('BUILDER_URL',   'https://lamangintel.net/builder');
 define('DB_HOST',       'localhost');
-define('DB_NAME',       'YOUR_DB_NAME');
-define('DB_USER',       'YOUR_DB_USER');
-define('DB_PASS',       'YOUR_DB_PASS');
+define('DB_NAME',       'admin_lamangintel');
+define('DB_USER',       'admin_lamangintel');
+define('DB_PASS',       'IG{+kh[0tX7g]sVJ');
 define('MAX_BUILDS',    20); // max saved builds per user
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
@@ -84,7 +84,7 @@ function validateSteamCallback(array $params): ?string {
 
     // Extract Steam64 ID from claimed_id URL
     // e.g. https://steamcommunity.com/openid/id/76561198XXXXXXXXX
-    if (!preg_match('#https://steamcommunity\.com/openid/id/(\d+)#', $params['openid_claimed_id'] ?? '', $m)) {
+    if (!preg_match('#https://steamcommunity\.com/openid/id/(\d+)#', $params['openid.claimed_id'] ?? '', $m)) {
         return null;
     }
     return $m[1];
@@ -103,18 +103,30 @@ function getSteamProfile(string $steamId): array {
 }
 
 function httpPost(string $url, string $body): string {
-    $ctx = stream_context_create(['http' => [
-        'method'  => 'POST',
-        'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-        'content' => $body,
-        'timeout' => 10,
-    ]]);
-    return file_get_contents($url, false, $ctx) ?: '';
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => $body,
+        CURLOPT_HTTPHEADER     => ['Content-Type: application/x-www-form-urlencoded'],
+        CURLOPT_TIMEOUT        => 10,
+        CURLOPT_SSL_VERIFYPEER => true,
+    ]);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    return $response ?: '';
 }
 
 function httpGet(string $url): string {
-    $ctx = stream_context_create(['http' => ['timeout' => 10]]);
-    return file_get_contents($url, false, $ctx) ?: '';
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 10,
+        CURLOPT_SSL_VERIFYPEER => true,
+    ]);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    return $response ?: '';
 }
 
 // ── DB helper ─────────────────────────────────────────────────────────────────
